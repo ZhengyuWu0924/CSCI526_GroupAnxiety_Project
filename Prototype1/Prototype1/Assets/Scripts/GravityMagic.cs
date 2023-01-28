@@ -19,6 +19,15 @@ public class GravityMagic : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        GameObject magicObject = collision.gameObject;
+        if (magicObject.CompareTag("MagicObject"))
+        {
+            magicObject.GetComponent<Rigidbody2D>().gravityScale = -0.1f;
+        }
+    }
+
     /*
     @TODO:
         inverse the gravity of the object

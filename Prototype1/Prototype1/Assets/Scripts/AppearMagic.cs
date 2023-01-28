@@ -18,6 +18,15 @@ public class AppearMagic : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        GameObject magicObject = collision.gameObject;
+        if(magicObject.CompareTag("MagicObject"))
+        {
+            magicObject.SetActive(false);
+        }
+    }
+
     /*
     @TODO:
         set the active status of the target object
