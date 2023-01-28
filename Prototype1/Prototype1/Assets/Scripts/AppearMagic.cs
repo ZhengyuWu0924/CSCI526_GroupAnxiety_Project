@@ -33,8 +33,8 @@ public class AppearMagic : MonoBehaviour
         @param: targetObject - the object that current magic interact with
         @param: activateIt - boolean value, determine if make the object appear or not
     */
-    private void makeAppear(Rigidbody targetObject, bool activateIt){
+    // private void makeAppear(Rigidbody targetObject, bool activateIt){
 
-    }
+    // }
 
 }
