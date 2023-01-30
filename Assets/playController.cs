@@ -15,27 +15,31 @@ public class playController : MonoBehaviour
     }
     void Movement()
     {
-        float horizontalmove = Input.GetAxis("Horizontal");//浮点型 -1~1;
-        float facedirection = Input.GetAxisRaw("Horizontal");//整型 -1 0 1
+        float horizontalmove = Input.GetAxis("Horizontal");
+        float facedirection = Input.GetAxisRaw("Horizontal");
 
-        //人物移动
+        // Move the player
         if (horizontalmove != 0)
         {
             rBody.velocity = new Vector2(horizontalmove * speed, rBody.velocity.y);
-            //velocity表示沿一定路线运动的速度
+
         }
 
-        //人物转身
-        if (facedirection != 0)
+        // Turn around
+        if (facedirection > 0)
         {
-            transform.localScale = new Vector3(facedirection, 1, 1);
-            //转身在三维空间实现
+            transform.localScale = new Vector3(Mathf.Abs(facedirection * transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }else if(facedirection < 0)
+        {
+            transform.localScale = new Vector3(-Mathf.Abs(facedirection * transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
 
-        //人物跳跃
+        // Jump
         if (Input.GetButtonDown("Jump"))
         {
-            rBody.velocity = new Vector2(rBody.velocity.x, jumpforce * Time.deltaTime);
+            rBody.velocity = new Vector2(rBody.velocity.x, jumpforce); // * Time.deltaTime);
+            //rBody.AddForce(Vector2.up * jumpforce);
+            
         }
     }
 }
