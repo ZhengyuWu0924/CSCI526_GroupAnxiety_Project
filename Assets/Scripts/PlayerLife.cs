@@ -16,13 +16,13 @@ public class PlayerLife : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("WaterTrap"))
+        if (collision.gameObject.CompareTag("Trap"))
         {
             Die();
         }
         if (collision.gameObject.CompareTag("Win"))
         {
-            Debug.Log("Game Over");
+            Debug.Log("Game Over! You Win!");
         }
     }
 
@@ -30,6 +30,7 @@ public class PlayerLife : MonoBehaviour
     {
         //rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
+        Invoke("RestartLevel", 0.5f);
     }
     // Update is called once per frame
     void Update()

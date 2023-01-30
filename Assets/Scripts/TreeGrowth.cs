@@ -8,6 +8,8 @@ public class TreeGrowth : MonoBehaviour
     public Vector3 scaleChange = new Vector3(0.1f, 0.5f, 0);
     public float height = 3.0f;
     private bool isWatered = false; //whether the tree is watered
+    public GameObject WoodButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,7 @@ public class TreeGrowth : MonoBehaviour
             Destroy(collision.gameObject);
             Debug.Log("WaterPen");
             isWatered = true;
+            WoodButton.SetActive(true);
         }
     }
 

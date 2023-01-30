@@ -8,7 +8,7 @@ TagManager:
   - Win
   - RockPen
   - WoodPen
-  - WaterTrap
+  - Trap
   layers:
   - Default
   - TransparentFX
@@ -17,7 +17,7 @@ TagManager:
   - Water
   - UI
   - CantDrawOver
-  - 
+  - Rock
   - 
   - 
   - 

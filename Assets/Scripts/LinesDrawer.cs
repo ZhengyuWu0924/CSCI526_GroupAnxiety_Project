@@ -96,6 +96,10 @@ public class LinesDrawer : MonoBehaviour
         {
             isRock = true;
         }
+        else
+        {
+            isRock = false;
+        }
     }
 
 }
