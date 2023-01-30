@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 线脚本
+/// Line
 /// </summary>
 public class Line : MonoBehaviour
 {
@@ -12,20 +12,20 @@ public class Line : MonoBehaviour
     public Rigidbody2D rigidBody;
 
     /// <summary>
-    /// 点数组
+    /// Array of points
     /// </summary>
     [HideInInspector] public List<Vector2> points = new List<Vector2>();
     [HideInInspector] public int pointCount = 0;
 
     /// <summary>
-    /// 画线过程中点与点的最小距离
+    /// The minimum distance between points when drawing
     /// </summary>
     float pointsMinDistance = 0.1f;
 
     float circleColliderRadius;
 
     /// <summary>
-    /// 添加点
+    /// Add a point
     /// </summary>
     /// <param name="newPoint"></param>
     public void AddPoint(Vector2 newPoint)
@@ -54,7 +54,7 @@ public class Line : MonoBehaviour
 
 
     /// <summary>
-    /// 获取最后一个点
+    /// Get the last point drawn
     /// </summary>
     /// <returns></returns>
     public Vector2 GetLastPoint()
@@ -63,7 +63,7 @@ public class Line : MonoBehaviour
     }
 
     /// <summary>
-    /// 是否启用物理特性
+    /// Whether to enable physics
     /// </summary>
     public void UsePhysics(bool usePhysics)
     {
@@ -71,7 +71,7 @@ public class Line : MonoBehaviour
     }
 
     /// <summary>
-    /// 设置线颜色
+    /// Set the color of the line
     /// </summary>
     /// <param name="colorGradient"></param>
     public void SetLineColor(Gradient colorGradient)
@@ -80,7 +80,7 @@ public class Line : MonoBehaviour
     }
 
     /// <summary>
-    /// 设置画线的点与点之间的最小距离
+    /// Set the minimum distance between points when drawing
     /// </summary>
     /// <param name="distance"></param>
     public void SetPointsMinDistance(float distance)
@@ -89,7 +89,7 @@ public class Line : MonoBehaviour
     }
 
     /// <summary>
-    /// 设置线宽度
+    /// Set the width of the line
     /// </summary>
     /// <param name="width"></param>
     public void SetLineWidth(float width)

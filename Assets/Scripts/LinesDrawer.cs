@@ -1,17 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 画线控制器
+/// Lines Drawer
 /// </summary>
 public class LinesDrawer : MonoBehaviour
 {
-    public GameObject linePrefab;
-
+    private GameObject chosenLinePrefab;
+    public GameObject[] linePrefabs;
     public LayerMask cantDrawOverLayer;
     int cantDrawOverLayerIndex;
+    private bool isRock = false;
 
     [Space(30)]
-    public Gradient lineColor;
+    //public Gradient lineColor;
     public float linePointsMinDistance;
     public float lineWidth;
 
@@ -22,6 +25,7 @@ public class LinesDrawer : MonoBehaviour
     {
         cam = Camera.main;
         cantDrawOverLayerIndex = LayerMask.NameToLayer("CantDrawOver");
+        chosenLinePrefab = linePrefabs[0];
     }
 
     private void Update()
@@ -34,27 +38,27 @@ public class LinesDrawer : MonoBehaviour
             EndDraw();
     }
 
-    // 画线逻辑-----------------------------------------------------------------------
+    // Drawing-----------------------------------------------------------------------
 
-    // 开始画线
+    // Start drawing
     void BeginDraw()
     {
-        // 实例化线预设
-        currentLine = Instantiate(linePrefab, this.transform).GetComponent<Line>();
-        // 设置参数
+        // Instantiate line prefab
+        currentLine = Instantiate(chosenLinePrefab, this.transform).GetComponent<Line>();
+        // Set parameters
         currentLine.UsePhysics(false);
-        currentLine.SetLineColor(lineColor);
+        //currentLine.SetLineColor(lineColor);
         currentLine.SetPointsMinDistance(linePointsMinDistance);
         currentLine.SetLineWidth(lineWidth);
 
 
     }
 
-    // 画线进行中
+    // Drawing the line
     void Draw()
     {
         var pos = cam.ScreenToWorldPoint(Input.mousePosition);
-        // 防止线与线之间交叉
+        // Prevent crossing between lines
         RaycastHit2D hit = Physics2D.CircleCast(pos, lineWidth / 3f, Vector2.zero, 1f, cantDrawOverLayer);
         if (hit)
             EndDraw();
@@ -62,7 +66,7 @@ public class LinesDrawer : MonoBehaviour
             currentLine.AddPoint(pos);
     }
 
-    // 画线结束
+    // The end of drawing
     void EndDraw()
     {
         if (null == currentLine) return;
@@ -72,9 +76,25 @@ public class LinesDrawer : MonoBehaviour
         }
         else
         {
-            currentLine.gameObject.layer = cantDrawOverLayerIndex;
+            if (isRock)
+            {
+                currentLine.gameObject.layer = LayerMask.NameToLayer("Rock");
+            }
+            else
+            {
+                currentLine.gameObject.layer = cantDrawOverLayerIndex;
+            }
             currentLine.UsePhysics(true);
             currentLine = null;
+        }
+    }
+
+    public void SwitchPen(int prefabIndex)
+    {
+        chosenLinePrefab = linePrefabs[prefabIndex];
+        if(prefabIndex == 1)
+        {
+            isRock = true;
         }
     }
 

@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    public Rigidbody2D rBody;
-    public float speed;
-    public float jumpforce;
+    private Rigidbody2D rBody;
+    public float speed = 3;
+    public float jumpforce = 8;
+    private bool isGround = false;
 
+    private void Start()
+    {
+        rBody = GetComponent<Rigidbody2D>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -35,11 +40,15 @@ public class playController : MonoBehaviour
         }
 
         // Jump
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isGround)
         {
-            rBody.velocity = new Vector2(rBody.velocity.x, jumpforce); // * Time.deltaTime);
-            //rBody.AddForce(Vector2.up * jumpforce);
-            
+            rBody.velocity = new Vector2(rBody.velocity.x, jumpforce);
+            isGround = false;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        isGround = true;
     }
 }
