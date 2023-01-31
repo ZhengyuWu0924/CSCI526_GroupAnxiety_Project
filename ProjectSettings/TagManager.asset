@@ -4,19 +4,20 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Trap
   - WaterPen
-  - WIn
   - Win
+  - RockPen
+  - WoodPen
+  - Trap
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Liquid
   - Water
   - UI
   - CantDrawOver
-  - 
+  - Rock
   - 
   - 
   - 

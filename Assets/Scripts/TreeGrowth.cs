@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class TreeGrowth : MonoBehaviour
 {
-    //private Animator anim;
     private Rigidbody2D rb;
-    public Vector3 scaleChange;
+    public Vector3 scaleChange = new Vector3(0.1f, 0.5f, 0);
+    public float height = 3.0f;
+    private bool isWatered = false; //whether the tree is watered
+    public GameObject WoodButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,32 +19,24 @@ public class TreeGrowth : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("OnCollisionEnter2D");
         if (collision.gameObject.CompareTag("WaterPen"))
         {
             Destroy(collision.gameObject);
             Debug.Log("WaterPen");
-            Grow();
+            isWatered = true;
+            WoodButton.SetActive(true);
         }
     }
 
-    private void Grow()
-    {
-        //rb.bodyType = RigidbodyType2D.Static;
-        while (transform.localScale.y < 3.4f)
-        {
-            transform.localScale += Time.deltaTime *  scaleChange;
-            transform.position += Time.deltaTime *  scaleChange;
-        }
-
-    }
     // Update is called once per frame
     void Update()
     {
-
+        // The tree grows
+        if(isWatered && transform.localScale.y < height)
+        {
+            transform.localScale += Time.deltaTime * scaleChange;
+            transform.position += Time.deltaTime * scaleChange;
+        }
     }
-    //private void RestartLevel()
-    //{
-    //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    //}
 }
+

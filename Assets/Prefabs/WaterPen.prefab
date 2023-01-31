@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 761279246466384330}
   - component: {fileID: 2510382614817961575}
   m_Layer: 0
-  m_Name: Line 1
+  m_Name: WaterPen
   m_TagString: WaterPen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.23529409, g: 0.7764706, b: 0.4318739, a: 1}
+      key0: {r: 0.20392157, g: 0.69411767, b: 1, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}

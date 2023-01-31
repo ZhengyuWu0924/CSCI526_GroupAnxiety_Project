@@ -22,7 +22,7 @@ public class PlayerLife : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Win"))
         {
-            Debug.Log("Game Over");
+            Debug.Log("Game Over! You Win!");
         }
     }
 
@@ -30,6 +30,7 @@ public class PlayerLife : MonoBehaviour
     {
         //rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
+        Invoke("RestartLevel", 0.5f);
     }
     // Update is called once per frame
     void Update()
