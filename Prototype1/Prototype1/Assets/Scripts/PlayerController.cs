@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         jump = 6f;
-        speed = 0.07f;
+        speed = 0.5f;
         m_playerRb = GetComponent<Rigidbody2D>();
         m_onGround = true;
     }
