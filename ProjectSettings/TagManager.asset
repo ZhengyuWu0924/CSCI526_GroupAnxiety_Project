@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Pen
+  - WaterPen
+  - RockPen
+  - WoodPen
   layers:
   - Default
   - TransparentFX
@@ -12,7 +15,7 @@ TagManager:
   - Canvas
   - Water
   - UI
-  - 
+  - CantDrawOver
   - 
   - 
   - 
