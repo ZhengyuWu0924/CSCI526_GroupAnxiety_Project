@@ -92,7 +92,7 @@ public class LinesDrawer : MonoBehaviour
     public void SwitchPen(int prefabIndex)
     {
         chosenLinePrefab = linePrefabs[prefabIndex];
-        if(prefabIndex == 1)
+        if(prefabIndex == 3)
         {
             isRock = true;
         }
