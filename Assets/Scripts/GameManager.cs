@@ -11,12 +11,11 @@ public class GameManager : Singleton<GameManager>
     protected override void Awake()
     {
         base.Awake();
-        
     }
 
 
 
-    // Start is called before the first frame update
+    // Initialize game status
     void Start()
     {
         
@@ -27,4 +26,6 @@ public class GameManager : Singleton<GameManager>
     {
         
     }
+
+
 }
