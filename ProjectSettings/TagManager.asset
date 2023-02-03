@@ -8,6 +8,7 @@ TagManager:
   - WaterPen
   - RockPen
   - WoodPen
+  - AntiGravityPen
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Water
   - UI
   - CantDrawOver
-  - 
+  - Rock
   - 
   - 
   - 
