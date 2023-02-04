@@ -20,6 +20,7 @@ public class LinesDrawer : MonoBehaviour
 
     Line currentLine;
     Camera cam;
+    CanvasMove canvasMove;
 
     private void Start()
     {
@@ -91,6 +92,12 @@ public class LinesDrawer : MonoBehaviour
 
     public void SwitchPen(int prefabIndex)
     {
+        GameObject DrawingBoard = GameObject.Find("DrawingBoard");
+        if(DrawingBoard != null)
+        {
+            canvasMove = DrawingBoard.GetComponent<CanvasMove>();
+            canvasMove.DisableMove();
+        }
         chosenLinePrefab = linePrefabs[prefabIndex];
         if(prefabIndex == 3)
         {

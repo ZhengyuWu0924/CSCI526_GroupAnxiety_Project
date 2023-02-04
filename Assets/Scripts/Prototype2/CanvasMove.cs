@@ -5,36 +5,42 @@ using UnityEngine;
 public class CanvasMove : MonoBehaviour
 {
     Vector3 mousePositionOffset;
-    Vector3 originPosition;
     public GameObject LinesDrawer;
+    private bool isMovable = false;
     private Vector3 GetMouseWorldPosition(){
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
-    /*
-        on mouse down, record the origin position of the object
-    */
     private void OnMouseDown(){
-        LinesDrawer.SetActive(false);
-        originPosition = gameObject.transform.position;
-        mousePositionOffset = gameObject.transform.position - GetMouseWorldPosition();
+        if (isMovable)
+        {
+            // Disable drawing
+            gameObject.layer = LayerMask.NameToLayer("CantDrawOver");
+            // Get mouse position offset with respect to the canvas
+            mousePositionOffset = gameObject.transform.position - GetMouseWorldPosition();
+        }
     }
-
-    /*
-        when dragging the mouse, move the object with the mouse
-    */
 
     private void OnMouseDrag(){
-        transform.position = GetMouseWorldPosition() + mousePositionOffset;
+        if (isMovable)
+        {   
+            // Make the canvas follow the mouse
+            transform.position = GetMouseWorldPosition() + mousePositionOffset;
+        }
     }
 
-    /*
-        reset the position of the item with the recorded position
-    */
     private void OnMouseUp(){
-        LinesDrawer.SetActive(true);
-        //transform.position = originPosition;
+        // Enable drawing
+        gameObject.layer = LayerMask.NameToLayer("Default");
     }
 
+    public void EnableMove()
+    {
+        isMovable = true;
+    }
 
+    public void DisableMove()
+    {
+        isMovable = false;
+    }
 }
