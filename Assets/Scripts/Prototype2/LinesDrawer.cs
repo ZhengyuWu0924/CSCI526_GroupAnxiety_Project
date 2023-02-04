@@ -99,7 +99,7 @@ public class LinesDrawer : MonoBehaviour
             canvasMove.DisableMove();
         }
         chosenLinePrefab = linePrefabs[prefabIndex];
-        if(prefabIndex == 3)
+        if(prefabIndex == 4)
         {
             isRock = true;
         }

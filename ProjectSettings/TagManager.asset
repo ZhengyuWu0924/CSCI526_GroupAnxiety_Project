@@ -9,6 +9,7 @@ TagManager:
   - RockPen
   - WoodPen
   - AntiGravityPen
+  - TestVanquish
   layers:
   - Default
   - TransparentFX
