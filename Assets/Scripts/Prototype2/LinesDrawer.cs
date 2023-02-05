@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Lines Drawer
@@ -9,10 +10,12 @@ public class LinesDrawer : MonoBehaviour
 {
     public GameObject chosenLinePrefab;
     public GameObject[] linePrefabs;
+    public GameObject chosenButtonPrefab;
+    public GameObject[] ButtonPrefabs;
     public LayerMask cantDrawOverLayer;
     int cantDrawOverLayerIndex;
     private bool isRock = false;
-    private bool canDraw = false;
+    public bool canDraw = false;
 
     [Space(30)]
     //public Gradient lineColor;
@@ -113,6 +116,28 @@ public class LinesDrawer : MonoBehaviour
         {
             canDraw = true;
         }
+        if (!canDraw)
+        {
+            foreach (GameObject button in ButtonPrefabs)
+            {
+                button.GetComponent<Image>().color = Color.white;
+            }
+        }
+        else
+        {
+            foreach (GameObject button in ButtonPrefabs)
+            {
+                if (button == ButtonPrefabs[prefabIndex])
+                {
+                    button.GetComponent<Image>().color = Color.green;
+                }
+                else
+                {
+                    button.GetComponent<Image>().color = Color.white;
+                }
+            }
+        }
+        //ButtonPrefabs[prefabIndex].GetComponent<Image>().color = Color.green;
         GameObject DrawingBoard = GameObject.Find("DrawingBoard");
         if(DrawingBoard != null)
         {

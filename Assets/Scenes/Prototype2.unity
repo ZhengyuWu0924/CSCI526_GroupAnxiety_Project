@@ -3440,9 +3440,18 @@ MonoBehaviour:
   - {fileID: 761279246466384331, guid: 0955edba1847498428c7e7b0fba36c8b, type: 3}
   - {fileID: 761279246466384331, guid: 0c854cf2f4a73e944a27732311c3be74, type: 3}
   - {fileID: 761279246466384331, guid: 7331ec75bb9a0b8439e4db8e3f8f165f, type: 3}
+  chosenButtonPrefab: {fileID: 0}
+  ButtonPrefabs:
+  - {fileID: 1711398794}
+  - {fileID: 1042102854}
+  - {fileID: 549149532}
+  - {fileID: 1897348694}
+  - {fileID: 480054323}
+  - {fileID: 396395183}
   cantDrawOverLayer:
     serializedVersion: 2
     m_Bits: 64
+  canDraw: 0
   linePointsMinDistance: 0.1
   lineWidth: 0.1
 --- !u!4 &2117820357
