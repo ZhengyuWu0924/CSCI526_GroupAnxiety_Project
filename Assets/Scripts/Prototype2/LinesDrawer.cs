@@ -116,6 +116,27 @@ public class LinesDrawer : MonoBehaviour
         {
             canDraw = true;
         }
+        SwitchButtonColor(prefabIndex);
+        //ButtonPrefabs[prefabIndex].GetComponent<Image>().color = Color.green;
+        GameObject DrawingBoard = GameObject.Find("DrawingBoard");
+        if(DrawingBoard != null)
+        {
+            canvasMove = DrawingBoard.GetComponent<CanvasMove>();
+            canvasMove.DisableMove();
+        }
+        chosenLinePrefab = linePrefabs[prefabIndex];
+        if(prefabIndex == 4)
+        {
+            isRock = true;
+        }
+        else
+        {
+            isRock = false;
+        }
+    }
+
+    private void SwitchButtonColor(int prefabIndex)
+    {
         if (!canDraw)
         {
             foreach (GameObject button in ButtonPrefabs)
@@ -136,22 +157,6 @@ public class LinesDrawer : MonoBehaviour
                     button.GetComponent<Image>().color = Color.white;
                 }
             }
-        }
-        //ButtonPrefabs[prefabIndex].GetComponent<Image>().color = Color.green;
-        GameObject DrawingBoard = GameObject.Find("DrawingBoard");
-        if(DrawingBoard != null)
-        {
-            canvasMove = DrawingBoard.GetComponent<CanvasMove>();
-            canvasMove.DisableMove();
-        }
-        chosenLinePrefab = linePrefabs[prefabIndex];
-        if(prefabIndex == 4)
-        {
-            isRock = true;
-        }
-        else
-        {
-            isRock = false;
         }
     }
 
