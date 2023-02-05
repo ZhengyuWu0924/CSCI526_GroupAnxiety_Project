@@ -234,6 +234,8 @@ GameObject:
   - component: {fileID: 279930502}
   - component: {fileID: 279930501}
   - component: {fileID: 279930503}
+  - component: {fileID: 279930505}
+  - component: {fileID: 279930504}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -282,7 +284,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -320,6 +322,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ef84ea5903b204e9f8557240e9778f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+  jumpSpeed: 8
+--- !u!58 &279930504
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279930500}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!50 &279930505
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279930500}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &401330979
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +558,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e616d6dc245dbb479f3c60a14d2f20b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 279930500}
+  offset: 0
+  offsetSmoothing: 0
 --- !u!1 &561712632
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,11 +911,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 426f0038d27932a40b9b39def0ffbaa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  penPrefabs:
-  - {fileID: 1961165463129997456, guid: fa93d86a8e8e0274db23835d7fcdbbf1, type: 3}
-  chosenPenIndex: 0
-  linePointsMinDistance: 0.1
-  lineWidth: 0.1
 --- !u!4 &2117820357
 Transform:
   m_ObjectHideFlags: 0
