@@ -12,6 +12,7 @@ public class LinesDrawer : MonoBehaviour
     public LayerMask cantDrawOverLayer;
     int cantDrawOverLayerIndex;
     private bool isRock = false;
+    private bool canDraw = false;
 
     [Space(30)]
     //public Gradient lineColor;
@@ -44,13 +45,17 @@ public class LinesDrawer : MonoBehaviour
     // Start drawing
     void BeginDraw()
     {
-        // Instantiate line prefab
-        currentLine = Instantiate(chosenLinePrefab, this.transform).GetComponent<Line>();
-        // Set parameters
-        currentLine.UsePhysics(false);
-        //currentLine.SetLineColor(lineColor);
-        currentLine.SetPointsMinDistance(linePointsMinDistance);
-        currentLine.SetLineWidth(lineWidth);
+        if (canDraw)
+        {
+            // Instantiate line prefab
+            currentLine = Instantiate(chosenLinePrefab, this.transform).GetComponent<Line>();
+            // Set parameters
+            currentLine.UsePhysics(false);
+            //currentLine.SetLineColor(lineColor);
+            currentLine.SetPointsMinDistance(linePointsMinDistance);
+            currentLine.SetLineWidth(lineWidth);
+
+        }
 
 
     }
@@ -58,40 +63,56 @@ public class LinesDrawer : MonoBehaviour
     // Drawing the line
     void Draw()
     {
-        var pos = cam.ScreenToWorldPoint(Input.mousePosition);
-        // Prevent crossing between lines
-        RaycastHit2D hit = Physics2D.CircleCast(pos, lineWidth / 3f, Vector2.zero, 1f, cantDrawOverLayer);
-        if (hit)
-            EndDraw();
-        else
-            currentLine.AddPoint(pos);
+        if (canDraw)
+        {
+            var pos = cam.ScreenToWorldPoint(Input.mousePosition);
+            // Prevent crossing between lines
+            RaycastHit2D hit = Physics2D.CircleCast(pos, lineWidth / 3f, Vector2.zero, 1f, cantDrawOverLayer);
+            if (hit)
+                EndDraw();
+            else
+                currentLine.AddPoint(pos);
+        }
+
     }
 
     // The end of drawing
     void EndDraw()
     {
-        if (null == currentLine) return;
-        if (currentLine.pointCount < 2)
+        if (canDraw)
         {
-            Destroy(currentLine.gameObject);
-        }
-        else
-        {
-            if (isRock)
+            if (null == currentLine) return;
+            if (currentLine.pointCount < 2)
             {
-                currentLine.gameObject.layer = LayerMask.NameToLayer("Rock");
+                Destroy(currentLine.gameObject);
             }
             else
             {
-                currentLine.gameObject.layer = cantDrawOverLayerIndex;
+                if (isRock)
+                {
+                    currentLine.gameObject.layer = LayerMask.NameToLayer("Rock");
+                }
+                else
+                {
+                    currentLine.gameObject.layer = cantDrawOverLayerIndex;
+                }
+                currentLine.UsePhysics(true);
+                currentLine = null;
             }
-            currentLine.UsePhysics(true);
-            currentLine = null;
         }
+
     }
 
     public void SwitchPen(int prefabIndex)
     {
+        if (canDraw && chosenLinePrefab == linePrefabs[prefabIndex])
+        {
+            canDraw = false;
+        }
+        else
+        {
+            canDraw = true;
+        }
         GameObject DrawingBoard = GameObject.Find("DrawingBoard");
         if(DrawingBoard != null)
         {
