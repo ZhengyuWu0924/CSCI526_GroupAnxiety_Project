@@ -10,6 +10,7 @@ public class LinesDrawer : MonoBehaviour
 {
     public GameObject chosenLinePrefab;
     public GameObject[] linePrefabs;
+    int chosenLinePrefabIdex;
     public GameObject chosenButtonPrefab;
     public GameObject[] ButtonPrefabs;
     public LayerMask cantDrawOverLayer;
@@ -31,6 +32,7 @@ public class LinesDrawer : MonoBehaviour
         cam = Camera.main;
         cantDrawOverLayerIndex = LayerMask.NameToLayer("CantDrawOver");
         chosenLinePrefab = linePrefabs[0];
+        chosenLinePrefabIdex = 0;
     }
 
     private void Update()
@@ -124,6 +126,7 @@ public class LinesDrawer : MonoBehaviour
             canvasMove = DrawingBoard.GetComponent<CanvasMove>();
             canvasMove.DisableMove();
         }
+        chosenLinePrefabIdex = prefabIndex;
         chosenLinePrefab = linePrefabs[prefabIndex];
         if(prefabIndex == 4)
         {
@@ -139,24 +142,31 @@ public class LinesDrawer : MonoBehaviour
     {
         if (!canDraw)
         {
-            foreach (GameObject button in ButtonPrefabs)
-            {
-                button.GetComponent<Image>().color = Color.white;
-            }
+            //foreach (GameObject button in ButtonPrefabs)
+            //{
+            //    button.GetComponent<Image>().color = Color.white;
+            //}
+            ButtonPrefabs[prefabIndex].GetComponent<Image>().color = Color.white;
+        }
+        else if (canDraw && chosenLinePrefab == linePrefabs[prefabIndex])
+        {
+            ButtonPrefabs[prefabIndex].GetComponent<Image>().color = Color.green;
         }
         else
         {
-            foreach (GameObject button in ButtonPrefabs)
-            {
-                if (button == ButtonPrefabs[prefabIndex])
-                {
-                    button.GetComponent<Image>().color = Color.green;
-                }
-                else
-                {
-                    button.GetComponent<Image>().color = Color.white;
-                }
-            }
+            //foreach (GameObject button in ButtonPrefabs)
+            //{
+            //    if (button == ButtonPrefabs[prefabIndex])
+            //    {
+            //        button.GetComponent<Image>().color = Color.green;
+            //    }
+            //    else
+            //    {
+            //        button.GetComponent<Image>().color = Color.white;
+            //    }
+            //}
+            ButtonPrefabs[prefabIndex].GetComponent<Image>().color = Color.green;
+            ButtonPrefabs[chosenLinePrefabIdex].GetComponent<Image>().color = Color.white;
         }
     }
 
