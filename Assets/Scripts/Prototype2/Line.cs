@@ -20,9 +20,9 @@ public class Line : MonoBehaviour
     /// <summary>
     /// The minimum distance between points when drawing
     /// </summary>
-    float pointsMinDistance = 0.1f;
+    public float pointsMinDistance = 0.1f;
 
-    float circleColliderRadius;
+    public float circleColliderRadius;
 
     /// <summary>
     /// Add a point

@@ -60,6 +60,7 @@ public class LinesDrawer : MonoBehaviour
             currentLine.SetPointsMinDistance(linePointsMinDistance);
             currentLine.SetLineWidth(lineWidth);
 
+            currentLine.AddPoint(cam.ScreenToWorldPoint(Input.mousePosition));
         }
 
 
@@ -76,7 +77,18 @@ public class LinesDrawer : MonoBehaviour
             if (hit)
                 EndDraw();
             else
-                currentLine.AddPoint(pos);
+            {
+                // add remain ink
+                float distance = Vector2.Distance(pos, currentLine.points[^1]);
+                if (distance > currentLine.pointsMinDistance)
+                {
+                    GameManager.Instance.updateInk(distance);
+                    currentLine.AddPoint(pos);
+                }
+                
+                
+            }
+                
         }
 
     }
