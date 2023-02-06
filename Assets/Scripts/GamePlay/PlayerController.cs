@@ -9,11 +9,13 @@ public class PlayerController : MonoBehaviour
     public float drainSpeed = 0.5f;
     private float direction = 0f;
     private Rigidbody2D player;
+    private bool isOnGround;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GetComponent<Rigidbody2D>();
+        isOnGround = true;
     }
 
     // Update is called once per frame
@@ -34,9 +36,10 @@ public class PlayerController : MonoBehaviour
             player.velocity = new Vector2(0, player.velocity.y);
         }
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isOnGround)
         {
             player.velocity = new Vector2(player.velocity.x, jumpSpeed);
+            isOnGround = false;
         }
 
     }
@@ -49,6 +52,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log(player.gravityScale);
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.tag == "Water")
@@ -57,5 +61,10 @@ public class PlayerController : MonoBehaviour
             Debug.Log(player.gravityScale);
         }
     }
-    
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        isOnGround = true;
+    }
+
 }
