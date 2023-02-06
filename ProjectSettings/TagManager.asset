@@ -10,6 +10,7 @@ TagManager:
   - WoodPen
   - AntiGravityPen
   - TestVanquish
+  - Water
   layers:
   - Default
   - TransparentFX

@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
     public float jumpSpeed = 8f;
+    public float drainSpeed = 0.5f;
     private float direction = 0f;
     private Rigidbody2D player;
 
@@ -38,6 +39,23 @@ public class PlayerController : MonoBehaviour
             player.velocity = new Vector2(player.velocity.x, jumpSpeed);
         }
 
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.tag == "Water")
+        {
+            player.gravityScale = drainSpeed;
+            player.AddForce(Vector2.up * 10);
+            Debug.Log(player.gravityScale);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.tag == "Water")
+        {
+            player.gravityScale = 1;
+            Debug.Log(player.gravityScale);
+        }
     }
     
 }
