@@ -23,8 +23,8 @@ public class FireController : MonoBehaviour
         if (col.gameObject.name == "WaterPen(Clone)")
         {
         fireCollider.enabled = false;
-       sprite.color = new Color (1, 0, 0, 0); 
-       Debug.Log(sprite.color);
+        sprite.color = new Color (1, 0, 0, 0); 
+        Debug.Log(sprite.color);
         }
         
     }
