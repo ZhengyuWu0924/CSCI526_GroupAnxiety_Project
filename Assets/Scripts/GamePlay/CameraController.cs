@@ -4,40 +4,57 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public GameObject player;
-    public float offset;
-    public float offsetSmoothing;
-    private Vector3 playerPosition;
+    [SerializeField] public GameObject player;
+    private Vector3 moveTemp;
+
+    [SerializeField] float xSpeed = 5f;
+    [SerializeField] float ySpeed = 8f;
+    [SerializeField] float xDifference;
+    [SerializeField] float yDifference;
+
+    [SerializeField] float movementThreshold = 2f;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        playerPosition = new Vector3(player.transform.position.x, player.transform.position.y, this.transform.position.z);
 
-        if (player.transform.localScale.x > 0f)
+        if (player.transform.position.x > transform.position.x)
         {
-            playerPosition = new Vector3(playerPosition.x + offset, playerPosition.y, playerPosition.z);
+            xDifference = player.transform.position.x - transform.position.x;
+        } else
+        {
+            xDifference = transform.position.x - player.transform.position.x;
+        }
+
+        if (xDifference >= movementThreshold)
+        {
+            moveTemp.x = player.transform.position.x;
+            moveTemp.z = -10;
+            transform.position = Vector3.MoveTowards(transform.position, moveTemp, xSpeed * Time.deltaTime);
+        }
+
+
+        if (player.transform.position.y > transform.position.y)
+        {
+            yDifference = player.transform.position.y - transform.position.y;
         }
         else
         {
-            playerPosition = new Vector3(playerPosition.x - offset, playerPosition.y, playerPosition.z);
+            yDifference = transform.position.y - player.transform.position.y;
         }
-
-        if(this.transform.position.x < 0){
-            transform.position = new Vector3(
-                0,
-                player.transform.position.y,
-                this.transform.position.z
-            );
+        if (yDifference >= movementThreshold)
+        {
+            moveTemp.y = player.transform.position.y;
+            moveTemp.z = -10;
+            transform.position = Vector3.MoveTowards(transform.position, moveTemp, ySpeed * Time.deltaTime);
         }
-
-        transform.position = Vector3.Lerp(transform.position, playerPosition, offsetSmoothing * Time.deltaTime);
 
     }
+
 }
