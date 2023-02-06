@@ -27,6 +27,7 @@ public class LinesDrawer : MonoBehaviour
     Camera cam;
     CanvasMove canvasMove;
 
+
     private void Start()
     {
         cam = Camera.main;
@@ -37,12 +38,19 @@ public class LinesDrawer : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && GameManager.remainInk > 0)
+        {
             BeginDraw();
-        if (null != currentLine)
+        }     
+        if (null != currentLine && GameManager.remainInk > 0)
+        {
             Draw();
-        if (Input.GetMouseButtonUp(0))
+        }
+        if (Input.GetMouseButtonUp(0) || GameManager.remainInk < 0)
+        {
             EndDraw();
+        }
+            
     }
 
     // Drawing-----------------------------------------------------------------------
@@ -50,7 +58,7 @@ public class LinesDrawer : MonoBehaviour
     // Start drawing
     void BeginDraw()
     {
-        if (canDraw)
+        if (canDraw && GameManager.remainInk > 0)
         {
             // Instantiate line prefab
             currentLine = Instantiate(chosenLinePrefab, this.transform).GetComponent<Line>();
