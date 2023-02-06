@@ -18,7 +18,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerPosition = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
+        playerPosition = new Vector3(player.transform.position.x, player.transform.position.y, this.transform.position.z);
 
         if (player.transform.localScale.x > 0f)
         {
@@ -27,6 +27,14 @@ public class CameraController : MonoBehaviour
         else
         {
             playerPosition = new Vector3(playerPosition.x - offset, playerPosition.y, playerPosition.z);
+        }
+
+        if(this.transform.position.x < 0){
+            transform.position = new Vector3(
+                0,
+                player.transform.position.y,
+                this.transform.position.z
+            );
         }
 
         transform.position = Vector3.Lerp(transform.position, playerPosition, offsetSmoothing * Time.deltaTime);
