@@ -102,8 +102,8 @@ LineRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 0.54509807, g: 0.5803922, b: 0.5803922, a: 1}
-      key1: {r: 0.54509807, g: 0.5803922, b: 0.5803922, a: 1}
-      key2: {r: 1, g: 1, b: 1, a: 0}
+      key1: {r: 0.9811321, g: 0.03147021, b: 0.03147021, a: 1}
+      key2: {r: 0.54509807, g: 0.5803922, b: 0.5803922, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -198,3 +198,5 @@ MonoBehaviour:
   rigidBody: {fileID: 761279246466384330}
   points: []
   pointCount: 0
+  pointsMinDistance: 0.1
+  circleColliderRadius: 0

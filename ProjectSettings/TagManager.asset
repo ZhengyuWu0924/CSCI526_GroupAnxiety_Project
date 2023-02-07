@@ -11,6 +11,7 @@ TagManager:
   - AntiGravityPen
   - TestVanquish
   - Water
+  - levelObject
   layers:
   - Default
   - TransparentFX
