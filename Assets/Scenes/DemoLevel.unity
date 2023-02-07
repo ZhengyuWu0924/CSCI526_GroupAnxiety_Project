@@ -2538,7 +2538,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1299.2, y: -24.7}
+  m_AnchoredPosition: {x: -1253.5, y: -31}
   m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &654952118
@@ -2585,9 +2585,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: fe4ba8062b17a934a83b5a569ce08ccf, type: 3}
-        m_TargetAssemblyTypeName: LinesDrawer, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 519420034}
+        m_TargetAssemblyTypeName: Restart, Assembly-CSharp
+        m_MethodName: ResetTheGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
