@@ -19,7 +19,7 @@ public class GameManager : Singleton<GameManager>
     // Initialize game status
     void Start()
     {
-        remainInk = 50;
+        remainInk = 100;
 
     }
 
