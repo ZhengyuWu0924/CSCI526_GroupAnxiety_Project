@@ -4,14 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Pen
-  - WaterPen
-  - RockPen
-  - WoodPen
-  - AntiGravityPen
-  - TestVanquish
-  - Water
-  - levelObject
   - Mutable Object
   - Drawn Object
   - Platform Object
