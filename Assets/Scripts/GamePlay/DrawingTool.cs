@@ -46,6 +46,7 @@ public class DrawingTool : MonoBehaviour
     {
         mainCamera = Camera.main;
         cantDrawOverLayerIndex = LayerMask.NameToLayer("CantDrawOver");
+
     }
 
     private void Update()
@@ -88,6 +89,7 @@ public class DrawingTool : MonoBehaviour
     {
         if (GameManager.remainInk > 0)
         {
+            chosenPen.InitializePen();
             // Instantiate line prefab
             drawnObject = Instantiate(chosenPen, this.transform).GetComponent<BasicPen>();
             // Set parameters
@@ -102,14 +104,14 @@ public class DrawingTool : MonoBehaviour
     {
         var pos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         // Prevent crossing between lines
-        RaycastHit2D hit = Physics2D.CircleCast(pos, lineWidth / 3f, Vector2.zero, 1f, cantDrawOverLayer);
+        RaycastHit2D hit = Physics2D.CircleCast(pos, chosenPen.lineWidth / 3f, Vector2.zero, 1f, cantDrawOverLayer);
         if (hit)
             EndDraw();
         else
         {
             // add remain ink
             float distance = Vector2.Distance(pos, drawnObject.points[^1]);
-            if (distance > drawnObject.pointsMinDistance)
+            if (distance > drawnObject.linePointsMinStep)
             {
                 GameManager.Instance.updateInk(distance);
                 drawnObject.AddPoint(pos);

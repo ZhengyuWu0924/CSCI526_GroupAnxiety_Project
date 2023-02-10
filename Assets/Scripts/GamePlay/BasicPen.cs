@@ -2,36 +2,51 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Baisc class of pen
+/// All general functions and variables of brush should be in this basic class
+/// </summary>
 public abstract class BasicPen : MonoBehaviour
 {
     // Components
-    public LineRenderer lineRenderer;
-    public EdgeCollider2D edgeCollider;
-    public Rigidbody2D rigidBody;
+    [HideInInspector] public LineRenderer lineRenderer;
+    [HideInInspector] public EdgeCollider2D edgeCollider2D;
+    [HideInInspector] public Rigidbody2D rigidBody2D;
 
     // Points
     [HideInInspector] public List<Vector2> points = new List<Vector2>();
     [HideInInspector] public int pointCount = 0;
 
-    // Line properties
-    public float pointsMinDistance = 0.1f;
+    // Line properties (change pen color in LineRenderer Component)
     public float linePointsMinStep;
     public float lineWidth;
-    public float circleColliderRadius;
+    // mass should be propontional to line length
+    
 
-    // Add a point
-    public void AddPoint(Vector2 newPoint)
+    // initialize pen properties before usage
+    public virtual void InitializePen()
     {
-        if (pointCount >= 1 && Vector2.Distance(newPoint, GetLastPoint()) < pointsMinDistance)
-            return;
+        lineRenderer = gameObject.GetComponent<LineRenderer>();
+        edgeCollider2D = gameObject.GetComponent<EdgeCollider2D>();
+        rigidBody2D = gameObject.GetComponent<Rigidbody2D>();
 
+        lineRenderer.startWidth = lineWidth;
+        lineRenderer.endWidth = lineWidth;
+    }
+
+    // Add a point, control how to draw line
+    public virtual void AddPoint(Vector2 newPoint)
+    {
+        if (pointCount >= 1 && Vector2.Distance(newPoint, GetLastPoint()) < linePointsMinStep)
+            return;
+     
         points.Add(newPoint);
         ++pointCount;
 
         // Add circle Collider
         var circleCollider = this.gameObject.AddComponent<CircleCollider2D>();
         circleCollider.offset = newPoint;
-        circleCollider.radius = circleColliderRadius;
+        circleCollider.radius = lineWidth/2.0f;
 
         // Line Renderer
         lineRenderer.positionCount = pointCount;
@@ -39,7 +54,7 @@ public abstract class BasicPen : MonoBehaviour
 
         // Edge Collider
         if (pointCount > 1)
-            edgeCollider.points = points.ToArray();
+            edgeCollider2D.points = points.ToArray();
     }
 
 
@@ -49,8 +64,9 @@ public abstract class BasicPen : MonoBehaviour
         return lineRenderer.GetPosition(pointCount - 1);
     }
 
+    // use physics
     public void UsePhysics(bool usePhysics)
     {
-        rigidBody.isKinematic = !usePhysics;
+        rigidBody2D.isKinematic = !usePhysics;
     }
 }
