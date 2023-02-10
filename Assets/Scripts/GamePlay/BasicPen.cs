@@ -15,6 +15,8 @@ public abstract class BasicPen : MonoBehaviour
 
     // Line properties
     public float pointsMinDistance = 0.1f;
+    public float linePointsMinStep;
+    public float lineWidth;
     public float circleColliderRadius;
 
     // Add a point
@@ -47,24 +49,8 @@ public abstract class BasicPen : MonoBehaviour
         return lineRenderer.GetPosition(pointCount - 1);
     }
 
-    // Initialize chosenPen properties
-    public virtual void InitializePen(float distance, float width)
-    {
-        pointsMinDistance = distance;
-        lineRenderer.startWidth = width;
-        lineRenderer.endWidth = width;
-
-        circleColliderRadius = width / 2f;
-        edgeCollider.edgeRadius = circleColliderRadius;
-    }
-
     public void UsePhysics(bool usePhysics)
     {
         rigidBody.isKinematic = !usePhysics;
     }
-
-    /// <summary>
-    /// Set the minimum distance between points when drawing
-    /// </summary>
-    /// <param name="distance"></param>
 }
