@@ -12,6 +12,9 @@ TagManager:
   - TestVanquish
   - Water
   - levelObject
+  - Mutable Object
+  - Drawn Object
+  - Platform Object
   layers:
   - Default
   - TransparentFX
