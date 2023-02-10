@@ -6,6 +6,7 @@ using UnityEngine.Networking;
 
 public class SendToGoogle : MonoBehaviour
 {
+    // URL is https://docs.google.com/forms/u/4/d/e/1FAIpQLSdOFLieYVjan5B-iP79DfZ8M6S5c_thnbpF3sSTJM9rvcxOTg/formResponse
     [SerializeField] private string URL;
     private long _sessionID;
     private float _inkUsage;
