@@ -23,11 +23,11 @@ public class DrawingTool : MonoBehaviour
     public float linePointsMinStep;
     public float lineWidth;
     
-    public BasicPen[] penPrefabs;
+    public BasicPen[] availablePens;
     [SerializeField]
-    private BasicPen chosenPenPrefab;
+    private BasicPen chosenPen;
 
-    private int chosenPenPrefabIdex;
+    private int chosenPenIdex;
     
     public GameObject[] ButtonPrefabs;
     public GameObject chosenButtonPrefab;
@@ -40,9 +40,9 @@ public class DrawingTool : MonoBehaviour
 
     // Brush Variables
     [Header("Brush Variables")]
-    public BasicBrush[] brushPrefabs;
+    public BasicBrush[] availableBrushs;
     [SerializeField]
-    private BasicBrush chosenBrushPrefab;
+    private BasicBrush chosenBrush;
 
 
     /// <summary>
@@ -52,8 +52,8 @@ public class DrawingTool : MonoBehaviour
     {
         mainCamera = Camera.main;
         cantDrawOverLayerIndex = LayerMask.NameToLayer("CantDrawOver");
-        chosenPenPrefab = penPrefabs[0];
-        chosenPenPrefabIdex = 0;
+        chosenPen = availablePens[0];
+        chosenPenIdex = 0;
     }
 
     private void Update()
@@ -76,14 +76,25 @@ public class DrawingTool : MonoBehaviour
         else if (toolType == ToolType.BRUSH)
         {
             // if mouse is on a mutable object, change it's properties
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if(Input.GetMouseButtonDown(0) && GameManager.remainInk > 0)
+            {
+                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+                if (hit.collider != null)
+                {
+                    if (hit.transform.CompareTag("Mutable Object"))
+                    {
+                        
+                        chosenBrush.changeProperties(hit.transform.gameObject);
+                    }
+                }
+            }
         }
     }
 
     public void SwitchTools(int prefabIndex)
     {
-        chosenPenPrefabIdex = prefabIndex;
-        chosenPenPrefab = penPrefabs[prefabIndex];
+        chosenPenIdex = prefabIndex;
+        chosenPen = availablePens[prefabIndex];
     }
 
 
@@ -96,7 +107,7 @@ public class DrawingTool : MonoBehaviour
         if (GameManager.remainInk > 0)
         {
             // Instantiate line prefab
-            drawnObject = Instantiate(chosenPenPrefab, this.transform).GetComponent<BasicPen>();
+            drawnObject = Instantiate(chosenPen, this.transform).GetComponent<BasicPen>();
             // Set parameters
             drawnObject.UsePhysics(false);
             

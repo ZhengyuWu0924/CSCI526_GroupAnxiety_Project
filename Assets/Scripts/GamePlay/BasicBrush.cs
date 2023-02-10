@@ -4,15 +4,19 @@ using UnityEngine;
 
 public abstract class BasicBrush : MonoBehaviour
 {
-    public Color penColor;
+    protected MutableObject mutableObject;
+
+    public Color brushColor;
+    
     public virtual void InitializeBrush()
     {
         
     }
 
 
-    public virtual void changeProperties(MutableObject mutableObject)
+    public virtual void changeProperties(GameObject gameObject)
     {
-        mutableObject.ChangeColor(penColor);
+        mutableObject = gameObject.GetComponent<MutableObject>();
+        mutableObject.ChangeColor(brushColor);
     }
 }

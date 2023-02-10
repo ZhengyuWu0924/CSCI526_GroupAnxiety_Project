@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class GravityBrush : BasicBrush
 {
-    public override void changeProperties(MutableObject mutableObject)
+    public override void changeProperties(GameObject gameObject)
     {
-        base.changeProperties(mutableObject);
-        
+        base.changeProperties(gameObject);
+
+        mutableObject.ChangeGravity();
+       
 
     }
 }

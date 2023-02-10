@@ -24,4 +24,9 @@ public class MutableObject : MonoBehaviour
     {
         spriteRenderer.color = color;
     }
+    
+    public void ChangeGravity()
+    {
+        rigidbody2D.gravityScale = -0.1f;
+    }
 }
