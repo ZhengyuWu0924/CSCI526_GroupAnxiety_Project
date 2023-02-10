@@ -649,7 +649,7 @@ GameObject:
   - component: {fileID: 200433549}
   - component: {fileID: 200433548}
   m_Layer: 5
-  m_Name: RemainInk
+  m_Name: RemainInkText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

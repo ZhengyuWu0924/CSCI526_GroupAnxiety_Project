@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BaiscPen : MonoBehaviour
+public abstract class BasicPen : MonoBehaviour
 {
     // Components
     public LineRenderer lineRenderer;
@@ -14,8 +14,8 @@ public abstract class BaiscPen : MonoBehaviour
     [HideInInspector] public int pointCount = 0;
 
     // Line properties
-    private float pointsMinDistance = 0.1f;
-    private float circleColliderRadius;
+    public float pointsMinDistance = 0.1f;
+    public float circleColliderRadius;
 
     // Add a point
     public void AddPoint(Vector2 newPoint)
@@ -57,4 +57,14 @@ public abstract class BaiscPen : MonoBehaviour
         circleColliderRadius = width / 2f;
         edgeCollider.edgeRadius = circleColliderRadius;
     }
+
+    public void UsePhysics(bool usePhysics)
+    {
+        rigidBody.isKinematic = !usePhysics;
+    }
+
+    /// <summary>
+    /// Set the minimum distance between points when drawing
+    /// </summary>
+    /// <param name="distance"></param>
 }

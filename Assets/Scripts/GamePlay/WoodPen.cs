@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestPen : BaiscPen
+public class WoodPen : BasicPen
 {
     public override void InitializePen(float distance, float width)
     {

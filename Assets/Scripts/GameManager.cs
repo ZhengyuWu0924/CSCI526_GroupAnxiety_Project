@@ -32,7 +32,7 @@ public class GameManager : Singleton<GameManager>
     public void updateInk(float ink)
     {
         remainInk -= ink;
-        GameObject.Find("RemainInk").GetComponent<TextMeshProUGUI>().SetText("Remain Ink: " + remainInk.ToString("0.0"));
+        GameObject.Find("RemainInkText").GetComponent<TextMeshProUGUI>().SetText("Remain Ink: " + remainInk.ToString("0.0"));
     }
 
 }
