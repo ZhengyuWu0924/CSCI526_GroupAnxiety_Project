@@ -22,9 +22,9 @@ public class Restart : MonoBehaviour
     public void ResetTheGame(){
         gm = FindObjectOfType<GameManager>();
         gm.resetInk();
-        generationTimes = gm.getGenerateTimes();
+        generationTimes = GameManager.SceneRegenerationTimes;
         generationTimes += 1;
-        gm.setRegenerateTimes(generationTimes);
+        GameManager.SceneRegenerationTimes = generationTimes;
         print("times = " + generationTimes);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         
