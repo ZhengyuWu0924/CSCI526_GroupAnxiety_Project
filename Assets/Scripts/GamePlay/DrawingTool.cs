@@ -21,7 +21,7 @@ public class DrawingTool : MonoBehaviour
 
     // Pen Variables
     [Header("Pen Variables")]
-    public BasicPen[] availablePens;
+    public List<BasicPen> availablePens;
     [SerializeField]
     private BasicPen chosenPen;
     [SerializeField]
@@ -36,7 +36,7 @@ public class DrawingTool : MonoBehaviour
 
     // Brush Variables
     [Header("Brush Variables")]
-    public BasicBrush[] availableBrushs;
+    public List<BasicBrush> availableBrushs;
     [SerializeField]
     private BasicBrush chosenBrush;
 
@@ -175,5 +175,27 @@ public class DrawingTool : MonoBehaviour
         drawnObject.gameObject.layer = cantDrawOverLayerIndex;
         drawnObject.UsePhysics(true);
         drawnObject = null;
+    }
+
+    /// <summary>
+    /// Pick up a tool
+    /// </summary>
+    public void PickUpTool(ToolType toolType, GameObject toolPrefab)
+    {
+        if(toolType == ToolType.PEN)
+        {
+            BasicPen pickupPen = toolPrefab.GetComponent<BasicPen>();
+            if (!availablePens.Contains(pickupPen))
+            {
+                availablePens.Add(pickupPen);
+            }
+        }else if(toolType == ToolType.BRUSH)
+        {
+            BasicBrush pickupBrush = toolPrefab.GetComponent<BasicBrush>();
+            if (!availableBrushs.Contains(pickupBrush))
+            {
+                availableBrushs.Add(pickupBrush);
+            }
+        }
     }
 }
