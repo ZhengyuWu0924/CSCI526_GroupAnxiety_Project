@@ -443,9 +443,10 @@ MonoBehaviour:
   mainCamera: {fileID: 1675427887}
   toolType: 2
   availablePens:
-  - {fileID: 0}
+  - {fileID: 8219163204479216961, guid: 1cc6b5803950ee0408123b7f7330f2a7, type: 3}
   - {fileID: 2931872026922226270, guid: 74e27d49578cfdd4dbdaf1610bc5dfb5, type: 3}
-  chosenPen: {fileID: 0}
+  - {fileID: 6509331957707295812, guid: eea1a947053125b4381b6e808c1704f8, type: 3}
+  chosenPen: {fileID: 2931872026922226270, guid: 74e27d49578cfdd4dbdaf1610bc5dfb5, type: 3}
   totalDrawDistance: 0
   cantDrawOverLayer:
     serializedVersion: 2
@@ -1173,6 +1174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2732d5e8a679e0d439bd37669b423978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneRegenerationTimes: 0
 --- !u!4 &1481086260
 Transform:
   m_ObjectHideFlags: 0
@@ -1620,6 +1622,10 @@ PrefabInstance:
     - target: {fileID: 4916388965202034151, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4916388965202034169, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
+      propertyPath: m_Mass
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4916388965202034172, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
       propertyPath: m_RootOrder
