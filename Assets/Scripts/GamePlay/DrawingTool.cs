@@ -135,17 +135,7 @@ public class DrawingTool : MonoBehaviour
             Destroy(drawnObject.gameObject);
         }else if (drawnObject.isStraight)
         {
-            Destroy(drawnObject.gameObject);
-            chosenPen.InitializePen();
-            drawnObject = Instantiate(chosenPen, this.transform).GetComponent<BasicPen>();
-            drawnObject.UsePhysics(false);
-            drawnObject.AddPoint(beginPosition);
-            drawnObject.AddPoint(endPosition);
-            totalDrawDistance = Vector2.Distance(beginPosition, endPosition);
-            drawnObject.GetComponent<Rigidbody2D>().mass = drawnObject.massRatio * drawnObject.massRatioOffset * totalDrawDistance;
-            drawnObject.gameObject.layer = cantDrawOverLayerIndex;
-            drawnObject.UsePhysics(true);
-            drawnObject = null;
+            Redraw();
         }
         else
         {
@@ -170,5 +160,20 @@ public class DrawingTool : MonoBehaviour
                 GameManager.Instance.updateInk(10);
             }
         }
+    }
+
+    void Redraw()
+    {
+        Destroy(drawnObject.gameObject);
+        chosenPen.InitializePen();
+        drawnObject = Instantiate(chosenPen, this.transform).GetComponent<BasicPen>();
+        drawnObject.UsePhysics(false);
+        drawnObject.AddPoint(beginPosition);
+        drawnObject.AddPoint(endPosition);
+        totalDrawDistance = Vector2.Distance(beginPosition, endPosition);
+        drawnObject.GetComponent<Rigidbody2D>().mass = drawnObject.massRatio * drawnObject.massRatioOffset * totalDrawDistance;
+        drawnObject.gameObject.layer = cantDrawOverLayerIndex;
+        drawnObject.UsePhysics(true);
+        drawnObject = null;
     }
 }
