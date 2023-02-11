@@ -9,6 +9,7 @@ using TMPro;
 public class GameManager : Singleton<GameManager>
 {
     public static float remainInk;
+    public int sceneRegenerationTimes = 0;
     protected override void Awake()
     {
         base.Awake();
@@ -20,7 +21,6 @@ public class GameManager : Singleton<GameManager>
     void Start()
     {
         remainInk = 100;
-
     }
 
     // Update is called once per frame
@@ -33,6 +33,19 @@ public class GameManager : Singleton<GameManager>
     {
         remainInk -= ink;
         GameObject.Find("RemainInkText").GetComponent<TextMeshProUGUI>().SetText("Remain Ink: " + remainInk.ToString("0.0"));
+        
+    }
+
+    public void resetInk(){
+        remainInk = 100;
+    }
+
+    public int getGenerateTimes(){
+        return this.sceneRegenerationTimes;
+    }
+
+    public void setRegenerateTimes(int times){
+        this.sceneRegenerationTimes = times;
     }
 
 }
