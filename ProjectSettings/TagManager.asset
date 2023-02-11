@@ -7,6 +7,13 @@ TagManager:
   - Mutable Object
   - Drawn Object
   - Platform Object
+  - levelObject
+  - Water
+  - AntiGravityPen
+  - WaterPen
+  - RockPen
+  - WoodPen
+  - Boundary
   layers:
   - Default
   - TransparentFX

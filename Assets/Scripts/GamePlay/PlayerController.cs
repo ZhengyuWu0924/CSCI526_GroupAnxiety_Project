@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
     private float direction = 0f;
     private Rigidbody2D player;
     private bool isOnGround;
-
     // Start is called before the first frame update
     void Start()
     {
