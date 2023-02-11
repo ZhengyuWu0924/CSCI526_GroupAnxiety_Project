@@ -443,8 +443,10 @@ MonoBehaviour:
   mainCamera: {fileID: 1675427887}
   toolType: 2
   availablePens:
+  - {fileID: 0}
   - {fileID: 2931872026922226270, guid: 74e27d49578cfdd4dbdaf1610bc5dfb5, type: 3}
-  chosenPen: {fileID: 2931872026922226270, guid: 74e27d49578cfdd4dbdaf1610bc5dfb5, type: 3}
+  chosenPen: {fileID: 0}
+  totalDrawDistance: 0
   cantDrawOverLayer:
     serializedVersion: 2
     m_Bits: 0
