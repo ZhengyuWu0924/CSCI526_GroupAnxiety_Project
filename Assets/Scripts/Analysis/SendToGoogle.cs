@@ -7,15 +7,14 @@ using UnityEngine.Networking;
 public class SendToGoogle : MonoBehaviour
 {
     // URL is https://docs.google.com/forms/u/4/d/e/1FAIpQLSdOFLieYVjan5B-iP79DfZ8M6S5c_thnbpF3sSTJM9rvcxOTg/formResponse
-    [SerializeField] private string URL;
+    // [SerializeField] private string URL;
+    private string URL = "https://docs.google.com/forms/u/4/d/e/1FAIpQLSdOFLieYVjan5B-iP79DfZ8M6S5c_thnbpF3sSTJM9rvcxOTg/formResponse";
     private long _sessionID;
     private float _inkUsage;
     private int _sceneRegenTimes;
-
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -29,10 +28,10 @@ public class SendToGoogle : MonoBehaviour
     */
     private void Awake(){
         _sessionID = DateTime.Now.Ticks;
-
+    
         // At test version, call send method when game awake
         // change the calling later
-        Send();
+        // Send();
     }
 
     private IEnumerator Post(string sessionID, string inkUsage, string sceneRegenTimes){
@@ -63,8 +62,8 @@ public class SendToGoogle : MonoBehaviour
     public void Send(){
         // Temp version
         // All data are temporary and fake
-        _inkUsage = 1.0f;
-        _sceneRegenTimes = 1;
+        _inkUsage = GameManager.RemainInk;
+        _sceneRegenTimes = GameManager.SceneRegenerationTimes;
 
         StartCoroutine(Post(_sessionID.ToString(), _inkUsage.ToString(), _sceneRegenTimes.ToString()));
     }
