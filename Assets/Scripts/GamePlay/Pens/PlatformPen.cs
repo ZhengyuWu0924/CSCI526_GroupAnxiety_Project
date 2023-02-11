@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WoodPen : BasicPen
+public class PlatformPen : BasicPen
 {
     //public int cornerVertics;
     //public int capVertics;
+    //public float gravityRatio;
     public override void InitializePen()
     {
         base.InitializePen();

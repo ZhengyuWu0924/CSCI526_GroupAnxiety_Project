@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WoodPen : BasicPen
+public class RockPen : BasicPen
 {
     //public int cornerVertics;
     //public int capVertics;
     public override void InitializePen()
     {
         base.InitializePen();
-        base.isStraight = true;
         //lineRenderer.numCornerVertices = cornerVertics;
         //lineRenderer.numCapVertices = capVertics;
     }

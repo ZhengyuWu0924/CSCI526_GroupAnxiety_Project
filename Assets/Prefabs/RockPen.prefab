@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &761279246466384331
+--- !u!1 &8219163204479216964
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,25 +8,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 761279246466384335}
-  - component: {fileID: 761279246466384332}
-  - component: {fileID: 761279246466384333}
-  - component: {fileID: 761279246466384330}
-  - component: {fileID: 2931872026922226270}
+  - component: {fileID: 8219163204479216960}
+  - component: {fileID: 8219163204479216963}
+  - component: {fileID: 8219163204479216962}
+  - component: {fileID: 8219163204479216965}
+  - component: {fileID: 8219163204479216961}
   m_Layer: 0
-  m_Name: WoodPen
+  m_Name: RockPen
   m_TagString: Drawn Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &761279246466384335
+--- !u!4 &8219163204479216960
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 761279246466384331}
+  m_GameObject: {fileID: 8219163204479216964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -35,13 +35,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!120 &761279246466384332
+--- !u!120 &8219163204479216963
 LineRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 761279246466384331}
+  m_GameObject: {fileID: 8219163204479216964}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -89,7 +89,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.5
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -98,7 +98,7 @@ LineRenderer:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 0.5
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -110,9 +110,9 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.62352943, g: 0.35686275, b: 0.121568635, a: 1}
-      key1: {r: 0.62352943, g: 0.35686275, b: 0.121568635, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 0.30565482, g: 0.28978285, b: 0.31132078, a: 1}
+      key1: {r: 0.30565482, g: 0.28978285, b: 0.31132078, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -128,7 +128,7 @@ LineRenderer:
       ctime7: 0
       atime0: 0
       atime1: 65535
-      atime2: 0
+      atime2: 65535
       atime3: 0
       atime4: 0
       atime5: 0
@@ -145,13 +145,13 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
---- !u!68 &761279246466384333
+--- !u!68 &8219163204479216962
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 761279246466384331}
+  m_GameObject: {fileID: 8219163204479216964}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -169,46 +169,45 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!50 &761279246466384330
+--- !u!50 &8219163204479216965
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 761279246466384331}
+  m_GameObject: {fileID: 8219163204479216964}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.1
+  m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2931872026922226270
+--- !u!114 &8219163204479216961
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 761279246466384331}
+  m_GameObject: {fileID: 8219163204479216964}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d0bb2248c0658c459fba23c6ac36088, type: 3}
+  m_Script: {fileID: 11500000, guid: f9d14d3cce22776469dad898f10c2ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineRenderer: {fileID: 761279246466384332}
-  edgeCollider2D: {fileID: 761279246466384333}
-  rigidBody2D: {fileID: 761279246466384330}
+  lineRenderer: {fileID: 8219163204479216963}
+  edgeCollider2D: {fileID: 8219163204479216962}
+  rigidBody2D: {fileID: 8219163204479216965}
   points: []
   pointCount: 0
-  linePointsMinStep: 2
-  lineWidth: 0.5
-  massRatio: 0.01
+  linePointsMinStep: 0.1
+  lineWidth: 1
+  massRatio: 2.5
   massRatioOffset: 1
-  isStraight: 1
