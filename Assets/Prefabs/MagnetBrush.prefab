@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6025b0536de913459b05a82652cc667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brushColor: {r: 0.81809366, g: 1, b: 0, a: 1}
+  brushColor: {r: 1, g: 0, b: 0, a: 1}
   positiveColor: {r: 1, g: 0, b: 0, a: 1}
-  negtiveColor: {r: 0.81809366, g: 1, b: 0, a: 1}
+  negtiveColor: {r: 0.06822491, g: 0, b: 1, a: 1}
