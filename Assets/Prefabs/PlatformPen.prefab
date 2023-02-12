@@ -211,3 +211,4 @@ MonoBehaviour:
   lineWidth: 0.3
   massRatio: 1
   massRatioOffset: 1
+  isStraight: 1

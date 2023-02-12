@@ -209,6 +209,6 @@ MonoBehaviour:
   pointCount: 0
   linePointsMinStep: 2
   lineWidth: 0.5
-  massRatio: 0.01
+  massRatio: 0.1
   massRatioOffset: 1
   isStraight: 1
