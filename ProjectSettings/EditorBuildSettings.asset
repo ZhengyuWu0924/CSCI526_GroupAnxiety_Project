@@ -5,11 +5,11 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 751863234df864cc898f70288b09cad0
+  - enabled: 1
     path: Assets/Scenes/Main (Contain all basic mechanisms, Duplicate this scene
       for creating new level).unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Prototype2/Prototype2.unity
-    guid: 4d28f441f07cdc24481e8853aaff32a3
   m_configObjects: {}
