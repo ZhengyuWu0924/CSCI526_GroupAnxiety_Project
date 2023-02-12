@@ -141,12 +141,13 @@ public class DrawingTool : MonoBehaviour
     void Brush()
     {
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+        Debug.DrawRay(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Color.yellow, 1000f);
         if (hit.collider != null)
         {
             if (hit.transform.CompareTag("Mutable Object"))
             {
                 chosenBrush.changeProperties(hit.transform.gameObject);
-                GameManager.Instance.updateInk(10);
+                GameManager.Instance.updateInk(5);
             }
         }
     }
