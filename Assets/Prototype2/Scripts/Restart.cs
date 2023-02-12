@@ -27,6 +27,6 @@ public class Restart : MonoBehaviour
         GameManager.SceneRegenerationTimes = generationTimes;
         print("times = " + generationTimes);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        
+        Time.timeScale = 1f;
     }
 }
