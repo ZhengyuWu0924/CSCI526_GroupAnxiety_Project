@@ -54,7 +54,7 @@ public class DrawingTool : MonoBehaviour
 
     private void Update()
     {
-        if (toolType == ToolType.NONE)
+        if (toolType == ToolType.PEN)
         {
             if (Input.GetMouseButtonDown(0) && GameManager.remainInk > 0)
             {
