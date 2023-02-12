@@ -20,6 +20,9 @@ public abstract class BasicPen : MonoBehaviour
     // Line properties (change pen color in LineRenderer Component)
     public float linePointsMinStep;
     public float lineWidth;
+    public float massRatio;
+    public float massRatioOffset;
+    public bool isStraight = false;
     // mass should be propontional to line length
     
 

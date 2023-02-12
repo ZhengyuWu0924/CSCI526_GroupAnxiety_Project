@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Restart : MonoBehaviour
 {
+    private GameManager gm;
+    private int generationTimes;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,13 @@ public class Restart : MonoBehaviour
     }
 
     public void ResetTheGame(){
+        gm = FindObjectOfType<GameManager>();
+        gm.resetInk();
+        generationTimes = GameManager.SceneRegenerationTimes;
+        generationTimes += 1;
+        GameManager.SceneRegenerationTimes = generationTimes;
+        print("times = " + generationTimes);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
     }
 }
