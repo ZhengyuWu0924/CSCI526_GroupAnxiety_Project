@@ -21,7 +21,7 @@ public class DrawingTool : MonoBehaviour
 
     // Pen Variables
     [Header("Pen Variables")]
-    public List<BasicPen> availablePens;
+    public BasicPen[] availablePens = new BasicPen[3];
     [SerializeField]
     private BasicPen chosenPen;
     [SerializeField]
@@ -36,9 +36,18 @@ public class DrawingTool : MonoBehaviour
 
     // Brush Variables
     [Header("Brush Variables")]
-    public List<BasicBrush> availableBrushs;
+    public BasicBrush[] availableBrushs = new BasicBrush[2];
     [SerializeField]
     private BasicBrush chosenBrush;
+
+
+    [Header("Tool Buttons")]
+    //Button Variables
+    [SerializeField] public GameObject GravityBrush;
+    [SerializeField] public GameObject MagnetBrush;
+    [SerializeField] public GameObject PlatformPen;
+    [SerializeField] public GameObject RockPen;
+    [SerializeField] public GameObject WoodPen;
 
     private Vector2 beginPosition;
     private Vector2 endPosition;
@@ -81,9 +90,18 @@ public class DrawingTool : MonoBehaviour
         }
     }
 
-    public void SwitchTools()
+    public void SwitchTools(int index)
     {
-        
+        if (index <= 1)
+        {
+            this.toolType = ToolType.BRUSH;
+            chosenBrush = availableBrushs[index];
+        }
+        else if (index >= 2 && index < 5)
+        {
+            this.toolType = ToolType.PEN;
+            chosenPen = availablePens[index - 2];
+        }
     }
 
     /// <summary>
@@ -143,6 +161,7 @@ public class DrawingTool : MonoBehaviour
             drawnObject.gameObject.layer = cantDrawOverLayerIndex;
             drawnObject.UsePhysics(true);
             drawnObject = null;
+            toolType = ToolType.NONE;
         }
     }
 
@@ -186,17 +205,38 @@ public class DrawingTool : MonoBehaviour
         if(toolType == ToolType.PEN)
         {
             BasicPen pickupPen = toolPrefab.GetComponent<BasicPen>();
-            if (!availablePens.Contains(pickupPen))
+            int penIndex = 0;
+
+            if (pickupPen.penName == "PlatformPen")
             {
-                availablePens.Add(pickupPen);
+                PlatformPen.SetActive(true);
+                penIndex = 0;
+            } else if (pickupPen.penName == "RockPen")
+            {
+                RockPen.SetActive(true);
+                penIndex = 1;
+            } else if (pickupPen.penName == "WoodPen")
+            {
+                WoodPen.SetActive(true);
+                penIndex = 2;
             }
-        }else if(toolType == ToolType.BRUSH)
+            availablePens[penIndex] = pickupPen;
+        }
+        else if(toolType == ToolType.BRUSH)
         {
             BasicBrush pickupBrush = toolPrefab.GetComponent<BasicBrush>();
-            if (!availableBrushs.Contains(pickupBrush))
+            int brushIndex = 0;
+
+            if (pickupBrush.brushName == "MagnetBrush")
             {
-                availableBrushs.Add(pickupBrush);
+                MagnetBrush.SetActive(true);
+                brushIndex = 0;
+            } else if (pickupBrush.brushName == "GravityBrush")
+            {
+                GravityBrush.SetActive(true);
+                brushIndex = 1;
             }
+            availableBrushs[brushIndex] = pickupBrush;
         }
     }
 }

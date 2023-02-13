@@ -205,6 +205,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 5785977451134608518}
   edgeCollider2D: {fileID: 5785977451134608519}
   rigidBody2D: {fileID: 5785977451134608512}
+  penName: PlatformPen
   points: []
   pointCount: 0
   linePointsMinStep: 2

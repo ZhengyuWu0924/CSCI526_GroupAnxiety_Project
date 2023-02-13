@@ -7,10 +7,12 @@ public class PlatformPen : BasicPen
     //public int cornerVertics;
     //public int capVertics;
     //public float gravityRatio;
+
     public override void InitializePen()
     {
         base.InitializePen();
         base.isStraight = true;
+        base.penName = "PlatformPen";
         //lineRenderer.numCornerVertices = cornerVertics;
         //lineRenderer.numCapVertices = capVertics;
     }

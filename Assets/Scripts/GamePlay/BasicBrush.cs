@@ -9,6 +9,7 @@ using UnityEngine;
 public abstract class BasicBrush : MonoBehaviour
 {
     protected MutableObject mutableObject;
+    [SerializeField] public string brushName;
 
     public Color brushColor;
 

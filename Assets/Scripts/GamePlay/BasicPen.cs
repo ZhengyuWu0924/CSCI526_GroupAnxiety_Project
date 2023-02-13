@@ -12,6 +12,7 @@ public abstract class BasicPen : MonoBehaviour
     [HideInInspector] public LineRenderer lineRenderer;
     [HideInInspector] public EdgeCollider2D edgeCollider2D;
     [HideInInspector] public Rigidbody2D rigidBody2D;
+    [SerializeField] public string penName;
 
     // Points
     [HideInInspector] public List<Vector2> points = new List<Vector2>();

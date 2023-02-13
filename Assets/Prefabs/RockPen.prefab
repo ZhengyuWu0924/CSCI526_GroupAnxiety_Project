@@ -205,6 +205,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 8219163204479216963}
   edgeCollider2D: {fileID: 8219163204479216962}
   rigidBody2D: {fileID: 8219163204479216965}
+  penName: RockPen
   points: []
   pointCount: 0
   linePointsMinStep: 0.1

@@ -10,6 +10,7 @@ public class WoodPen : BasicPen
     {
         base.InitializePen();
         base.isStraight = true;
+        base.penName = "WoodPen";
         //lineRenderer.numCornerVertices = cornerVertics;
         //lineRenderer.numCapVertices = capVertics;
     }

@@ -11,6 +11,7 @@ public class GravityBrush : BasicBrush
     {
         // Firstly, call this function in BasicBrush
         base.changeProperties(gameObject);
+        base.brushName = "GravityBrush";
 
         // Then, do something special to this brush
         mutableObject.ChangeGravity();

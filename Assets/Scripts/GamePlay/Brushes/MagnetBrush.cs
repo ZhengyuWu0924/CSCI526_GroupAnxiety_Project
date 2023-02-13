@@ -15,6 +15,7 @@ public class MagnetBrush : BasicBrush
 
     public override void changeProperties(GameObject gameObject)
     {
+        base.brushName = "MagnetBrush";
         mutableObject = gameObject.GetComponent<MutableObject>();
         if (magnetism == Magnetism.Postive)
         {

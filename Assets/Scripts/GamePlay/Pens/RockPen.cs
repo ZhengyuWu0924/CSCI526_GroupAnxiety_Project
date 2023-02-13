@@ -9,6 +9,7 @@ public class RockPen : BasicPen
     public override void InitializePen()
     {
         base.InitializePen();
+        base.penName = "RockPen";
         //lineRenderer.numCornerVertices = cornerVertics;
         //lineRenderer.numCapVertices = capVertics;
     }
