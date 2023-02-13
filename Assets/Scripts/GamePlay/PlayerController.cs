@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private float direction = 0f;
     private Rigidbody2D player;
     private bool isOnGround;
+
+    [SerializeField] public GameObject win;
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +66,15 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         isOnGround = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.tag == "Win")
+        {
+            win.SetActive(true);
+        }
     }
 
 }

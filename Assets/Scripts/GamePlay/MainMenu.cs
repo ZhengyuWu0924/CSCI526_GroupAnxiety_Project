@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public string firstLevel;
+    // public string firstLevel;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(firstLevel);
+        SceneManager.LoadScene(2);
     }
 
     public void QuitGame()
