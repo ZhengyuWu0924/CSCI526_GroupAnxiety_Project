@@ -4962,7 +4962,9 @@ MonoBehaviour:
   cantDrawOverLayer:
     serializedVersion: 2
     m_Bits: 0
-  availableBrushs: []
+  availableBrushs:
+  - {fileID: 4888813342968499132, guid: 66db36982ed5be84b8370993d219761e, type: 3}
+  - {fileID: 4984614884451149496, guid: 85246ef5bdd5ffd4a828b73b5596ff0f, type: 3}
   chosenBrush: {fileID: 4984614884451149496, guid: 85246ef5bdd5ffd4a828b73b5596ff0f, type: 3}
   GravityBrush: {fileID: 800620745}
   MagnetBrush: {fileID: 941573571}
