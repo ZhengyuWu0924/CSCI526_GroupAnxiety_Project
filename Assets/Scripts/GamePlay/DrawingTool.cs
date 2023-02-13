@@ -49,6 +49,11 @@ public class DrawingTool : MonoBehaviour
     [SerializeField] public GameObject RockPen;
     [SerializeField] public GameObject WoodPen;
 
+    [Header("Mouse Cursors")]
+    [SerializeField] public Texture2D[] cursors = new Texture2D[5];
+    private Vector2 cursorHotsopt;
+
+
     private Vector2 beginPosition;
     private Vector2 endPosition;
     /// <summary>
@@ -102,6 +107,12 @@ public class DrawingTool : MonoBehaviour
             this.toolType = ToolType.PEN;
             chosenPen = availablePens[index - 2];
         }
+
+        Texture2D cursor = cursors[index];
+        cursorHotsopt = new Vector2(cursor.width / 2, cursor.height / 2);
+        // cursorHotsopt = new Vector2(16, 0);
+        Cursor.SetCursor(cursor, cursorHotsopt, CursorMode.Auto);
+
     }
 
     /// <summary>
