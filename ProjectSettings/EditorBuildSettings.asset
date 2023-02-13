@@ -12,4 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Main (Contain all basic mechanisms, Duplicate this scene
       for creating new level).unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level-test.unity
+    guid: 3f45130f85313db4fa916d6e27a809e4
   m_configObjects: {}
