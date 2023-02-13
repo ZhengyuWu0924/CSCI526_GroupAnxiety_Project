@@ -238,8 +238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff97a97b87544e14975c036547a6086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstLevel: Main (Contain all basic mechanisms, Duplicate this scene for creating
-    new level)
 --- !u!1001 &309769696
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,8 +10,10 @@ public class PlayerController : MonoBehaviour
     private float direction = 0f;
     private Rigidbody2D player;
     private bool isOnGround;
+    public GameManager gameManager;
 
     [SerializeField] public GameObject win;
+    [SerializeField] public GameObject lose;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +43,11 @@ public class PlayerController : MonoBehaviour
         {
             player.velocity = new Vector2(player.velocity.x, jumpSpeed);
             isOnGround = false;
+        }
+
+        if (gameManager.getInk() <= 0)
+        {
+            lose.SetActive(true);
         }
 
     }

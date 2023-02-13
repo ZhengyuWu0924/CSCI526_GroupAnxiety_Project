@@ -15,6 +15,7 @@ TagManager:
   - WoodPen
   - Boundary
   - EndPoint
+  - Win
   layers:
   - Default
   - TransparentFX

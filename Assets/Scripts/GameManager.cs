@@ -50,4 +50,9 @@ public class GameManager : Singleton<GameManager>
         remainInk = 100;
     }
 
+    public float getInk()
+    {
+        return remainInk;
+    } 
+
 }
