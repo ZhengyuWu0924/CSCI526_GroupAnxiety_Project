@@ -67,3 +67,6 @@ Assets/.DS_Store
 .DS_Store
 Assets/Sprites/.DS_Store
 Assets/Sprites/Cursors/.DS_Store
+connectwebgl.zip
+ProjectSettings/EditorBuildSettings.asset
+UserSettings/EditorUserSettings.asset
