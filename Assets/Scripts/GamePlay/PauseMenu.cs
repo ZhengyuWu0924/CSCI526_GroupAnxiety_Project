@@ -23,6 +23,10 @@ public class PauseMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu");
     }
-
+    
+    public void Tutorial()
+    {
+        SceneManager.LoadScene(2);
+    }
 
 }

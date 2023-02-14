@@ -13,6 +13,9 @@ EditorBuildSettings:
       for creating new level).unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Levels/Start Scenes.unity
+    guid: 39a53124bba8b44e089e62fa595c31a9
+  - enabled: 1
     path: Assets/Scenes/Levels/Level-test.unity
     guid: 3f45130f85313db4fa916d6e27a809e4
   m_configObjects: {}
