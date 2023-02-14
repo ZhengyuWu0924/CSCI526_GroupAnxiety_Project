@@ -12,7 +12,7 @@ public class EndPointSendForm : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision){
-        if (collision.gameObject.CompareTag("EndPoint")){
+        if (collision.gameObject.CompareTag("Win")){
             print("hit the endpoint");
             stg.Send();
         }
