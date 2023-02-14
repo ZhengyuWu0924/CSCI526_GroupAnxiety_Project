@@ -99,6 +99,7 @@ public class DrawingTool : MonoBehaviour
     {
         if (index <= 1)
         {
+<<<<<<< Updated upstream
             if(chosenBrush == availableBrushs[index])
             {
                 this.toolType = ToolType.NONE;
@@ -132,6 +133,17 @@ public class DrawingTool : MonoBehaviour
                 // cursorHotsopt = new Vector2(16, 0);
                 Cursor.SetCursor(cursor, cursorHotsopt, CursorMode.Auto);
             }
+=======
+            this.toolType = ToolType.BRUSH;
+            chosenBrush = availableBrushs[index];
+            chosenPen = null;
+        }
+        else if (index >= 2 && index < 5)
+        {
+            this.toolType = ToolType.PEN;
+            chosenPen = availablePens[index - 2];
+            chosenBrush = null;
+>>>>>>> Stashed changes
         }
 
         

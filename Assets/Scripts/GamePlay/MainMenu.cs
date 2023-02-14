@@ -18,14 +18,9 @@ public class MainMenu : MonoBehaviour
         
     }
 
-    public void Tutorial()
-    {
-        SceneManager.LoadScene(2);
-    }
-
     public void StartGame()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("Level-test");
     }
 
     public void QuitGame()
