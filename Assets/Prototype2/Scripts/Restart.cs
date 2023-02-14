@@ -28,5 +28,6 @@ public class Restart : MonoBehaviour
         print("times = " + generationTimes);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1f;
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 }
