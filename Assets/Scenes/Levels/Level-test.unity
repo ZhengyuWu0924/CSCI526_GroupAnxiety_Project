@@ -6283,7 +6283,7 @@ MonoBehaviour:
   - {fileID: 8219163204479216961, guid: 1cc6b5803950ee0408123b7f7330f2a7, type: 3}
   - {fileID: 2931872026922226270, guid: 74e27d49578cfdd4dbdaf1610bc5dfb5, type: 3}
   - {fileID: 6509331957707295812, guid: eea1a947053125b4381b6e808c1704f8, type: 3}
-  chosenPen: {fileID: 6509331957707295812, guid: eea1a947053125b4381b6e808c1704f8, type: 3}
+  chosenPen: {fileID: 0}
   totalDrawDistance: 0
   cantDrawOverLayer:
     serializedVersion: 2
@@ -6291,7 +6291,7 @@ MonoBehaviour:
   availableBrushs:
   - {fileID: 4888813342968499132, guid: 66db36982ed5be84b8370993d219761e, type: 3}
   - {fileID: 4984614884451149496, guid: 85246ef5bdd5ffd4a828b73b5596ff0f, type: 3}
-  chosenBrush: {fileID: 4984614884451149496, guid: 85246ef5bdd5ffd4a828b73b5596ff0f, type: 3}
+  chosenBrush: {fileID: 0}
   GravityBrush: {fileID: 800620745}
   MagnetBrush: {fileID: 941573571}
   PlatformPen: {fileID: 1413366663}
@@ -14753,7 +14753,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 960, y: 540}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
