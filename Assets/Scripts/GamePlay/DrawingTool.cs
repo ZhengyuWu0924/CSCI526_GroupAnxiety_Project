@@ -99,19 +99,42 @@ public class DrawingTool : MonoBehaviour
     {
         if (index <= 1)
         {
-            this.toolType = ToolType.BRUSH;
-            chosenBrush = availableBrushs[index];
+            if(chosenBrush == availableBrushs[index])
+            {
+                this.toolType = ToolType.NONE;
+                chosenBrush = null;
+                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            }
+            else
+            {
+                this.toolType = ToolType.BRUSH;
+                chosenBrush = availableBrushs[index];
+                Texture2D cursor = cursors[index];
+                cursorHotsopt = new Vector2(cursor.width / 2, cursor.height / 2);
+                // cursorHotsopt = new Vector2(16, 0);
+                Cursor.SetCursor(cursor, cursorHotsopt, CursorMode.Auto);
+            }
         }
         else if (index >= 2 && index < 5)
         {
-            this.toolType = ToolType.PEN;
-            chosenPen = availablePens[index - 2];
+            if (chosenPen == availablePens[index - 2])
+            {
+                this.toolType = ToolType.NONE;
+                chosenPen = null;
+                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            }
+            else
+            {
+                this.toolType = ToolType.PEN;
+                chosenPen = availablePens[index - 2];
+                Texture2D cursor = cursors[index];
+                cursorHotsopt = new Vector2(cursor.width / 2, cursor.height / 2);
+                // cursorHotsopt = new Vector2(16, 0);
+                Cursor.SetCursor(cursor, cursorHotsopt, CursorMode.Auto);
+            }
         }
 
-        Texture2D cursor = cursors[index];
-        cursorHotsopt = new Vector2(cursor.width / 2, cursor.height / 2);
-        // cursorHotsopt = new Vector2(16, 0);
-        Cursor.SetCursor(cursor, cursorHotsopt, CursorMode.Auto);
+        
 
     }
 
@@ -172,7 +195,6 @@ public class DrawingTool : MonoBehaviour
             drawnObject.gameObject.layer = cantDrawOverLayerIndex;
             drawnObject.UsePhysics(true);
             drawnObject = null;
-            toolType = ToolType.NONE;
         }
     }
 
