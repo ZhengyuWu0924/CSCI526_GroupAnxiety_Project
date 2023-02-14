@@ -172,7 +172,6 @@ public class DrawingTool : MonoBehaviour
             drawnObject.gameObject.layer = cantDrawOverLayerIndex;
             drawnObject.UsePhysics(true);
             drawnObject = null;
-            toolType = ToolType.NONE;
         }
     }
 
