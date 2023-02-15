@@ -21,7 +21,7 @@ public class DrawingTool : MonoBehaviour
 
     // Pen Variables
     [Header("Pen Variables")]
-    public BasicPen[] availablePens = new BasicPen[3];
+    public List<BasicPen> availablePens = new();
     [SerializeField]
     private BasicPen chosenPen;
     [SerializeField]
@@ -36,21 +36,10 @@ public class DrawingTool : MonoBehaviour
 
     // Brush Variables
     [Header("Brush Variables")]
-    public BasicBrush[] availableBrushs = new BasicBrush[2];
+    public List<BasicBrush> availableBrushes = new();
     [SerializeField]
     private BasicBrush chosenBrush;
 
-
-    [Header("Tool Buttons")]
-    //Button Variables
-    [SerializeField] public GameObject GravityBrush;
-    [SerializeField] public GameObject MagnetBrush;
-    [SerializeField] public GameObject PlatformPen;
-    [SerializeField] public GameObject RockPen;
-    [SerializeField] public GameObject WoodPen;
-
-    [Header("Mouse Cursors")]
-    [SerializeField] public Texture2D[] cursors = new Texture2D[5];
     private Vector2 cursorHotsopt;
 
 
@@ -95,29 +84,12 @@ public class DrawingTool : MonoBehaviour
         }
     }
 
-    public void SwitchTools(int index)
+    public void SwitchTools(GameObject toolPrefab)
     {
-        if (index <= 1)
+        if (toolPrefab.name.EndsWith("Pen"))
         {
-            if(chosenBrush == availableBrushs[index])
-            {
-                this.toolType = ToolType.NONE;
-                chosenBrush = null;
-                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-            }
-            else
-            {
-                this.toolType = ToolType.BRUSH;
-                chosenBrush = availableBrushs[index];
-                Texture2D cursor = cursors[index];
-                cursorHotsopt = new Vector2(cursor.width / 2, cursor.height / 2);
-                // cursorHotsopt = new Vector2(16, 0);
-                Cursor.SetCursor(cursor, cursorHotsopt, CursorMode.Auto);
-            }
-        }
-        else if (index >= 2 && index < 5)
-        {
-            if (chosenPen == availablePens[index - 2])
+            BasicPen pen = toolPrefab.GetComponent<BasicPen>();
+            if (chosenPen == pen)
             {
                 this.toolType = ToolType.NONE;
                 chosenPen = null;
@@ -126,11 +98,27 @@ public class DrawingTool : MonoBehaviour
             else
             {
                 this.toolType = ToolType.PEN;
-                chosenPen = availablePens[index - 2];
-                Texture2D cursor = cursors[index];
-                cursorHotsopt = new Vector2(cursor.width / 2, cursor.height / 2);
-                // cursorHotsopt = new Vector2(16, 0);
-                Cursor.SetCursor(cursor, cursorHotsopt, CursorMode.Auto);
+                chosenPen = pen;
+                chosenBrush = null;
+                cursorHotsopt = new Vector2(pen.cursor.width / 2, pen.cursor.height / 2);
+                Cursor.SetCursor(pen.cursor, cursorHotsopt, CursorMode.Auto);
+            }
+        }else if(toolPrefab.name.EndsWith("Brush"))
+        {
+            BasicBrush brush = toolPrefab.GetComponent<BasicBrush>();
+            if (chosenBrush == brush)
+            {
+                this.toolType = ToolType.NONE;
+                chosenBrush = null;
+                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            }
+            else
+            {
+                this.toolType = ToolType.BRUSH;
+                chosenBrush = brush;
+                chosenPen = null;
+                cursorHotsopt = new Vector2(brush.cursor.width / 2, brush.cursor.height / 2);
+                Cursor.SetCursor(brush.cursor, cursorHotsopt, CursorMode.Auto);
             }
         }
     }
@@ -230,43 +218,18 @@ public class DrawingTool : MonoBehaviour
     /// <summary>
     /// Pick up a tool
     /// </summary>
-    public void PickUpTool(ToolType toolType, GameObject toolPrefab)
+    public void PickUpTool(ToolType toolType, GameObject toolPrefab, GameObject toolButton)
     {
         if(toolType == ToolType.PEN)
         {
             BasicPen pickupPen = toolPrefab.GetComponent<BasicPen>();
-            int penIndex = 0;
-
-            if (pickupPen.penName == "PlatformPen")
-            {
-                PlatformPen.SetActive(true);
-                penIndex = 0;
-            } else if (pickupPen.penName == "RockPen")
-            {
-                RockPen.SetActive(true);
-                penIndex = 1;
-            } else if (pickupPen.penName == "WoodPen")
-            {
-                WoodPen.SetActive(true);
-                penIndex = 2;
-            }
-            availablePens[penIndex] = pickupPen;
+            availablePens.Add(pickupPen);
         }
         else if(toolType == ToolType.BRUSH)
         {
             BasicBrush pickupBrush = toolPrefab.GetComponent<BasicBrush>();
-            int brushIndex = 0;
-
-            if (pickupBrush.brushName == "MagnetBrush")
-            {
-                MagnetBrush.SetActive(true);
-                brushIndex = 0;
-            } else if (pickupBrush.brushName == "GravityBrush")
-            {
-                GravityBrush.SetActive(true);
-                brushIndex = 1;
-            }
-            availableBrushs[brushIndex] = pickupBrush;
+            availableBrushes.Add(pickupBrush);
         }
+        toolButton.SetActive(true);
     }
 }

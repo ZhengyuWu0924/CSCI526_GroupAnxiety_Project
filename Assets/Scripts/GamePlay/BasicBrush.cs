@@ -13,6 +13,8 @@ public abstract class BasicBrush : MonoBehaviour
 
     public Color brushColor;
 
+    public Texture2D cursor;
+
     // Called by DrawingTool.cs, change current object's propertiess
     public virtual void changeProperties(GameObject gameObject)
     {

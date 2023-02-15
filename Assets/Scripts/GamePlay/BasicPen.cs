@@ -25,7 +25,8 @@ public abstract class BasicPen : MonoBehaviour
     public float massRatioOffset;
     public bool isStraight = false;
     // mass should be propontional to line length
-    
+
+    public Texture2D cursor;
 
     // initialize pen properties before usage
     public virtual void InitializePen()

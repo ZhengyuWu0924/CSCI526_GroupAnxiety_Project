@@ -8,7 +8,9 @@ public class Pickup : MonoBehaviour
     private ToolType toolType;
     [SerializeField]
     private GameObject toolPrefab;
-    
+    [SerializeField]
+    private GameObject toolButton;
+
     private DrawingTool drawingTool;
 
     private void Start()
@@ -21,7 +23,7 @@ public class Pickup : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
-            drawingTool.PickUpTool(toolType, toolPrefab);
+            drawingTool.PickUpTool(toolType, toolPrefab, toolButton);
         }
     }
 

@@ -3089,7 +3089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2157587045656806618, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2157587045656806618, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3107,9 +3107,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2157587045656806618, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 5785977451134608513, guid: eea1a947053125b4381b6e808c1704f8, type: 3}
+    - target: {fileID: 2157587045656806618, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2157587045656806620, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_Name
-      value: PlatformPen
+      value: PlatformPenButton
       objectReference: {fileID: 0}
     - target: {fileID: 2157587045656806620, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_IsActive
@@ -6279,30 +6287,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 802615100}
   toolType: 2
-  availablePens:
-  - {fileID: 8219163204479216961, guid: 1cc6b5803950ee0408123b7f7330f2a7, type: 3}
-  - {fileID: 2931872026922226270, guid: 74e27d49578cfdd4dbdaf1610bc5dfb5, type: 3}
-  - {fileID: 6509331957707295812, guid: eea1a947053125b4381b6e808c1704f8, type: 3}
+  availablePens: []
   chosenPen: {fileID: 0}
   totalDrawDistance: 0
   cantDrawOverLayer:
     serializedVersion: 2
     m_Bits: 72
-  availableBrushs:
-  - {fileID: 4888813342968499132, guid: 66db36982ed5be84b8370993d219761e, type: 3}
-  - {fileID: 4984614884451149496, guid: 85246ef5bdd5ffd4a828b73b5596ff0f, type: 3}
+  availableBrushes: []
   chosenBrush: {fileID: 0}
-  GravityBrush: {fileID: 800620745}
-  MagnetBrush: {fileID: 941573571}
-  PlatformPen: {fileID: 1413366663}
-  RockPen: {fileID: 91098189}
-  WoodPen: {fileID: 239680659}
-  cursors:
-  - {fileID: 2800000, guid: a54685e40ffa448b6a2bc498458f5d86, type: 3}
-  - {fileID: 2800000, guid: 50d3c3eba5b32497e8032c2ab5e6c35d, type: 3}
-  - {fileID: 2800000, guid: a1a7c9326a32d47728bc0426d405b03b, type: 3}
-  - {fileID: 2800000, guid: 1ad27dd756456483abe09acf954ed445, type: 3}
-  - {fileID: 2800000, guid: b895abdea8d9b47f4845cdacabf79d8d, type: 3}
 --- !u!4 &611842658
 Transform:
   m_ObjectHideFlags: 0
@@ -7028,7 +7020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2157587045656806618, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2157587045656806618, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -7046,9 +7038,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2157587045656806618, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 761279246466384331, guid: 74e27d49578cfdd4dbdaf1610bc5dfb5, type: 3}
+    - target: {fileID: 2157587045656806618, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2157587045656806620, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_Name
-      value: WoodPen
+      value: WoodPenButton
       objectReference: {fileID: 0}
     - target: {fileID: 2157587045656806620, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_IsActive
@@ -7532,7 +7532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2157587045656806618, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2157587045656806618, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -7559,12 +7559,16 @@ PrefabInstance:
       value: DrawingTool, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2157587045656806618, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4984614884451149503, guid: 85246ef5bdd5ffd4a828b73b5596ff0f, type: 3}
+    - target: {fileID: 2157587045656806618, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2157587045656806620, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_Name
-      value: MagnetBrush
+      value: MagnetBrushButton
       objectReference: {fileID: 0}
     - target: {fileID: 2157587045656806620, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_IsActive
@@ -9916,9 +9920,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
+      propertyPath: toolButton
+      value: 
+      objectReference: {fileID: 239680659}
+    - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: toolPrefab
       value: 
       objectReference: {fileID: 761279246466384331, guid: 74e27d49578cfdd4dbdaf1610bc5dfb5, type: 3}
+    - target: {fileID: 7307871067185668523, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307871067185668523, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307871067185668523, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.71
+      objectReference: {fileID: 0}
     - target: {fileID: 7307871067185668564, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: m_Name
       value: Wood
@@ -11049,7 +11069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2157587045656806618, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2157587045656806618, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -11067,9 +11087,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2157587045656806618, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8219163204479216964, guid: 1cc6b5803950ee0408123b7f7330f2a7, type: 3}
+    - target: {fileID: 2157587045656806618, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2157587045656806620, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_Name
-      value: RockPen
+      value: RockPenButton
       objectReference: {fileID: 0}
     - target: {fileID: 2157587045656806620, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_IsActive
@@ -13502,9 +13530,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
+      propertyPath: toolButton
+      value: 
+      objectReference: {fileID: 1413366663}
+    - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: toolPrefab
       value: 
       objectReference: {fileID: 5785977451134608513, guid: eea1a947053125b4381b6e808c1704f8, type: 3}
+    - target: {fileID: 7307871067185668523, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307871067185668523, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307871067185668523, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.71
+      objectReference: {fileID: 0}
     - target: {fileID: 7307871067185668564, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: m_Name
       value: Platform
@@ -16408,7 +16452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2157587045656806618, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2157587045656806618, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -16426,9 +16470,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2157587045656806618, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4653983718219067100, guid: 66db36982ed5be84b8370993d219761e, type: 3}
+    - target: {fileID: 2157587045656806618, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2157587045656806620, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_Name
-      value: GravityBrush
+      value: GravityBrushButton
       objectReference: {fileID: 0}
     - target: {fileID: 2157587045656806620, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_IsActive
@@ -18422,9 +18474,25 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
+      propertyPath: toolButton
+      value: 
+      objectReference: {fileID: 941573571}
+    - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: toolPrefab
       value: 
       objectReference: {fileID: 4984614884451149503, guid: 85246ef5bdd5ffd4a828b73b5596ff0f, type: 3}
+    - target: {fileID: 7307871067185668523, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307871067185668523, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307871067185668523, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.71
+      objectReference: {fileID: 0}
     - target: {fileID: 7307871067185668564, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: m_Name
       value: Magnet
@@ -19032,9 +19100,25 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
+      propertyPath: toolButton
+      value: 
+      objectReference: {fileID: 800620745}
+    - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: toolPrefab
       value: 
       objectReference: {fileID: 4653983718219067100, guid: 66db36982ed5be84b8370993d219761e, type: 3}
+    - target: {fileID: 7307871067185668523, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307871067185668523, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307871067185668523, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.71
+      objectReference: {fileID: 0}
     - target: {fileID: 7307871067185668564, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: m_Name
       value: Gravity
@@ -19866,9 +19950,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
+      propertyPath: toolButton
+      value: 
+      objectReference: {fileID: 91098189}
+    - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: toolPrefab
       value: 
       objectReference: {fileID: 8219163204479216964, guid: 1cc6b5803950ee0408123b7f7330f2a7, type: 3}
+    - target: {fileID: 7307871067185668523, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307871067185668523, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307871067185668523, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.71
+      objectReference: {fileID: 0}
     - target: {fileID: 7307871067185668564, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: m_Name
       value: Rock
