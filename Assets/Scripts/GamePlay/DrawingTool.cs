@@ -118,10 +118,6 @@ public class DrawingTool : MonoBehaviour
                 chosenBrush = brush;
                 chosenPen = null;
                 cursorHotsopt = new Vector2(brush.cursor.width / 2, brush.cursor.height / 2);
-                if (toolPrefab.name == "EraserBrush")
-                {
-                    cursorHotsopt = new Vector2(0, 0);
-                }
                 Cursor.SetCursor(brush.cursor, cursorHotsopt, CursorMode.Auto);
             }
         }
@@ -217,10 +213,17 @@ public class DrawingTool : MonoBehaviour
         chosenPen.InitializePen();
         drawnObject = Instantiate(chosenPen, this.transform).GetComponent<BasicPen>();
         drawnObject.UsePhysics(false);
-        drawnObject.AddPoint(beginPosition);
-        //while ()
-        drawnObject.AddPoint(endPosition);
         totalDrawDistance = Vector2.Distance(beginPosition, endPosition);
+        drawnObject.AddPoint(beginPosition);
+        int numOfPoints = (int)(totalDrawDistance / 0.1f);
+        for (int i = 1; i <= numOfPoints; i++)
+        {
+            Vector2 point = beginPosition + (endPosition - beginPosition) * (i / (numOfPoints + 1.0f));
+            drawnObject.AddPoint(point);
+        }
+
+        drawnObject.AddPoint(endPosition);
+        
         drawnObject.GetComponent<Rigidbody2D>().mass = drawnObject.massRatio * drawnObject.massRatioOffset * totalDrawDistance;
         drawnObject.gameObject.layer = cantDrawOverLayerIndex;
         drawnObject.UsePhysics(true);
