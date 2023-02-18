@@ -118,6 +118,10 @@ public class DrawingTool : MonoBehaviour
                 chosenBrush = brush;
                 chosenPen = null;
                 cursorHotsopt = new Vector2(brush.cursor.width / 2, brush.cursor.height / 2);
+                if (toolPrefab.name == "EraserBrush")
+                {
+                    cursorHotsopt = new Vector2(0, 0);
+                }
                 Cursor.SetCursor(brush.cursor, cursorHotsopt, CursorMode.Auto);
             }
         }
@@ -194,8 +198,15 @@ public class DrawingTool : MonoBehaviour
         {
             if (hit.transform.CompareTag("Mutable Object"))
             {
+                if (chosenBrush.name != "EraserBrush")
+                {
+                    chosenBrush.changeProperties(hit.transform.gameObject);
+                    GameManager.Instance.updateInk(5);
+                }
+            }
+            if (hit.transform.CompareTag("Drawn Object"))
+            {
                 chosenBrush.changeProperties(hit.transform.gameObject);
-                GameManager.Instance.updateInk(5);
             }
         }
     }
@@ -207,6 +218,7 @@ public class DrawingTool : MonoBehaviour
         drawnObject = Instantiate(chosenPen, this.transform).GetComponent<BasicPen>();
         drawnObject.UsePhysics(false);
         drawnObject.AddPoint(beginPosition);
+        //while ()
         drawnObject.AddPoint(endPosition);
         totalDrawDistance = Vector2.Distance(beginPosition, endPosition);
         drawnObject.GetComponent<Rigidbody2D>().mass = drawnObject.massRatio * drawnObject.massRatioOffset * totalDrawDistance;

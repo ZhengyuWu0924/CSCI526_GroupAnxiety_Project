@@ -208,7 +208,7 @@ MonoBehaviour:
   penName: RockPen
   points: []
   pointCount: 0
-  linePointsMinStep: 0.1
+  linePointsMinStep: 2
   lineWidth: 2
   massRatio: 2.5
   massRatioOffset: 1
