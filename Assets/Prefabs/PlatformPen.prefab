@@ -208,7 +208,7 @@ MonoBehaviour:
   penName: PlatformPen
   points: []
   pointCount: 0
-  linePointsMinStep: 2
+  linePointsMinStep: 0.1
   lineWidth: 0.5
   massRatio: 1
   massRatioOffset: 1
