@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -81,6 +82,14 @@ public class PlayerController : MonoBehaviour
         if (collision.tag == "Win")
         {
             win.SetActive(true);
+        }
+        else if(collision.tag == "NextLevel")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else if (collision.tag == "PreviousLevel")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
     }
 

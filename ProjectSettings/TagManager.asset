@@ -16,6 +16,8 @@ TagManager:
   - Boundary
   - EndPoint
   - Win
+  - NextLevel
+  - PreviousLevel
   layers:
   - Default
   - TransparentFX
