@@ -279,6 +279,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuPanel: {fileID: 6179236875814410428}
   tutorial: {fileID: 6179236875466451633}
+  win: {fileID: 6179236877005901988}
+  lose: {fileID: 6179236876687515163}
 --- !u!114 &3525864882114554710
 MonoBehaviour:
   m_ObjectHideFlags: 0

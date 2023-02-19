@@ -7,6 +7,8 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] public GameObject pauseMenuPanel;
     [SerializeField] public GameObject tutorial;
+    [SerializeField] public GameObject win;
+    [SerializeField] public GameObject lose;
 
     public void Pause()
     {
@@ -22,6 +24,8 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenu()
     {
+        win.SetActive(false);
+        lose.SetActive(false);
         SceneManager.LoadScene("Main Menu");
     }
     
