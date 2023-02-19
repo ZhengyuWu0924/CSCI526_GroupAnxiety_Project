@@ -9,9 +9,11 @@ public class SendToGoogle : MonoBehaviour
     // URL is https://docs.google.com/forms/u/4/d/e/1FAIpQLSdOFLieYVjan5B-iP79DfZ8M6S5c_thnbpF3sSTJM9rvcxOTg/formResponse
     // [SerializeField] private string URL;
     private string URL = "https://docs.google.com/forms/u/4/d/e/1FAIpQLSdOFLieYVjan5B-iP79DfZ8M6S5c_thnbpF3sSTJM9rvcxOTg/formResponse";
-    private long _sessionID;
+    // private long _sessionID;
     private float _inkUsage;
     private int _sceneRegenTimes;
+    private int _checkpoints;
+    private int _rewardCollected;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +42,8 @@ public class SendToGoogle : MonoBehaviour
         form.AddField("entry.366340186", sessionID);
         form.AddField("entry.161804138", inkUsage);
         form.AddField("entry.515608870", sceneRegenTimes);
+        // form.AddField("entry.1197245544", checkPoints);
+        // form.AddField("entry.772491702", rewardCollected);
 
         // Send responses and verify result
         using (UnityWebRequest www = UnityWebRequest.Post(URL, form)){
