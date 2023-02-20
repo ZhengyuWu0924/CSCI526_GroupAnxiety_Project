@@ -91,6 +91,10 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
+        else if (collision.tag == "MainMenu")
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
 }

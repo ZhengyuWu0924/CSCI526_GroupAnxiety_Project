@@ -18,6 +18,7 @@ TagManager:
   - Win
   - NextLevel
   - PreviousLevel
+  - MainMenu
   layers:
   - Default
   - TransparentFX
