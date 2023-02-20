@@ -9,7 +9,13 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] public GameObject tutorial;
     [SerializeField] public GameObject win;
     [SerializeField] public GameObject lose;
+    private Restart restartScript;
 
+
+    void Start()
+    {
+        restartScript = GameObject.FindObjectOfType(typeof(Restart)) as Restart;
+    }
     public void Pause()
     {
         pauseMenuPanel.SetActive(true);
@@ -24,6 +30,7 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenu()
     {
+        restartScript.ResetTheGame();
         win.SetActive(false);
         lose.SetActive(false);
         SceneManager.LoadScene("Main Menu");
