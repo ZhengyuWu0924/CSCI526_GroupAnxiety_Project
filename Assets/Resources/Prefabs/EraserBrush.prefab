@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brushName: EraserBrush
   brushColor: {r: 1, g: 1, b: 1, a: 0}
-  cursor: {fileID: 2800000, guid: a1a7c9326a32d47728bc0426d405b03b, type: 3}
+  cursor: {fileID: 2800000, guid: 4129fde84a89a4d049ba2d87c8a40bc8, type: 3}
