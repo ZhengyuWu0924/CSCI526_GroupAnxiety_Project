@@ -9,6 +9,7 @@ public class EndPointSendForm : MonoBehaviour
     void Start()
     {
         stg = GameObject.FindObjectOfType(typeof(SendToGoogle)) as SendToGoogle;
+        print(stg);
     }
 
     private void OnCollisionEnter2D(Collision2D collision){
