@@ -177,6 +177,7 @@ public class DrawingTool : MonoBehaviour
         else
         {
             drawnObject.GetComponent<Rigidbody2D>().mass = drawnObject.massRatio * drawnObject.massRatioOffset * totalDrawDistance;
+            totalDrawDistance = 0;
             drawnObject.gameObject.layer = cantDrawOverLayerIndex;
             drawnObject.UsePhysics(true);
             drawnObject = null;
@@ -225,6 +226,7 @@ public class DrawingTool : MonoBehaviour
         drawnObject.AddPoint(endPosition);
         
         drawnObject.GetComponent<Rigidbody2D>().mass = drawnObject.massRatio * drawnObject.massRatioOffset * totalDrawDistance;
+        totalDrawDistance = 0;
         drawnObject.gameObject.layer = cantDrawOverLayerIndex;
         drawnObject.UsePhysics(true);
         drawnObject = null;
