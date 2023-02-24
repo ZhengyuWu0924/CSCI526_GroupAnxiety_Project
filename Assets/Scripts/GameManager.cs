@@ -43,7 +43,7 @@ public class GameManager : Singleton<GameManager>
     {
         remainInk -= ink;
         GameObject.Find("RemainInkText").GetComponent<TextMeshProUGUI>().SetText("Remain Ink: " + remainInk.ToString("0.0"));
-        
+        GameObject.Find("RemaimInkSlider").GetComponent<RemainInkSliderControl>().UpdateSlider(remainInk);
     }
 
     public void resetInk(){
