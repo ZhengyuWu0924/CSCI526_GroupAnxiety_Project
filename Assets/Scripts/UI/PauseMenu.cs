@@ -10,12 +10,21 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] public GameObject win;
     [SerializeField] public GameObject lose;
     private Restart restartScript;
+    private bool pause;
 
 
     void Start()
     {
         restartScript = GameObject.FindObjectOfType(typeof(Restart)) as Restart;
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab)) {
+            Pause();
+        }
+    }
+
     public void Pause()
     {
         pauseMenuPanel.SetActive(true);
@@ -45,6 +54,11 @@ public class PauseMenu : MonoBehaviour
     {
         tutorial.SetActive(false);
         Resume();
+    }
+
+    public void SelectLevel()
+    {
+        SceneManager.LoadScene("LevelSelection");
     }
 
 }
