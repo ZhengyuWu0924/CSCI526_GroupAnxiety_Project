@@ -156,7 +156,7 @@ public class DrawingTool : MonoBehaviour
             totalDrawDistance += distance;
             if (distance > drawnObject.linePointsMinStep)
             {
-                GameManager.Instance.updateInk(distance);
+                GameManager.Instance.updateInk(distance * chosenPen.lineCostFactor);
                 drawnObject.AddPoint(pos);
             }            
         }
@@ -198,7 +198,7 @@ public class DrawingTool : MonoBehaviour
                 if (chosenBrush.name != "EraserBrush")
                 {
                     chosenBrush.changeProperties(hit.transform.gameObject);
-                    GameManager.Instance.updateInk(5);
+                    GameManager.Instance.updateInk(chosenBrush.brushCost);
                 }
             }
             if (hit.transform.CompareTag("Drawn Object"))
