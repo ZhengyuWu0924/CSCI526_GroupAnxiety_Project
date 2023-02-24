@@ -5,35 +5,38 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 5f;
+    [Header("Player Movement")]
+    public float moveSpeed = 5f;
     public float jumpSpeed = 8f;
-    public float drainSpeed = 0.5f;
-    private float direction = 0f;
+
     private Rigidbody2D player;
     private bool isOnGround;
-    public GameManager gameManager;
+    private GameManager gameManager;
 
+    // need to change
     [SerializeField] public GameObject win;
     [SerializeField] public GameObject lose;
-    // Start is called before the first frame update
+    
+
     void Start()
     {
         player = GetComponent<Rigidbody2D>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         isOnGround = true;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        direction = Input.GetAxis("Horizontal");
+        float direction = Input.GetAxis("Horizontal");
 
         if (direction > 0f)
         {
-            player.velocity = new Vector2(direction * speed, player.velocity.y);
+            player.velocity = new Vector2(direction * moveSpeed, player.velocity.y);
         }
         else if (direction < 0f)
         {
-            player.velocity = new Vector2(direction * speed, player.velocity.y);
+            player.velocity = new Vector2(direction * moveSpeed, player.velocity.y);
         }    
         else
         {
@@ -51,24 +54,6 @@ public class PlayerController : MonoBehaviour
             lose.SetActive(true);
         }
 
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if(collision.tag == "Water")
-        {
-            player.gravityScale = drainSpeed;
-            player.AddForce(Vector2.up * 10);
-            Debug.Log(player.gravityScale);
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if(collision.tag == "Water")
-        {
-            player.gravityScale = 1;
-            Debug.Log(player.gravityScale);
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
