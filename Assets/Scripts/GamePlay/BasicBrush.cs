@@ -15,6 +15,8 @@ public abstract class BasicBrush : MonoBehaviour
 
     public Texture2D cursor;
 
+    public int brushCost;
+
     // Called by DrawingTool.cs, change current object's propertiess
     public virtual void changeProperties(GameObject gameObject)
     {
