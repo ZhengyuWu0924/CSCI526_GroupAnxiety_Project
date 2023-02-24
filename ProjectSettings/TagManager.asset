@@ -19,6 +19,7 @@ TagManager:
   - NextLevel
   - PreviousLevel
   - MainMenu
+  - Disappear
   layers:
   - Default
   - TransparentFX
