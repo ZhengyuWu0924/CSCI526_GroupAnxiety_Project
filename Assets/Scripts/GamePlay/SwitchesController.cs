@@ -18,7 +18,7 @@ public class SwitchesController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
 {
-    if (collision.gameObject.name == "RockPen(Clone)")
+    if (collision.gameObject.CompareTag("Drawn Object") || collision.gameObject.CompareTag("Mutable Object") || collision.gameObject.CompareTag("Player"))
     {
         GameObject objectToDisappear = GameObject.FindGameObjectWithTag("Disappear");
 
