@@ -4040,7 +4040,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.02922237}
+  m_Offset: {x: -0.8627654, y: -0.029222488}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4051,7 +4051,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.62, y: 4.6215553}
+  m_Size: {x: 0.89446914, y: 4.6215553}
   m_EdgeRadius: 0
 --- !u!4 &1765437224 stripped
 Transform:
@@ -4538,19 +4538,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7307871067185668520, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.25
+      value: 1.319875
       objectReference: {fileID: 0}
     - target: {fileID: 7307871067185668520, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.25
+      value: 1.3023751
       objectReference: {fileID: 0}
     - target: {fileID: 7307871067185668520, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -38.2
+      value: -38.1402
       objectReference: {fileID: 0}
     - target: {fileID: 7307871067185668520, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.97
+      value: 7.9252
       objectReference: {fileID: 0}
     - target: {fileID: 7307871067185668520, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4589,16 +4589,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 529bf907e66774846be0af490cb169f9, type: 3}
     - target: {fileID: 7307871067185668521, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307871067185668521, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 0.21960786
       objectReference: {fileID: 0}
     - target: {fileID: 7307871067185668521, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 0.21960786
       objectReference: {fileID: 0}
     - target: {fileID: 7307871067185668521, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 0.21960786
       objectReference: {fileID: 0}
     - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: toolType
@@ -5379,11 +5383,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7455130649559846247, guid: a1ac4cb73dcdd4d1288d28c380d4cbd2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.23
+      value: 24.65
       objectReference: {fileID: 0}
     - target: {fileID: 7455130649559846247, guid: a1ac4cb73dcdd4d1288d28c380d4cbd2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.2171
+      value: -13.55
       objectReference: {fileID: 0}
     - target: {fileID: 7455130649559846247, guid: a1ac4cb73dcdd4d1288d28c380d4cbd2, type: 3}
       propertyPath: m_LocalPosition.z
