@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 
 public enum ToolType { PEN = 0, BRUSH, NONE };
 
@@ -91,34 +91,79 @@ public class DrawingTool : MonoBehaviour
             BasicPen pen = toolPrefab.GetComponent<BasicPen>();
             if (chosenPen == pen)
             {
+                //Cancel selection
                 this.toolType = ToolType.NONE;
                 chosenPen = null;
                 Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                GameObject chosenButton = GameObject.Find(pen.penName + "Button");
+                TextMeshProUGUI tmp = chosenButton.GetComponentInChildren<TextMeshProUGUI>();
+                tmp.SetText(tmp.text.Substring(1, tmp.text.Length - 2));
             }
             else
             {
+                //Cancel current selection
+                if(chosenPen != null)
+                {
+                    GameObject chosenPenButton = GameObject.Find(chosenPen.penName + "Button");
+                    TextMeshProUGUI buttonTmp = chosenPenButton.GetComponentInChildren<TextMeshProUGUI>();
+                    buttonTmp.SetText(buttonTmp.text.Substring(1, buttonTmp.text.Length - 2));
+                    chosenPen = null;
+                }
+                if(chosenBrush != null)
+                {
+                    GameObject chosenBrushButton = GameObject.Find(chosenBrush.brushName + "Button");
+                    TextMeshProUGUI buttonTmp = chosenBrushButton.GetComponentInChildren<TextMeshProUGUI>();
+                    buttonTmp.SetText(buttonTmp.text.Substring(1, buttonTmp.text.Length - 2));
+                    chosenBrush = null;
+                }
+                chosenBrush = null;
+                //Change to new selected tool
                 this.toolType = ToolType.PEN;
                 chosenPen = pen;
-                chosenBrush = null;
                 cursorHotsopt = new Vector2(pen.cursor.width / 2, pen.cursor.height / 2);
                 Cursor.SetCursor(pen.cursor, cursorHotsopt, CursorMode.Auto);
+                GameObject chosenButton = GameObject.Find(pen.penName + "Button");
+                TextMeshProUGUI tmp = chosenButton.GetComponentInChildren<TextMeshProUGUI>();
+                tmp.SetText("-" + tmp.text + "-");
             }
         }else if(toolPrefab.name.EndsWith("Brush"))
         {
             BasicBrush brush = toolPrefab.GetComponent<BasicBrush>();
             if (chosenBrush == brush)
             {
+                //Cancel Selection
                 this.toolType = ToolType.NONE;
                 chosenBrush = null;
                 Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                GameObject chosenButton = GameObject.Find(brush.brushName + "Button");
+                TextMeshProUGUI tmp = chosenButton.GetComponentInChildren<TextMeshProUGUI>();
+                tmp.SetText(tmp.text.Substring(1, tmp.text.Length - 2));
             }
             else
             {
+                //Cancel current selection
+                if (chosenPen != null)
+                {
+                    GameObject chosenPenButton = GameObject.Find(chosenPen.penName + "Button");
+                    TextMeshProUGUI buttonTmp = chosenPenButton.GetComponentInChildren<TextMeshProUGUI>();
+                    buttonTmp.SetText(buttonTmp.text.Substring(1, buttonTmp.text.Length - 2));
+                    chosenPen = null;
+                }
+                if (chosenBrush != null)
+                {
+                    GameObject chosenBrushButton = GameObject.Find(chosenBrush.brushName + "Button");
+                    TextMeshProUGUI buttonTmp = chosenBrushButton.GetComponentInChildren<TextMeshProUGUI>();
+                    buttonTmp.SetText(buttonTmp.text.Substring(1, buttonTmp.text.Length - 2));
+                    chosenBrush = null;
+                }
+                //Change to new selected tool
                 this.toolType = ToolType.BRUSH;
                 chosenBrush = brush;
-                chosenPen = null;
                 cursorHotsopt = new Vector2(brush.cursor.width / 2, brush.cursor.height / 2);
                 Cursor.SetCursor(brush.cursor, cursorHotsopt, CursorMode.Auto);
+                GameObject chosenButton = GameObject.Find(brush.brushName + "Button");
+                TextMeshProUGUI tmp = chosenButton.GetComponentInChildren<TextMeshProUGUI>();
+                tmp.SetText("-" + tmp.text + "-");
             }
         }
     }
