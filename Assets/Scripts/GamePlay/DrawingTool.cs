@@ -249,6 +249,7 @@ public class DrawingTool : MonoBehaviour
             if (hit.transform.CompareTag("Drawn Object"))
             {
                 chosenBrush.changeProperties(hit.transform.gameObject);
+                GameManager.Instance.updateInk(chosenBrush.brushCost);
             }
         }
     }
