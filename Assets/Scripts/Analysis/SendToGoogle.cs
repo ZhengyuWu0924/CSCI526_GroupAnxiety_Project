@@ -8,35 +8,17 @@ public class SendToGoogle : MonoBehaviour
 {
     // URL is https://docs.google.com/forms/u/4/d/e/1FAIpQLSdOFLieYVjan5B-iP79DfZ8M6S5c_thnbpF3sSTJM9rvcxOTg/formResponse
     // [SerializeField] private string URL;
-    private string URL = "https://docs.google.com/forms/u/4/d/e/1FAIpQLSdOFLieYVjan5B-iP79DfZ8M6S5c_thnbpF3sSTJM9rvcxOTg/formResponse";
-    private long _sessionID;
-    private float _inkUsage;
-    private int _sceneRegenTimes;
-    private int _checkpoints;
-    private int _rewardCollected;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+    private static string URL = "https://docs.google.com/forms/u/4/d/e/1FAIpQLSdOFLieYVjan5B-iP79DfZ8M6S5c_thnbpF3sSTJM9rvcxOTg/formResponse";
+    // private static long _sessionID;
+    // private float _inkUsage;
+    // private static int _sceneRegenTimes;
+    // private static int _checkpoints;
+    // private static int _rewardCollected;
+    // private static float _timeUsedBetweenCheckpoints;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    /*
-        Generate a unique session ID for current game play
-    */
-    private void Awake(){
-        _sessionID = DateTime.Now.Ticks;
-    
-        // At test version, call send method when game awake
-        // change the calling later
-        // Send();
-    }
 
-    private IEnumerator Post(string sessionID, string inkUsage, string sceneRegenTimes){
+    private static IEnumerator Post(string sessionID, string inkUsage, string sceneRegenTimes){
         // Create the form and enter responses
         WWWForm form = new WWWForm();
         form.AddField("entry.366340186", sessionID);
@@ -63,12 +45,13 @@ public class SendToGoogle : MonoBehaviour
         Send data to Google Form
         Call this method only when decide to send all data to Google
     */
-    public void Send(){
+    public void Send(float inkUsed, int regenTimes){
+        // long _sessionID = DateTime.Now.Ticks;
         // Temp version
         // All data are temporary and fake
-        _inkUsage = GameManager.RemainInk;
-        _sceneRegenTimes = GameManager.SceneRegenerationTimes;
+        // _inkUsage = inkUsed;
+        // _sceneRegenTimes = regenTimes;
 
-        StartCoroutine(Post(_sessionID.ToString(), _inkUsage.ToString(), _sceneRegenTimes.ToString()));
+        StartCoroutine(Post(DateTime.Now.Ticks.ToString(), inkUsed.ToString(), regenTimes.ToString()));
     }
 }

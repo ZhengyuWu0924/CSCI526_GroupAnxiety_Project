@@ -8,8 +8,10 @@ using TMPro;
 /// </summary>
 public class GameManager : Singleton<GameManager>
 {
-    public static float remainInk;
+    public GameObject Player;
 
+    public static float remainInk;
+    public GameState State {get; private set;}
     public static float RemainInk{
         get { return remainInk; }
         set { remainInk = value; }
@@ -20,6 +22,15 @@ public class GameManager : Singleton<GameManager>
         get { return sceneRegenerationTimes; }
         set { sceneRegenerationTimes = value; }
     }
+
+    public static int currentLevel;
+    public static int CurrentLevel{
+        get { return currentLevel; }
+        set { currentLevel = value; }
+    }
+
+    
+
     protected override void Awake()
     {
         base.Awake();
@@ -55,4 +66,41 @@ public class GameManager : Singleton<GameManager>
         return remainInk;
     } 
 
+    public void UpdateGameState(GameState newState){
+        State = newState;
+        switch(State){
+            case GameState.Victory:
+                break;
+            case GameState.Lose:
+                break;
+            case GameState.Pause:
+                break;
+            case GameState.Playing:
+                break;
+            case GameState.MainMenu:
+                break;
+            default:
+                // throw new ArgumentOutOfRangeException(nameof(State), State, null);
+                break;
+        }
+    }
+
+    private void HandleVictory(){
+        // SendToGoogle.Send(remainInk, sceneRegenerationTimes);
+    }
+
+    private void HandleLose(){
+        // DeathFormToGoogle.Send(Player.transform.position);
+    }
+
+
+}
+
+
+public enum GameState {
+    Victory = 0,
+    Lose = 1,
+    Pause = 2,
+    Playing = 3,
+    MainMenu = 4,
 }

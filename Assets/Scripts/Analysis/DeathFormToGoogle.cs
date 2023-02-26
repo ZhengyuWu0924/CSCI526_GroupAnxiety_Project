@@ -7,23 +7,13 @@ using UnityEngine.Networking;
 public class DeathFormToGoogle : MonoBehaviour
 {
     // [SerializeField] private string URL;
-    private string URL = "https://docs.google.com/forms/u/4/d/e/1FAIpQLSe_shYbBT5NxwjFOYv7GHy2lI17-r_dXH71L6DJ2vhbDj98jw/formResponse";
+    private static string URL = "https://docs.google.com/forms/u/4/d/e/1FAIpQLSe_shYbBT5NxwjFOYv7GHy2lI17-r_dXH71L6DJ2vhbDj98jw/formResponse";
     // private int _levelId;
-    private string _deathPosition;
+    // private string _deathPosition;
     // Start is called before the first frame update
-    void Start()
-    {
-    }
 
-    // Update is called once per frame
-    void Update()
-    { 
-    }
 
-    private void Awake(){
-    }
-
-    private IEnumerator Post(string deathPosition){
+    private static IEnumerator Post(string deathPosition){
         // Create the form and enter responses
         WWWForm form = new WWWForm();
         // form.AddField("entry.972509864", levelId);
@@ -49,13 +39,13 @@ public class DeathFormToGoogle : MonoBehaviour
         Send data to Google Form
         Call this method only when decide to send all data to Google
     */
-    public void Send(string trapID){
+    public void Send(Vector2 playerPosition){
         // Temp version
         // All data are temporary and fake
         // _inkUsage = GameManager.RemainInk;
         // _sceneRegenTimes = GameManager.SceneRegenerationTimes;
 
-        _deathPosition = trapID;
-        StartCoroutine(Post(_deathPosition.ToString()));
+        // _deathPosition = playerPosition;
+        StartCoroutine(Post(playerPosition.ToString()));
     }
 }
