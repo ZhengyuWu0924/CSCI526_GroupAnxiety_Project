@@ -4008,7 +4008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2157587046749317887, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_text
-      value: Eraser Brush
+      value: Eraser For Pen
       objectReference: {fileID: 0}
     - target: {fileID: 2157587046749317887, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_fontColor.b
