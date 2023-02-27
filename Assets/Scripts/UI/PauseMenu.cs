@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] public GameObject pauseMenuPanel;
-    [SerializeField] public GameObject tutorial;
     [SerializeField] public GameObject win;
     [SerializeField] public GameObject lose;
     private Restart restartScript;
@@ -46,14 +45,19 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
     }
     
-    public void Tutorial()
-    {
-        tutorial.SetActive(true);
-    }
 
     public void SelectLevel()
     {
         Resume();
         SceneManager.LoadScene("LevelSelection");
+    }
+
+    public void NextLevel()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+        // Debug.Log("Current scene name: " + sceneName);
+        int nextLevel = int.Parse(sceneName.Substring(6)) + 1;
+        SceneManager.LoadScene("Level " + nextLevel.ToString());
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 }
