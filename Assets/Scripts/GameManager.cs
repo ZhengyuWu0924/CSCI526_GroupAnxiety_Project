@@ -29,7 +29,10 @@ public class GameManager : Singleton<GameManager>
         set { currentLevel = value; }
     }
 
-    
+
+    // ****** File Refference Declarations ******
+    private SendToGoogle stg;
+    private DeathFormToGoogle dtg;
 
     protected override void Awake()
     {
@@ -50,21 +53,10 @@ public class GameManager : Singleton<GameManager>
         
     }
 
-    public void updateInk(float ink)
-    {
-        remainInk -= ink;
-        GameObject.Find("RemainInkText").GetComponent<TextMeshProUGUI>().SetText("Remain Ink: " + remainInk.ToString("0.0"));
-        GameObject.Find("RemaimInkSlider").GetComponent<RemainInkSliderControl>().UpdateSlider(remainInk);
-    }
 
-    public void resetInk(){
-        remainInk = 100;
-    }
 
-    public float getInk()
-    {
-        return remainInk;
-    } 
+
+    // ****** State Handlers ******
 
     public void UpdateGameState(GameState newState){
         State = newState;
@@ -85,12 +77,82 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    /*
+        Triggered by victory state
+        When victory, send the form with data to google for data analysis
+        TBD: Add function calls for printing victory infomation and button for next level
+    */
+
     private void HandleVictory(){
-        // SendToGoogle.Send(remainInk, sceneRegenerationTimes);
+        SendAtVictory();
     }
 
+    /*
+        Triggered by lose state
+        When player died, record its position and send it to google for data analysis
+        TBD: Add function calls for printing the lose information and restart button
+    */
     private void HandleLose(){
-        // DeathFormToGoogle.Send(Player.transform.position);
+        SendAtLose();
+    }
+
+
+    /*
+        Triggered when enter pause state
+        When pause, print the pause menu with buttons
+        TBD: Add wake up functions for the pause menu, also record corrent infos
+    */
+    private void HandlePause(){
+
+    }
+
+    /*
+        Triggered when switch back to play scene
+        TBD: Add dis-active functions for the pause menu, and wake up the
+        objects in playing scene
+    */
+    private void HandlePlaying(){
+
+    }
+
+    /*
+        Trigger when back to main menu
+        TBD: Add wake up functions for the main menu scene, and also activate
+        buttons on the scene
+    */
+    private void HandleMainMenu(){
+
+    }
+
+
+
+
+    // ****** Helper Functions ******
+
+    public void updateInk(float ink)
+    {
+        remainInk -= ink;
+        GameObject.Find("RemainInkText").GetComponent<TextMeshProUGUI>().SetText("Remain Ink: " + remainInk.ToString("0.0"));
+        GameObject.Find("RemaimInkSlider").GetComponent<RemainInkSliderControl>().UpdateSlider(remainInk);
+    }
+
+    public void resetInk(){
+        remainInk = 100;
+    }
+
+    public float getInk()
+    {
+        return remainInk;
+    } 
+    
+    private void SendAtVictory(){
+        stg = GameObject.FindObjectOfType(typeof(SendToGoogle)) as SendToGoogle;
+        stg.Send(remainInk, sceneRegenerationTimes);
+    }
+
+    private void SendAtLose(){
+        dtg = GameObject.FindObjectOfType(typeof(DeathFormToGoogle)) as DeathFormToGoogle;
+        dtg.Send(Player.transform.position);
     }
 
 
