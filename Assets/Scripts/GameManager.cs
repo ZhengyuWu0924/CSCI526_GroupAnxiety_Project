@@ -58,6 +58,13 @@ public class GameManager : Singleton<GameManager>
 
     // ****** State Handlers ******
 
+    /*
+        Update the game state of GameManager
+        @newState: target state that wants to transfer to.
+        @return: call this method in other scripts, and attach that script with 
+        a specific object if wants to trigger it in game scene. related handle function
+        will be called based on the state parsed in.
+    */
     public void UpdateGameState(GameState newState){
         State = newState;
         switch(State){
