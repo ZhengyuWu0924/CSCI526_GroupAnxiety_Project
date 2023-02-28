@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] public GameObject win;
     [SerializeField] public GameObject lose;
     private Restart restartScript;
-    private bool pause;
+    private bool pause = false;
 
 
     void Start()
@@ -20,7 +20,13 @@ public class PauseMenu : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab)) {
-            Pause();
+            if (!pause)
+            {
+                Pause();
+            } else
+            {
+                Resume();
+            }
         }
     }
 
@@ -28,12 +34,14 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuPanel.SetActive(true);
         Time.timeScale = 0f;
+        pause = true;
     }
 
     public void Resume()
     {
         pauseMenuPanel.SetActive(false);
         Time.timeScale = 1f;
+        pause = false;
     }
 
     public void MainMenu()
@@ -49,6 +57,8 @@ public class PauseMenu : MonoBehaviour
     public void SelectLevel()
     {
         Resume();
+        win.SetActive(false);
+        lose.SetActive(false);
         SceneManager.LoadScene("LevelSelection");
     }
 
