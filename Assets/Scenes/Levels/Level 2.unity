@@ -515,6 +515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2732d5e8a679e0d439bd37669b423978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
 --- !u!4 &360380513
 Transform:
   m_ObjectHideFlags: 0
@@ -736,8 +737,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.8668635, y: 0}
-  m_Size: {x: 0.8862729, y: 4.68}
+  m_Offset: {x: -0.87316275, y: 0}
+  m_Size: {x: 0.9693308, y: 4.68}
   m_Direction: 0
 --- !u!212 &658431767
 SpriteRenderer:
