@@ -29,10 +29,20 @@ public class GameManager : Singleton<GameManager>
         set { currentLevel = value; }
     }
 
+    public int[] trapsHitted;
+    public int this[int index]{
+        get { return trapsHitted[index]; }
+        set { trapsHitted[index] = value; }
+    }
+    public void UpdateTrapHitted(int index, int newValue){
+        trapsHitted[index] = newValue;
+    }
+
 
     // ****** File Refference Declarations ******
     private SendToGoogle stg;
     private DeathFormToGoogle dtg;
+    private TrapFormToGoogle tftg;
 
     protected override void Awake()
     {
@@ -160,6 +170,11 @@ public class GameManager : Singleton<GameManager>
     private void SendAtLose(){
         dtg = GameObject.FindObjectOfType(typeof(DeathFormToGoogle)) as DeathFormToGoogle;
         dtg.Send(Player.transform.position);
+    }
+
+    private void SendTrapInfoAtVictory(){
+        tftg = GameObject.FindObjectOfType(typeof(TrapFormToGoogle)) as TrapFormToGoogle;
+        tftg.Send(trapsHitted);
     }
 
 
