@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitTrapSendForm : MonoBehaviour
+public class HitTrapTrigger : MonoBehaviour
 {
     public GameManager gm;
     // private TrapFormToGoogle tftg;

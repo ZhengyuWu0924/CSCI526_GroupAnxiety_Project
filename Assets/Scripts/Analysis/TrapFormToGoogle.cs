@@ -13,11 +13,11 @@ public class TrapFormToGoogle : MonoBehaviour
         WWWForm form = new WWWForm();
 
         // trap 0 hitted times
-        form.AddField("entry.1464565645", trapArr[0]);
+        form.AddField("entry.1464565645", trapArr[0].ToString());
         // trap 1 hitted times
-        form.AddField("entry.1465169559", trapArr[1]);
+        form.AddField("entry.1465169559", trapArr[1].ToString());
         // trap 2 hitted times
-        form.AddField("entry.1239040308", trapArr[2]);
+        form.AddField("entry.1239040308", trapArr[2].ToString());
 
         // Send responses and verify result
         using (UnityWebRequest www = UnityWebRequest.Post(URL, form)){

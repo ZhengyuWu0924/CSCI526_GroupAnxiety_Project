@@ -38,11 +38,48 @@ public class GameManager : Singleton<GameManager>
         trapsHitted[index] = newValue;
     }
 
+    public static float platformInkUsed;
+    public static float PlatformInkUsed{
+        get { return platformInkUsed; }
+        set { platformInkUsed = value; }
+    }
+
+    public static float gravityInkUsed;
+    public static float GravityInkUsed{
+        get { return gravityInkUsed; }
+        set { gravityInkUsed = value; }
+    }
+
+    public static float magnetInkUsed;
+    public static float MagnetInkUsed{
+        get { return magnetInkUsed; }
+        set { magnetInkUsed = value; }
+    }
+
+    public static float woodInkUsed;
+    public static float WoodInkUsed{
+        get { return woodInkUsed; }
+        set { woodInkUsed = value; }
+    }
+
+    public static float rockInkUsed;
+    public static float RockInkUsed{
+        get { return rockInkUsed; }
+        set { rockInkUsed = value; }
+    }
+
+    public static float vanishInkUsed;
+    public static float VanishInkUsed{
+        get { return vanishInkUsed; }
+        set { vanishInkUsed = value; }
+    }
+
 
     // ****** File Refference Declarations ******
     private SendToGoogle stg;
     private DeathFormToGoogle dtg;
     private TrapFormToGoogle tftg;
+    private PercentageFormToGoogle pftg;
 
     protected override void Awake()
     {
@@ -55,6 +92,14 @@ public class GameManager : Singleton<GameManager>
     void Start()
     {
         remainInk = 100;
+        platformInkUsed = 0.0f;
+        gravityInkUsed = 0.0f;
+        magnetInkUsed = 0.0f;
+        woodInkUsed = 0.0f;
+        rockInkUsed = 0.0f;
+        vanishInkUsed = 0.0f;
+
+
     }
 
     // Update is called once per frame
@@ -102,6 +147,7 @@ public class GameManager : Singleton<GameManager>
 
     private void HandleVictory(){
         SendAtVictory();
+        SendTrapInfoAtVictory();
     }
 
     /*
@@ -175,6 +221,11 @@ public class GameManager : Singleton<GameManager>
     private void SendTrapInfoAtVictory(){
         tftg = GameObject.FindObjectOfType(typeof(TrapFormToGoogle)) as TrapFormToGoogle;
         tftg.Send(trapsHitted);
+    }
+
+    private void SendUsageAtVictory(){
+        pftg = GameObject.FindObjectOfType(typeof(PercentageFormToGoogle)) as PercentageFormToGoogle;
+        pftg.Send(platformInkUsed, gravityInkUsed, magnetInkUsed, woodInkUsed, rockInkUsed, vanishInkUsed);
     }
 
 
