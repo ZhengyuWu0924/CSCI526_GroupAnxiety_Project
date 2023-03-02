@@ -2505,7 +2505,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2157587046749317887, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_text
-      value: Rock Pen
+      value: 'Rock Pen
+
+        Cost: 2/Unit'
       objectReference: {fileID: 0}
     - target: {fileID: 2157587046749317887, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_fontColor.b
@@ -2720,7 +2722,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2157587046749317887, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_text
-      value: Gravity Brush
+      value: 'Gravity Brush
+
+        Cost: 3/Tap'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
@@ -3041,7 +3045,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2157587046749317887, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_text
-      value: Platform Pen
+      value: 'Platform Pen
+
+        Cost: 5/Unit'
       objectReference: {fileID: 0}
     - target: {fileID: 2157587046749317887, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_fontColor.b
@@ -3256,7 +3262,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2157587046749317887, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_text
-      value: Wood Pen
+      value: 'Wood Pen
+
+        Cost: 0.5/Unit'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
@@ -3739,7 +3747,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2157587046749317887, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_text
-      value: Magnet Brush
+      value: 'Magnet Brush
+
+        Cost: 1/Tap'
       objectReference: {fileID: 0}
     - target: {fileID: 2157587046749317887, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_fontColor.b
@@ -3954,7 +3964,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2157587046749317887, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_text
-      value: Eraser For Pen
+      value: 'Eraser For Pen
+
+        Cost: 2/Tap'
       objectReference: {fileID: 0}
     - target: {fileID: 2157587046749317887, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_fontColor.b
