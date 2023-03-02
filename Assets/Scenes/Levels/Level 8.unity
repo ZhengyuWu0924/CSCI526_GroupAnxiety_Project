@@ -399,11 +399,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4916388965202034172, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -44.54
+      value: -44.3
       objectReference: {fileID: 0}
     - target: {fileID: 4916388965202034172, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.8
+      value: 5.7
       objectReference: {fileID: 0}
     - target: {fileID: 4916388965202034172, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2531,6 +2531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 57500174}
+  trapsHitted: 
 --- !u!4 &360380513
 Transform:
   m_ObjectHideFlags: 0
@@ -11774,11 +11775,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7307871067185668520, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -39.91
+      value: -39.9
       objectReference: {fileID: 0}
     - target: {fileID: 7307871067185668520, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.8332
+      value: 3.8
       objectReference: {fileID: 0}
     - target: {fileID: 7307871067185668520, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: m_LocalPosition.z
