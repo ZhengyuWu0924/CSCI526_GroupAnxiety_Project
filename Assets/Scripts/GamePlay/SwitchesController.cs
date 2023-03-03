@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SwitchesController : MonoBehaviour
 {
+    public List<GameObject> objectsToDisappear;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,13 +18,15 @@ public class SwitchesController : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision)
-{
-    if (collision.gameObject.CompareTag("Drawn Object") || collision.gameObject.CompareTag("Mutable Object") || collision.gameObject.CompareTag("Player"))
     {
-        GameObject objectToDisappear = GameObject.FindGameObjectWithTag("Disappear");
+        if (collision.gameObject.CompareTag("Mutable Object") || collision.gameObject.CompareTag("Player"))
+        {
 
-        Destroy(objectToDisappear);
+            foreach(GameObject obj in objectsToDisappear)
+            {
+                Destroy(obj);
+            }
+        }
     }
-}
 
 }
