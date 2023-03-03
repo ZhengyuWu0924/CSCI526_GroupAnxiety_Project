@@ -202,7 +202,10 @@ public class DrawingTool : MonoBehaviour
         if (hit)
         {
             //cursorHotsopt = new Vector2(pen.cursor.width / 2, pen.cursor.height / 2);
-            Cursor.SetCursor(cantDrawSign, new Vector2(cantDrawSign.width / 2, cantDrawSign.height / 2), CursorMode.Auto);
+            if (hit.transform.name != "UIBlocker")
+            {
+                Cursor.SetCursor(cantDrawSign, new Vector2(cantDrawSign.width / 2, cantDrawSign.height / 2), CursorMode.Auto);
+            }
             EndDraw();
         }
         else
@@ -221,7 +224,7 @@ public class DrawingTool : MonoBehaviour
     // The end of drawing
     void EndDraw()
     {
-        Debug.Log("enddraw");
+        //Debug.Log("enddraw");
         endPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         if (null == drawnObject) return;
         if (drawnObject.pointCount < 2)
@@ -265,11 +268,11 @@ public class DrawingTool : MonoBehaviour
                 chosenBrush.changeProperties(hit.transform.gameObject);
                 GameManager.Instance.updateInk(chosenBrush.brushCost);
             }
-            //else if (hit.transform.CompareTag("Platform Object"))
-            //{
-            //    Debug.Log("platform");
-            //    Cursor.SetCursor(cantDrawSign, new Vector2(cantDrawSign.width / 2, cantDrawSign.height / 2), CursorMode.Auto);
-            //}
+            else if (hit.transform.CompareTag("Platform Object"))
+            {
+                //Debug.Log("platform");
+                Cursor.SetCursor(cantDrawSign, new Vector2(cantDrawSign.width / 2, cantDrawSign.height / 2), CursorMode.Auto);
+            }
         }
     }
 
