@@ -19,7 +19,7 @@ public class MutableObject : MonoBehaviour
     {
         rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        originColor = spriteRenderer.color;
+        originColor = Color.white;
     }
 
     
