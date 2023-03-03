@@ -8,18 +8,12 @@ TagManager:
   - Drawn Object
   - Platform Object
   - levelObject
-  - Water
-  - AntiGravityPen
-  - WaterPen
-  - RockPen
-  - WoodPen
   - Boundary
   - EndPoint
   - Win
   - NextLevel
   - PreviousLevel
   - MainMenu
-  - Disappear
   layers:
   - Default
   - TransparentFX
