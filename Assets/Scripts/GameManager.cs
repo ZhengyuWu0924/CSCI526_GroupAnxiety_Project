@@ -29,6 +29,12 @@ public class GameManager : Singleton<GameManager>
         set { currentLevel = value; }
     }
 
+    public static int currentLevelStars;
+    public static int CurrentLevelStars{
+        get { return currentLevelStars; }
+        set { currentLevelStars = value;}
+    }
+
     public int[] trapsHitted;
     public int this[int index]{
         get { return trapsHitted[index]; }
@@ -201,6 +207,14 @@ public class GameManager : Singleton<GameManager>
 
     public void resetInk(){
         remainInk = 100;
+    }
+
+    public void resetCurrentLevelStars(){
+        currentLevelStars = 0;
+    }
+
+    public void updateCurrentLevelStars(int inValue){
+        CurrentLevelStars = inValue;
     }
 
     public float getInk()
