@@ -12,8 +12,10 @@ public enum ToolType { PEN = 0, BRUSH, NONE };
 /// </summary>
 public class DrawingTool : MonoBehaviour
 {
+
     // General Variables
     [Header ("General Variables")]
+    public Texture2D cantDrawSign;
     public Camera mainCamera;
     public ToolType toolType = ToolType.NONE;
 
@@ -72,6 +74,7 @@ public class DrawingTool : MonoBehaviour
             {
 
                 EndDraw();
+                Cursor.SetCursor(chosenPen.cursor, new Vector2(chosenPen.cursor.width / 2, chosenPen.cursor.height / 2), CursorMode.Auto);
             }
         }
         else if (toolType == ToolType.BRUSH)
@@ -80,6 +83,10 @@ public class DrawingTool : MonoBehaviour
             if(Input.GetMouseButtonDown(0) && GameManager.remainInk > 0)
             {
                 Brush();
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+                Cursor.SetCursor(chosenBrush.cursor, new Vector2(chosenBrush.cursor.width / 2, chosenBrush.cursor.height / 2), CursorMode.Auto);
             }
         }
     }
@@ -193,7 +200,11 @@ public class DrawingTool : MonoBehaviour
         // Prevent crossing between lines
         RaycastHit2D hit = Physics2D.CircleCast(pos, chosenPen.lineWidth / 3f, Vector2.zero, 1f, cantDrawOverLayer);
         if (hit)
+        {
+            //cursorHotsopt = new Vector2(pen.cursor.width / 2, pen.cursor.height / 2);
+            Cursor.SetCursor(cantDrawSign, new Vector2(cantDrawSign.width / 2, cantDrawSign.height / 2), CursorMode.Auto);
             EndDraw();
+        }
         else
         {
             // add remain ink
@@ -210,6 +221,7 @@ public class DrawingTool : MonoBehaviour
     // The end of drawing
     void EndDraw()
     {
+        Debug.Log("enddraw");
         endPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         if (null == drawnObject) return;
         if (drawnObject.pointCount < 2)
@@ -227,6 +239,8 @@ public class DrawingTool : MonoBehaviour
             drawnObject.UsePhysics(true);
             drawnObject = null;
         }
+        
+
     }
 
     /// <summary>
@@ -246,11 +260,16 @@ public class DrawingTool : MonoBehaviour
                     GameManager.Instance.updateInk(chosenBrush.brushCost);
                 }
             }
-            if (hit.transform.CompareTag("Drawn Object"))
+            if (chosenBrush.name == "EraserBrush" && hit.transform.CompareTag("Drawn Object"))
             {
                 chosenBrush.changeProperties(hit.transform.gameObject);
                 GameManager.Instance.updateInk(chosenBrush.brushCost);
             }
+            //else if (hit.transform.CompareTag("Platform Object"))
+            //{
+            //    Debug.Log("platform");
+            //    Cursor.SetCursor(cantDrawSign, new Vector2(cantDrawSign.width / 2, cantDrawSign.height / 2), CursorMode.Auto);
+            //}
         }
     }
 
