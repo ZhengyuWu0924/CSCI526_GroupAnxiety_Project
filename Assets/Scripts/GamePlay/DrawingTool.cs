@@ -101,7 +101,7 @@ public class DrawingTool : MonoBehaviour
                 //Cancel selection
                 this.toolType = ToolType.NONE;
                 chosenPen = null;
-                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                Cursor.SetCursor(cantDrawSign, Vector2.zero, CursorMode.Auto);
                 GameObject chosenButton = GameObject.Find(pen.penName + "Button");
                 TextMeshProUGUI tmp = chosenButton.GetComponentInChildren<TextMeshProUGUI>();
                 tmp.SetText(tmp.text.Substring(1, tmp.text.Length - 2));
@@ -141,7 +141,7 @@ public class DrawingTool : MonoBehaviour
                 //Cancel Selection
                 this.toolType = ToolType.NONE;
                 chosenBrush = null;
-                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                Cursor.SetCursor(cantDrawSign, Vector2.zero, CursorMode.Auto);
                 GameObject chosenButton = GameObject.Find(brush.brushName + "Button");
                 TextMeshProUGUI tmp = chosenButton.GetComponentInChildren<TextMeshProUGUI>();
                 tmp.SetText(tmp.text.Substring(1, tmp.text.Length - 2));
