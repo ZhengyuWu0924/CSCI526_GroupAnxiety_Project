@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5295d6d326cb88b4ba37c05895015537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cantDrawSign: {fileID: 2800000, guid: 1f96c11d436e3fe458da0919d08b7734, type: 3}
+  cantDrawSign: {fileID: 2800000, guid: e68abdc7bb6f24458af987261515b20e, type: 3}
   mainCamera: {fileID: 0}
   toolType: 2
   availablePens: []
