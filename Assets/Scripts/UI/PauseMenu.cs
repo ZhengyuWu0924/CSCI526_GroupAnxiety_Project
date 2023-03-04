@@ -46,7 +46,7 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenu()
     {
-        restartScript.ResetTheGame();
+        //restartScript.ResetTheGame();
         win.SetActive(false);
         lose.SetActive(false);
         Resume();

@@ -21,11 +21,11 @@ public class LevelButton : MonoBehaviour
         levelStar = Instantiate(starBar, gameObject.transform).GetComponent<LevelStar>();
     }
 
-    public void SetUp(int level)
+    public void SetUp(int level, int starAmount)
     {
         this.level = level;
         levelText.text = level.ToString();
-        SetStars(0);
+        SetStars(starAmount);
     }
 
     void SetStars(int stars)
