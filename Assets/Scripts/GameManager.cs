@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 /// <summary>
 /// Use GameManager.Instance to access game manager
 /// </summary>
@@ -82,10 +82,11 @@ public class GameManager : Singleton<GameManager>
 
 
     // ****** File Refference Declarations ******
-    private SendToGoogle stg;
-    private DeathFormToGoogle dtg;
-    private TrapFormToGoogle tftg;
-    private PercentageFormToGoogle pftg;
+    SendToGoogle stg;
+    DeathFormToGoogle dtg;
+    TrapFormToGoogle tftg;
+    PercentageFormToGoogle pftg;
+    PlayerPrefsManager ppm;
 
     protected override void Awake()
     {
@@ -130,6 +131,7 @@ public class GameManager : Singleton<GameManager>
         State = newState;
         switch(State){
             case GameState.Victory:
+                HandleVictory();
                 break;
             case GameState.Lose:
                 break;
@@ -138,6 +140,8 @@ public class GameManager : Singleton<GameManager>
             case GameState.Playing:
                 break;
             case GameState.MainMenu:
+                break;
+            case GameState.GameQuit:
                 break;
             default:
                 // throw new ArgumentOutOfRangeException(nameof(State), State, null);
@@ -152,8 +156,11 @@ public class GameManager : Singleton<GameManager>
     */
 
     private void HandleVictory(){
-        SendAtVictory();
-        SendTrapInfoAtVictory();
+        // SendAtVictory();
+        // SendTrapInfoAtVictory();
+        print("enter handle victory");
+        updateCurrentLevel();
+        passStarsToPrefs(currentLevel, currentLevelStars);
     }
 
     /*
@@ -190,6 +197,10 @@ public class GameManager : Singleton<GameManager>
         buttons on the scene
     */
     private void HandleMainMenu(){
+
+    }
+
+    private void HandleGameQuit(){
 
     }
 
@@ -242,6 +253,26 @@ public class GameManager : Singleton<GameManager>
         pftg.Send(platformInkUsed, gravityInkUsed, magnetInkUsed, woodInkUsed, rockInkUsed, vanishInkUsed);
     }
 
+    private void updateCurrentLevel(){
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        print(currentSceneName);
+        /*
+            Test version, level 1 only
+        */
+        currentLevel = 1;
+
+    }
+
+    private void passStarsToPrefs(int curLevel, int curLevelStars){
+        print("enter passStarsToPrefs");
+        print("initialize ppm");
+        PlayerPrefsManager ppm = FindObjectOfType<PlayerPrefsManager>();
+        print(ppm);
+        ppm.updateLevelStars(curLevel, curLevelStars);
+        print("successful pass level and stars info to prefs.");
+    }
+
+
 
 }
 
@@ -252,4 +283,5 @@ public enum GameState {
     Pause = 2,
     Playing = 3,
     MainMenu = 4,
+    GameQuit = 5,
 }
