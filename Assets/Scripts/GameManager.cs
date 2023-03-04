@@ -105,7 +105,9 @@ public class GameManager : Singleton<GameManager>
         woodInkUsed = 0.0f;
         rockInkUsed = 0.0f;
         vanishInkUsed = 0.0f;
-
+        
+        print("initialize ppm");
+        ppm = FindObjectOfType<PlayerPrefsManager>();
 
     }
 
@@ -158,9 +160,11 @@ public class GameManager : Singleton<GameManager>
     private void HandleVictory(){
         // SendAtVictory();
         // SendTrapInfoAtVictory();
+
         print("enter handle victory");
         updateCurrentLevel();
         passStarsToPrefs(currentLevel, currentLevelStars);
+
     }
 
     /*
@@ -225,7 +229,7 @@ public class GameManager : Singleton<GameManager>
     }
 
     public void updateCurrentLevelStars(int inValue){
-        CurrentLevelStars = inValue;
+        currentLevelStars = inValue;
     }
 
     public float getInk()
@@ -254,22 +258,43 @@ public class GameManager : Singleton<GameManager>
     }
 
     private void updateCurrentLevel(){
+        // get the name of current level, and make switch based on level name
         string currentSceneName = SceneManager.GetActiveScene().name;
-        print(currentSceneName);
+
         /*
-            Test version, level 1 only
+            @TODO: Add more cases in later development
+        */
+        switch(currentSceneName){
+            case "Level 1":
+                currentLevel = 1;
+                break;
+            case "Level 2":
+                currentLevel = 2;
+                break;
+            default:
+                break;
+        }
+        print(currentSceneName);
+
+        /*
+            Test version, set to level 1 only
+            remove below code after detailed implementation
         */
         currentLevel = 1;
 
     }
 
     private void passStarsToPrefs(int curLevel, int curLevelStars){
-        print("enter passStarsToPrefs");
-        print("initialize ppm");
-        PlayerPrefsManager ppm = FindObjectOfType<PlayerPrefsManager>();
-        print(ppm);
+        int gotStars = ppm.getStarsCollectedOnLevel(curLevel);
+        // print("already have stars:" + gotStars);
         ppm.updateLevelStars(curLevel, curLevelStars);
-        print("successful pass level and stars info to prefs.");
+        // print("successful pass level and stars info to prefs.");
+        gotStars = ppm.getStarsCollectedOnLevel(curLevel);
+        // print("already have stars:" + gotStars);
+    }
+
+    private void resetCurrentLevelStar(){
+        currentLevelStars = 0;
     }
 
 

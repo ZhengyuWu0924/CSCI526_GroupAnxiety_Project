@@ -10,23 +10,33 @@ public class PlayerPrefsManager : MonoBehaviour
     {
     }
 
-    public void updateLevelStars(int level, int stars){
-        print("enter update level stars");
-        string starCollectedLevel = "StarCollected_Level" + level.ToString();
-        PlayerPrefs.SetInt(starCollectedLevel, stars);
-        print("CurrentLevel is" + starCollectedLevel + " and stars are: " + stars);
-    }
+    
 
     public int getStarsCollectedOnLevel(int level){
         string starCollectedLevel = "StarCollected_Level" + level.ToString();
-
-        // get stars collected at target level, if no stars, return 0 as default
-        int starsCollected = PlayerPrefs.GetInt(starCollectedLevel, 0);
+        // get stars collected at target level
+        int starsCollected = PlayerPrefs.GetInt(starCollectedLevel);
         return starsCollected;
     }
 
+    public void updateLevelStars(int level, int stars){
+        string starCollectedLevel = "StarCollected_Level" + level.ToString();
+        int alreadyGot = getStarsCollectedOnLevel(level);
+        print("already got" + alreadyGot);
+
+        // set upper limit for star collection to three
+        if(alreadyGot < 3){
+            PlayerPrefs.SetInt(starCollectedLevel, stars);
+        }
+        print("CurrentLevel is" + starCollectedLevel + " and stars are: " + stars);
+    }
+
+    /*
+        Implemenmt the below function after discussion
+    */
     private void OnApplicationQuit(){
-        PlayerPrefs.DeleteAll();
+        // print("delete playerpref");
+        // PlayerPrefs.DeleteAll();
     }
 
 }
