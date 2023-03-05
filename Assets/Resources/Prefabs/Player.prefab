@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4916388965202034170}
   - component: {fileID: 4916388965202034169}
   - component: {fileID: 4916388965202034168}
+  - component: {fileID: -3619650506760501324}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -101,8 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpSpeed: 8
-  win: {fileID: 0}
-  lose: {fileID: 0}
+  remainInk: 100
 --- !u!50 &4916388965202034169
 Rigidbody2D:
   serializedVersion: 4
@@ -140,3 +140,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-3619650506760501324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4916388965202034151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f1c5c5ef50d5a24bbd2ebd11a7ed47c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InvincibleTime: 3
