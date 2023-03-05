@@ -17,8 +17,7 @@ public class HitTrapTrigger : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.CompareTag("Trap") && !isInvincible){
-            isInvincible = true;
-            Invoke("endInvincible", InvincibleTime);
+            startInvincible();
             gm.updateInk(33.3f);
             collisionTrap = collision.gameObject.name;
             switch(collisionTrap){
@@ -36,9 +35,19 @@ public class HitTrapTrigger : MonoBehaviour
             }
         }
     }
-
+    private void startInvincible()
+    {
+        isInvincible = true;
+        Color tmp = GetComponent<SpriteRenderer>().color;
+        tmp.a = 0.6f;
+        GetComponent<SpriteRenderer>().color = tmp;
+        Invoke("endInvincible", InvincibleTime);
+    }
     private void endInvincible()
     {
         isInvincible = false;
+        Color tmp = GetComponent<SpriteRenderer>().color;
+        tmp.a = 1;
+        GetComponent<SpriteRenderer>().color = tmp;
     }
 }
