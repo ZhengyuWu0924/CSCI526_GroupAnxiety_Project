@@ -16,8 +16,15 @@ public class GameManager : Singleton<GameManager>
         get { return remainInk; }
         set { remainInk = value; }
     }
-    public static int sceneRegenerationTimes;
 
+    public static float inkCostByTrap;
+    public static float InkCostByTrap{
+        get { return inkCostByTrap; }
+        set { inkCostByTrap = value; }
+    }
+
+
+    public static int sceneRegenerationTimes;
     public static int SceneRegenerationTimes{
         get { return sceneRegenerationTimes; }
         set { sceneRegenerationTimes = value; }
@@ -105,7 +112,8 @@ public class GameManager : Singleton<GameManager>
         woodInkUsed = 0.0f;
         rockInkUsed = 0.0f;
         vanishInkUsed = 0.0f;
-        
+        currentLevelStars = 0;
+
         print("initialize ppm");
         ppm = FindObjectOfType<PlayerPrefsManager>();
 
@@ -160,7 +168,7 @@ public class GameManager : Singleton<GameManager>
     private void HandleVictory(){
         // SendAtVictory();
         // SendTrapInfoAtVictory();
-
+        // SendUsageAtVictory();
         print("enter handle victory");
         updateCurrentLevel();
         passStarsToPrefs(currentLevel, currentLevelStars);
@@ -239,7 +247,7 @@ public class GameManager : Singleton<GameManager>
     
     private void SendAtVictory(){
         stg = GameObject.FindObjectOfType(typeof(SendToGoogle)) as SendToGoogle;
-        stg.Send(remainInk, sceneRegenerationTimes);
+        stg.Send(remainInk, sceneRegenerationTimes, currentLevel, currentLevelStars, inkCostByTrap);
     }
 
     private void SendAtLose(){
@@ -254,7 +262,7 @@ public class GameManager : Singleton<GameManager>
 
     private void SendUsageAtVictory(){
         pftg = GameObject.FindObjectOfType(typeof(PercentageFormToGoogle)) as PercentageFormToGoogle;
-        pftg.Send(platformInkUsed, gravityInkUsed, magnetInkUsed, woodInkUsed, rockInkUsed, vanishInkUsed);
+        pftg.Send(currentLevel, platformInkUsed, gravityInkUsed, magnetInkUsed, woodInkUsed, rockInkUsed, vanishInkUsed);
     }
 
     private void updateCurrentLevel(){

@@ -18,12 +18,15 @@ public class SendToGoogle : MonoBehaviour
 
 
 
-    private static IEnumerator Post(string sessionID, string inkUsage, string sceneRegenTimes){
+    private static IEnumerator Post(string sessionID, string inkUsage, string sceneRegenTimes, string levelId, string rewards, string inkByTrap){
         // Create the form and enter responses
         WWWForm form = new WWWForm();
         form.AddField("entry.366340186", sessionID);
+        form.AddField("entry.671983043", levelId);
         form.AddField("entry.161804138", inkUsage);
+        form.AddField("entry.210016202", inkByTrap);
         form.AddField("entry.515608870", sceneRegenTimes);
+        form.AddField("entry.772491702", rewards);
         // form.AddField("entry.1197245544", checkPoints);
         // form.AddField("entry.772491702", rewardCollected);
 
@@ -45,13 +48,13 @@ public class SendToGoogle : MonoBehaviour
         Send data to Google Form
         Call this method only when decide to send all data to Google
     */
-    public void Send(float inkUsed, int regenTimes){
+    public void Send(float inkUsed, int regenTimes, int curLevelId, int curRewards, float inkCostByTrap){
         // long _sessionID = DateTime.Now.Ticks;
         // Temp version
         // All data are temporary and fake
         // _inkUsage = inkUsed;
         // _sceneRegenTimes = regenTimes;
 
-        StartCoroutine(Post(DateTime.Now.Ticks.ToString(), inkUsed.ToString(), regenTimes.ToString()));
+        StartCoroutine(Post(DateTime.Now.Ticks.ToString(), inkUsed.ToString(), regenTimes.ToString(), curLevelId.ToString(), curRewards.ToString(), inkCostByTrap.ToString()));
     }
 }
