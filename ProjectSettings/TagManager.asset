@@ -15,6 +15,7 @@ TagManager:
   - PreviousLevel
   - MainMenu
   - Star
+  - Trap
   layers:
   - Default
   - TransparentFX
