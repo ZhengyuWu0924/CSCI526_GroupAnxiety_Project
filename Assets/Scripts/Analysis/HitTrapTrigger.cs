@@ -18,7 +18,7 @@ public class HitTrapTrigger : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.CompareTag("Trap") && !isInvincible){
             startInvincible();
-            gm.updateInk(33.3f);
+            gm.updateInk(GetComponent<PlayerController>().remainInk * 0.333f);
             collisionTrap = collision.gameObject.name;
             switch(collisionTrap){
                 case "Trap0":
