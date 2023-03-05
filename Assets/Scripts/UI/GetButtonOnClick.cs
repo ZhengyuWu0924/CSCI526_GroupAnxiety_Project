@@ -13,7 +13,7 @@ public class GetButtonOnClick : MonoBehaviour
     {
         drawingTool = GameObject.Find("DrawingTool").GetComponent<DrawingTool>();
         button = GetComponent<Button>();
-        buttonPrefab = Resources.Load("Prefabs/" + gameObject.name.Replace("Button", "")) as GameObject;
+        buttonPrefab = Resources.Load("Prefabs/DrawingTools/" + gameObject.name.Replace("Button", "")) as GameObject;
         button.onClick.AddListener(() => drawingTool.SwitchTools(buttonPrefab));
     }
 }

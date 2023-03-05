@@ -284,7 +284,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2732d5e8a679e0d439bd37669b423978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  player: {fileID: 1715473163}
+  mainCamera: {fileID: 2120548078}
+  levelUI: {fileID: 1130104373}
   trapsHitted: 
 --- !u!4 &360380513
 Transform:
@@ -1301,6 +1303,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1945202401}
     - target: {fileID: 4916388965202034170, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
+      propertyPath: remainInk
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4916388965202034170, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 360380512}
@@ -1481,6 +1487,11 @@ Transform:
   m_Father: {fileID: 1381369651}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1130104373 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6179236875731160389, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+  m_PrefabInstance: {fileID: 1945202400}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1138333877
 GameObject:
   m_ObjectHideFlags: 0
@@ -2459,7 +2470,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b53f56869748c9b4ab0b9c17fb80131e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  remainLife: 5
 --- !u!114 &1715473165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2954,3 +2964,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 583cc358a2453bd4e92de1c9201f2dd0, type: 3}
+--- !u!1 &2120548078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5871847943347777874, guid: 965168e90dc583640ad2b63f08f0a6f4, type: 3}
+  m_PrefabInstance: {fileID: 320498532}
+  m_PrefabAsset: {fileID: 0}
