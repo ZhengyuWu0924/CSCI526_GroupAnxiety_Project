@@ -4,20 +4,24 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] public GameObject player;
+    private GameManager gameManager;
+    private GameObject player;
     private Vector3 moveTemp;
 
-    [SerializeField] float xSpeed = 5f;
-    [SerializeField] float ySpeed = 8f;
-    [SerializeField] float xDifference;
-    [SerializeField] float yDifference;
+    public float xSpeed = 5f;
+    public float ySpeed = 8f;
+    public float xDifference;
+    public float yDifference;
+    public float movementThreshold = 2f;
 
-    [SerializeField] float movementThreshold = 2f;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        gameManager = FindObjectOfType<GameManager>();
+    }
+
+    private void Start()
+    {
+        player = gameManager.player;
     }
 
     // Update is called once per frame

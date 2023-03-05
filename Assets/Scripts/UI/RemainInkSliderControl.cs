@@ -7,7 +7,7 @@ public class RemainInkSliderControl : MonoBehaviour
 {
 
     private Slider slider;
-    void Start()
+    void Awake()
     {
         slider = GetComponent<Slider>();
     }
@@ -16,5 +16,10 @@ public class RemainInkSliderControl : MonoBehaviour
     public void UpdateSlider(float remainInk)
     {
         slider.value = remainInk;
+    }
+
+    public void InitializedSlider(float remainInk)
+    {
+        slider.maxValue = remainInk;
     }
 }

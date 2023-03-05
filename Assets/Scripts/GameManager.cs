@@ -8,7 +8,10 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class GameManager : Singleton<GameManager>
 {
-    public GameObject Player;
+    public GameObject player;
+    public GameObject mainCamera;
+    public GameObject levelUI;
+
 
     public static float remainInk;
     public GameState State {get; private set;}
@@ -42,7 +45,7 @@ public class GameManager : Singleton<GameManager>
         set { currentLevelStars = value;}
     }
 
-    public int[] trapsHitted;
+    [HideInInspector] public int[] trapsHitted;
     public int this[int index]{
         get { return trapsHitted[index]; }
         set { trapsHitted[index] = value; }
@@ -105,7 +108,6 @@ public class GameManager : Singleton<GameManager>
     // Initialize game status
     void Start()
     {
-        remainInk = 100;
         platformInkUsed = 0.0f;
         gravityInkUsed = 0.0f;
         magnetInkUsed = 0.0f;
@@ -228,6 +230,16 @@ public class GameManager : Singleton<GameManager>
         GameObject.Find("RemaimInkSlider").GetComponent<RemainInkSliderControl>().UpdateSlider(remainInk);
     }
 
+    public void setInk(float ink)
+    {
+        remainInk = ink;
+
+
+        GameObject.Find("RemainInkText").GetComponent<TextMeshProUGUI>().SetText("Remain Ink: " + remainInk.ToString("0.0"));
+        GameObject.Find("RemaimInkSlider").GetComponent<RemainInkSliderControl>().InitializedSlider(remainInk);
+        GameObject.Find("RemaimInkSlider").GetComponent<RemainInkSliderControl>().UpdateSlider(remainInk);
+    }
+
     public void resetInk(){
         remainInk = 100;
     }
@@ -252,7 +264,7 @@ public class GameManager : Singleton<GameManager>
 
     private void SendAtLose(){
         dtg = GameObject.FindObjectOfType(typeof(DeathFormToGoogle)) as DeathFormToGoogle;
-        dtg.Send(Player.transform.position);
+        dtg.Send(player.transform.position);
     }
 
     private void SendTrapInfoAtVictory(){

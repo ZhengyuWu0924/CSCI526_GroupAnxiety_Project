@@ -5,24 +5,34 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Player Movement")]
+    [Header("Player Settings")]
     public float moveSpeed = 5f;
     public float jumpSpeed = 8f;
+    public float remainInk = 100f;
 
     private Rigidbody2D player;
     private bool isOnGround;
     private GameManager gameManager;
 
-    // need to change
-    [SerializeField] public GameObject win;
-    [SerializeField] public GameObject lose;
-    
+    private GameObject levelUI;
+    private GameObject victoryScreen;
+    private GameObject loseScreen;
+
+    private void Awake()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
 
     void Start()
     {
-        player = GetComponent<Rigidbody2D>();
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        player = gameManager.player.GetComponent<Rigidbody2D>();
         isOnGround = true;
+
+        gameManager.setInk(remainInk);
+
+        levelUI = gameManager.levelUI;
+        victoryScreen = levelUI.transform.Find("VictoryScreen").gameObject;
+        loseScreen = levelUI.transform.Find("LoseScreen").gameObject;
     }
 
     
@@ -51,7 +61,7 @@ public class PlayerController : MonoBehaviour
 
         if (gameManager.getInk() <= 0)
         {
-            lose.SetActive(true);
+            loseScreen.SetActive(true);
         }
 
     }
@@ -66,7 +76,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.tag == "Win")
         {
-            win.SetActive(true);
+            victoryScreen.SetActive(true);
         }
         else if(collision.tag == "NextLevel")
         {
