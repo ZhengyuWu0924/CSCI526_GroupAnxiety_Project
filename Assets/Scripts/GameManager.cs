@@ -12,13 +12,20 @@ public class GameManager : Singleton<GameManager>
     public GameObject mainCamera;
     public GameObject levelUI;
 
+    public GameState state;
+    public GameState State {
+        get { return state; } 
+        set { state = value; }
+    }
 
     public static float remainInk;
-    public GameState State {get; private set;}
+    
     public static float RemainInk{
         get { return remainInk; }
         set { remainInk = value; }
     }
+
+    
 
     public static float inkCostByTrap;
     public static float InkCostByTrap{
@@ -115,8 +122,11 @@ public class GameManager : Singleton<GameManager>
         rockInkUsed = 0.0f;
         vanishInkUsed = 0.0f;
         currentLevelStars = 0;
-
-        print("initialize ppm");
+        trapsHitted = new int[3];
+        stg = GameObject.FindObjectOfType(typeof(SendToGoogle)) as SendToGoogle;
+        dtg = GameObject.FindObjectOfType(typeof(DeathFormToGoogle)) as DeathFormToGoogle;
+        tftg = GameObject.FindObjectOfType(typeof(TrapFormToGoogle)) as TrapFormToGoogle;
+        pftg = GameObject.FindObjectOfType(typeof(PercentageFormToGoogle)) as PercentageFormToGoogle;
         ppm = FindObjectOfType<PlayerPrefsManager>();
 
     }
@@ -139,13 +149,14 @@ public class GameManager : Singleton<GameManager>
         a specific object if wants to trigger it in game scene. related handle function
         will be called based on the state parsed in.
     */
-    public void UpdateGameState(GameState newState){
-        State = newState;
+    public void UpdateGameState(){
+        // State = newState;
         switch(State){
             case GameState.Victory:
                 HandleVictory();
                 break;
             case GameState.Lose:
+                HandleLose();
                 break;
             case GameState.Pause:
                 break;
@@ -159,6 +170,7 @@ public class GameManager : Singleton<GameManager>
                 // throw new ArgumentOutOfRangeException(nameof(State), State, null);
                 break;
         }
+        State = GameState.Default;
     }
 
     /*
@@ -168,11 +180,10 @@ public class GameManager : Singleton<GameManager>
     */
 
     private void HandleVictory(){
-        // SendAtVictory();
-        // SendTrapInfoAtVictory();
-        // SendUsageAtVictory();
-        print("enter handle victory");
         updateCurrentLevel();
+        SendAtVictory();
+        SendTrapInfoAtVictory();
+        SendUsageAtVictory();
         passStarsToPrefs(currentLevel, currentLevelStars);
 
     }
@@ -258,22 +269,18 @@ public class GameManager : Singleton<GameManager>
     } 
     
     private void SendAtVictory(){
-        stg = GameObject.FindObjectOfType(typeof(SendToGoogle)) as SendToGoogle;
         stg.Send(remainInk, sceneRegenerationTimes, currentLevel, currentLevelStars, inkCostByTrap);
     }
 
     private void SendAtLose(){
-        dtg = GameObject.FindObjectOfType(typeof(DeathFormToGoogle)) as DeathFormToGoogle;
         dtg.Send(player.transform.position);
     }
 
     private void SendTrapInfoAtVictory(){
-        tftg = GameObject.FindObjectOfType(typeof(TrapFormToGoogle)) as TrapFormToGoogle;
         tftg.Send(trapsHitted);
     }
 
     private void SendUsageAtVictory(){
-        pftg = GameObject.FindObjectOfType(typeof(PercentageFormToGoogle)) as PercentageFormToGoogle;
         pftg.Send(currentLevel, platformInkUsed, gravityInkUsed, magnetInkUsed, woodInkUsed, rockInkUsed, vanishInkUsed);
     }
 
@@ -291,6 +298,9 @@ public class GameManager : Singleton<GameManager>
             case "Level 2":
                 currentLevel = 2;
                 break;
+            case "Level 3":
+                currentLevel = 3;
+                break;
             default:
                 break;
         }
@@ -306,11 +316,8 @@ public class GameManager : Singleton<GameManager>
 
     private void passStarsToPrefs(int curLevel, int curLevelStars){
         int gotStars = ppm.getStarsCollectedOnLevel(curLevel);
-        // print("already have stars:" + gotStars);
         ppm.updateLevelStars(curLevel, curLevelStars);
-        // print("successful pass level and stars info to prefs.");
         gotStars = ppm.getStarsCollectedOnLevel(curLevel);
-        // print("already have stars:" + gotStars);
     }
 
     private void resetCurrentLevelStar(){
@@ -323,10 +330,11 @@ public class GameManager : Singleton<GameManager>
 
 
 public enum GameState {
-    Victory = 0,
-    Lose = 1,
-    Pause = 2,
-    Playing = 3,
-    MainMenu = 4,
-    GameQuit = 5,
+    Default = 0,
+    Victory = 1,
+    Lose = 2,
+    Pause = 3,
+    Playing = 4,
+    MainMenu = 5,
+    GameQuit = 6,
 }
