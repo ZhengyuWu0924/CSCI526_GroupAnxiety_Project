@@ -211,12 +211,26 @@ public class DrawingTool : MonoBehaviour
         else
         {
             // add remain ink
+           
             float distance = Vector2.Distance(pos, drawnObject.points[^1]);
             totalDrawDistance += distance;
             if (distance > drawnObject.linePointsMinStep)
             {
                 GameManager.Instance.updateInk(distance * chosenPen.lineCostFactor);
                 drawnObject.AddPoint(pos);
+            }
+            switch(chosenPen.penName){
+                case "PlatformPen":
+                    GameManager.platformInkUsed += distance * chosenPen.lineCostFactor;
+                    break;
+                case "RockPen":
+                    GameManager.rockInkUsed += distance * chosenPen.lineCostFactor;
+                    break;
+                case "WoodPen":
+                    GameManager.woodInkUsed += distance * chosenPen.lineCostFactor;
+                    break;
+                default:
+                    break;
             }            
         }
     }
@@ -261,12 +275,25 @@ public class DrawingTool : MonoBehaviour
                 {
                     chosenBrush.changeProperties(hit.transform.gameObject);
                     GameManager.Instance.updateInk(chosenBrush.brushCost);
+                    switch(chosenBrush.brushName){
+                        case "GravityBrush":
+                            GameManager.gravityInkUsed += chosenBrush.brushCost;
+                            break;
+                        case "MagnetBrush":
+                            GameManager.magnetInkUsed += chosenBrush.brushCost;
+                            break;
+                        default:
+                            break;
+                        
+                    }
                 }
             }
             if (chosenBrush.name == "EraserBrush" && hit.transform.CompareTag("Drawn Object"))
             {
                 chosenBrush.changeProperties(hit.transform.gameObject);
                 GameManager.Instance.updateInk(chosenBrush.brushCost);
+                // update eraser brush cost
+                GameManager.eraserInkUsed += chosenBrush.brushCost;
             }
             else if (hit.transform.CompareTag("Platform Object"))
             {

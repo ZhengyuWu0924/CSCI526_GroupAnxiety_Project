@@ -97,6 +97,12 @@ public class GameManager : Singleton<GameManager>
         set { vanishInkUsed = value; }
     }
 
+    public static float eraserInkUsed;
+    public static float EraserInkUsed{
+        get { return eraserInkUsed; }
+        set { eraserInkUsed = value; }
+    }
+
 
     // ****** File Refference Declarations ******
     SendToGoogle stg;
@@ -121,6 +127,7 @@ public class GameManager : Singleton<GameManager>
         woodInkUsed = 0.0f;
         rockInkUsed = 0.0f;
         vanishInkUsed = 0.0f;
+        eraserInkUsed = 0.0f;
         currentLevelStars = 0;
         trapsHitted = new int[3];
         stg = GameObject.FindObjectOfType(typeof(SendToGoogle)) as SendToGoogle;
