@@ -33,6 +33,15 @@ public class HitTrapTrigger : MonoBehaviour
                 default:
                     break;
             }
+            /*
+                Character dies if remain ink less than 0 after hitted a trap
+            */
+            if(GetComponent<PlayerController>().remainInk <= 0){
+                // update game state to lose state
+                // and trigger 
+                gm.state = GameState.Lose;
+                gm.UpdateGameState();
+            }
         }
     }
     private void StartInvincible()
