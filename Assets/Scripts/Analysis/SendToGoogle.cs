@@ -27,8 +27,6 @@ public class SendToGoogle : MonoBehaviour
         form.AddField("entry.210016202", inkByTrap);
         form.AddField("entry.515608870", sceneRegenTimes);
         form.AddField("entry.772491702", rewards);
-        // form.AddField("entry.1197245544", checkPoints);
-        // form.AddField("entry.772491702", rewardCollected);
 
         // Send responses and verify result
         using (UnityWebRequest www = UnityWebRequest.Post(URL, form)){
