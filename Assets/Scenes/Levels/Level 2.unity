@@ -442,6 +442,7 @@ GameObject:
   - component: {fileID: 360380512}
   - component: {fileID: 360380514}
   - component: {fileID: 360380515}
+  - component: {fileID: 360380516}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -461,7 +462,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2732d5e8a679e0d439bd37669b423978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  player: {fileID: 1715473163}
+  mainCamera: {fileID: 1234099302}
+  levelUI: {fileID: 1762625033}
   trapsHitted: 
 --- !u!4 &360380513
 Transform:
@@ -500,6 +503,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a61e7719cb71a24a9fece6b93c32f6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &360380516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360380511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99509263518a2dc47abbaae4f7f527c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &497519723
@@ -1923,6 +1938,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1234099302 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5871847943347777874, guid: 965168e90dc583640ad2b63f08f0a6f4, type: 3}
+  m_PrefabInstance: {fileID: 320498532}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1381369650
 GameObject:
   m_ObjectHideFlags: 0
@@ -2396,7 +2416,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b53f56869748c9b4ab0b9c17fb80131e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  remainLife: 5
 --- !u!114 &1715473165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2413,6 +2432,11 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 957471778074010176, guid: 393ce3c46e7d546458b5e9f454cc4266, type: 3}
   m_PrefabInstance: {fileID: 2066706535}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1762625033 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6179236875731160389, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+  m_PrefabInstance: {fileID: 1945202400}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1775454696
 GameObject:

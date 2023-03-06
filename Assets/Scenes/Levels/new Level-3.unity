@@ -1303,7 +1303,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2732d5e8a679e0d439bd37669b423978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  player: {fileID: 1715473163}
+  mainCamera: {fileID: 2142977773}
+  levelUI: {fileID: 1435264762}
   trapsHitted: 
 --- !u!4 &360380513
 Transform:
@@ -5501,6 +5503,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1435264762 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6179236875731160389, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+  m_PrefabInstance: {fileID: 1945202400}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1437037264 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7307871067185668520, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
@@ -6343,7 +6350,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b53f56869748c9b4ab0b9c17fb80131e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  remainLife: 5
 --- !u!114 &1715473165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8388,6 +8394,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 393ce3c46e7d546458b5e9f454cc4266, type: 3}
+--- !u!1 &2142977773 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5871847943347777874, guid: 965168e90dc583640ad2b63f08f0a6f4, type: 3}
+  m_PrefabInstance: {fileID: 320498532}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2144046389
 PrefabInstance:
   m_ObjectHideFlags: 0
