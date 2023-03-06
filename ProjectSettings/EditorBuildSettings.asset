@@ -14,52 +14,22 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/Tutorials/Tutorial 1.unity
-    guid: 24d1787e0389843c3b676be147933ded
-  - enabled: 0
-    path: Assets/Scenes/Tutorials/Tutorial 2.unity
-    guid: 961f4e51e879b4149a9e07a1383de318
-  - enabled: 0
-    path: Assets/Scenes/Tutorials/Tutorial 3.unity
-    guid: 3323bdb76334f4536b311a460b449770
-  - enabled: 0
-    path: Assets/Scenes/Tutorials/Tutorial 4.unity
-    guid: 3f45130f85313db4fa916d6e27a809e4
   - enabled: 1
     path: Assets/Scenes/LevelSelection.unity
     guid: 05bca5dfdbdaa49f68c14033d1d20dec
-  - enabled: 0
-    path: Assets/Scenes/Levels/new Level-1(Tutorial).unity
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 1.unity
     guid: 73498925f9838407dbe40cdd30ef74cc
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 1.unity
-    guid: f3a799982be4b4fcbadf069c5ca29de3
-  - enabled: 1
     path: Assets/Scenes/Levels/Level 2.unity
-    guid: 5a0ed437ebc314b1ea70ee7be0b9bdeb
+    guid: a0e0795a9c20f4ca2a78a0cdf5621f41
   - enabled: 1
     path: Assets/Scenes/Levels/Level 3.unity
-    guid: 69a884883310d4be3aeee590e4895f8c
+    guid: ea7f847c379b9464ca23bc059137bd45
   - enabled: 1
     path: Assets/Scenes/Levels/Level 4.unity
-    guid: 709fe8aae287d4572ba35187bfec62d3
-  - enabled: 1
-    path: Assets/Scenes/Levels/Level 5.unity
-    guid: a8f26797f23df419eaa14003dff2ca3f
-  - enabled: 1
-    path: Assets/Scenes/Levels/Level 6.unity
-    guid: 91994d40d1724400c94a1fde9827631c
-  - enabled: 1
-    path: Assets/Scenes/Levels/Level 7.unity
-    guid: a571b3e319a3f447d9b99583152a2e65
-  - enabled: 1
-    path: Assets/Scenes/Levels/Level 8.unity
-    guid: b9dafd3b433f94ceea2e3b4bc60d7659
-  - enabled: 1
-    path: Assets/Scenes/Levels/Level 9.unity
-    guid: bd6b99efc2fc1481590bee480f28bcbb
+    guid: 762b7405e43e54947b78d2f6a4eecd24
   m_configObjects: {}
