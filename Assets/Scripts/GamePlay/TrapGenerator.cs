@@ -7,6 +7,7 @@ public class TrapGenerator : MonoBehaviour
     public GameObject objectPrefab;
     public Vector3 gereratePosition = new Vector3(0, -5, 0);
     public float generationDelay;
+    public float destroyRange = -5;
     
     private float timer;
 
@@ -25,6 +26,13 @@ public class TrapGenerator : MonoBehaviour
         {
             Instantiate(objectPrefab, gereratePosition, Quaternion.identity);
             timer = 0f;
+
+            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Trap")){
+                if (obj.transform.position.y < destroyRange){
+                    Destroy(obj);
+                }
+            }
         }
+
     }
 }
