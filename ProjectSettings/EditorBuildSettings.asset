@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelSelection.unity
     guid: 05bca5dfdbdaa49f68c14033d1d20dec
   - enabled: 0
-    path: Assets/Scenes/Levels/Tutorial-1.unity
+    path: Assets/Scenes/Levels/new Level-1(Tutorial).unity
     guid: 73498925f9838407dbe40cdd30ef74cc
   - enabled: 0
     path: 
