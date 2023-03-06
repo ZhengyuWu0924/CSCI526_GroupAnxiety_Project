@@ -5,7 +5,8 @@ using UnityEngine;
 public class SwitchesController : MonoBehaviour
 {
     public List<GameObject> objectsToDisappear;
-    private bool isOn = false; 
+    //private bool isOn = false; 
+    public List<bool> isOn;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,16 +23,35 @@ public class SwitchesController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Mutable Object") || collision.gameObject.CompareTag("Player"))
         {
-            isOn = !isOn;
-            foreach (GameObject obj in objectsToDisappear)
+            //isOn = !isOn;
+            //foreach (GameObject obj in objectsToDisappear)
+            //{
+            //    SpriteRenderer renderer = obj.GetComponent<SpriteRenderer>();
+            //    BoxCollider2D collider = obj.GetComponent<BoxCollider2D>();
+
+            //    if the switch is on, make the game object transparent and disable the collider
+            //    if (true)
+            //    {
+            //        renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 0f);
+            //        collider.enabled = false;
+            //    }
+            //    if the switch is off, make the game object fully visible and enable the collider
+            //    else
+            //    {
+            //        renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 1f);
+            //        collider.enabled = true;
+            //    }
+            //}
+            for (int i = 0; i < objectsToDisappear.Count; i++)
             {
-                SpriteRenderer renderer = obj.GetComponent<SpriteRenderer>();
-                BoxCollider2D collider = obj.GetComponent<BoxCollider2D>();
+                isOn[i] = !isOn[i];
+                SpriteRenderer renderer = objectsToDisappear[i].GetComponent<SpriteRenderer>();
+                BoxCollider2D collider = objectsToDisappear[i].GetComponent<BoxCollider2D>();
 
                 // if the switch is on, make the game object transparent and disable the collider
-                if (isOn)
+                if (isOn[i])
                 {
-                    renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 0f);
+                    renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 0.1f);
                     collider.enabled = false;
                 }
                 // if the switch is off, make the game object fully visible and enable the collider
