@@ -6017,6 +6017,60 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3596477295115025482, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+      propertyPath: m_text
+      value: 'Cost: 2/Unit'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3596477295709539927, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+      propertyPath: m_text
+      value: 'Cost: 3/Tap'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3596477296445361210, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+      propertyPath: m_text
+      value: 'Cost: 5/Unit'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3596477296891011736, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+      propertyPath: m_text
+      value: 'Cost: 0.5/Unit'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3596477296921657310, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+      propertyPath: m_text
+      value: 'Cost: 1/Tap'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3596477297227010021, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+      propertyPath: m_text
+      value: 'Cost: 2/Tap'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201735426895709101, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+      propertyPath: m_text
+      value: 'Platform Pen
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201735427189637234, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+      propertyPath: m_text
+      value: 'Eraser For Pen
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201735427488788553, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+      propertyPath: m_text
+      value: 'Magnet Brush
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201735427525913871, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+      propertyPath: m_text
+      value: 'Wood Pen
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201735428190483421, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+      propertyPath: m_text
+      value: 'Rock Pen
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 5201735428244631120, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6064,6 +6118,12 @@ PrefabInstance:
     - target: {fileID: 5201735428640979510, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201735428701110720, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+      propertyPath: m_text
+      value: 'Gravity Brush
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 6179236875731160385, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
       propertyPath: m_Pivot.x
