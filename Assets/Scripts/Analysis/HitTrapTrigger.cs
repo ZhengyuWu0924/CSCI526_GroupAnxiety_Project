@@ -9,6 +9,9 @@ public class HitTrapTrigger : MonoBehaviour
     private string collisionTrap;
     [SerializeField]
     private float invincibleTime = 3;
+    [SerializeField]
+    private float invincibleAlpha = 0.4f;
+
     private bool isInvincible = false;
     void Start(){
         gm = FindObjectOfType<GameManager>();
@@ -55,10 +58,14 @@ public class HitTrapTrigger : MonoBehaviour
     {
         for(int i=0; i<invincibleTime; i++)
         {
-            StartCoroutine(FadeTo(0.6f, 0.5f));
-            yield return new WaitForSeconds(0.5f);
-            StartCoroutine(FadeTo(1, 0.5f));
-            yield return new WaitForSeconds(0.5f);
+            StartCoroutine(FadeTo(invincibleAlpha, 0.25f));
+            yield return new WaitForSeconds(0.25f);
+            StartCoroutine(FadeTo(1, 0.25f));
+            yield return new WaitForSeconds(0.25f);
+            StartCoroutine(FadeTo(invincibleAlpha, 0.25f));
+            yield return new WaitForSeconds(0.25f);
+            StartCoroutine(FadeTo(1, 0.25f));
+            yield return new WaitForSeconds(0.25f);
         }
         isInvincible = false;
     }
