@@ -11,7 +11,6 @@ public class TrapFormToGoogle : MonoBehaviour
     private static IEnumerator Post(int[] trapArr){
         // Create the form and enter responses
         WWWForm form = new WWWForm();
-
         // trap 0 hitted times
         form.AddField("entry.1464565645", trapArr[0].ToString());
         // trap 1 hitted times
