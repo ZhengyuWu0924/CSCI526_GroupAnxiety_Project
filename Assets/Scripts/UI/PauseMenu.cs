@@ -35,6 +35,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuPanel.SetActive(true);
         Time.timeScale = 0f;
         pause = true;
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
     public void Resume()
@@ -42,6 +43,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuPanel.SetActive(false);
         Time.timeScale = 1f;
         pause = false;
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
     public void MainMenu()
@@ -51,6 +53,7 @@ public class PauseMenu : MonoBehaviour
         lose.SetActive(false);
         Resume();
         SceneManager.LoadScene("Main Menu");
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
     
 
@@ -60,6 +63,7 @@ public class PauseMenu : MonoBehaviour
         win.SetActive(false);
         lose.SetActive(false);
         SceneManager.LoadScene("LevelSelection");
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
     public void NextLevel()
