@@ -52,8 +52,8 @@ public class PauseMenu : MonoBehaviour
         win.SetActive(false);
         lose.SetActive(false);
         Resume();
-        SceneManager.LoadScene("Main Menu");
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        SceneManager.LoadScene("Main Menu");
     }
     
 
@@ -62,8 +62,8 @@ public class PauseMenu : MonoBehaviour
         Resume();
         win.SetActive(false);
         lose.SetActive(false);
-        SceneManager.LoadScene("LevelSelection");
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        SceneManager.LoadScene("LevelSelection");
     }
 
     public void NextLevel()
@@ -71,7 +71,7 @@ public class PauseMenu : MonoBehaviour
         string sceneName = SceneManager.GetActiveScene().name;
         // Debug.Log("Current scene name: " + sceneName);
         int nextLevel = int.Parse(sceneName.Substring(6)) + 1;
-        SceneManager.LoadScene("Level " + nextLevel.ToString());
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        SceneManager.LoadScene("Level " + nextLevel.ToString());
     }
 }

@@ -10,6 +10,7 @@ public class LevelMenu : MonoBehaviour
 
     void Start()
     {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         playerPrefsManager = GameObject.FindObjectOfType(typeof(PlayerPrefsManager)) as PlayerPrefsManager;
         Refresh();
     }
