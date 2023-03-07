@@ -822,6 +822,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 858242140}
     - target: {fileID: 4916388965202034170, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
+      propertyPath: remainInk
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4916388965202034170, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 0}
