@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 8260172482341061505}
   - component: {fileID: 8260172482341061507}
   - component: {fileID: 8260172482341061506}
+  - component: {fileID: 8366058810680263932}
+  - component: {fileID: 3326703736636925217}
+  - component: {fileID: 1890306301351770127}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -49,6 +52,7 @@ MonoBehaviour:
   player: {fileID: 0}
   mainCamera: {fileID: 0}
   levelUI: {fileID: 0}
+  state: 0
   trapsHitted: 
 --- !u!114 &8260172482341061507
 MonoBehaviour:
@@ -72,5 +76,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a61e7719cb71a24a9fece6b93c32f6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8366058810680263932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8260172482341061566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18523040521026c46b736d0945f8f519, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3326703736636925217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8260172482341061566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 212b0ad394a664945998b22c8c771004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1890306301351770127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8260172482341061566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99509263518a2dc47abbaae4f7f527c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

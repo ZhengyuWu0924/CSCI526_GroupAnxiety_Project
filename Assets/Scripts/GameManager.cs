@@ -298,26 +298,27 @@ public class GameManager : Singleton<GameManager>
         /*
             @TODO: Add more cases in later development
         */
-        switch(currentSceneName){
-            case "Level 1":
-                currentLevel = 1;
-                break;
-            case "Level 2":
-                currentLevel = 2;
-                break;
-            case "Level 3":
-                currentLevel = 3;
-                break;
-            default:
-                break;
-        }
+        //switch(currentSceneName){
+        //    case "Level 1":
+        //        currentLevel = 1;
+        //        break;
+        //    case "Level 2":
+        //        currentLevel = 2;
+        //        break;
+        //    case "Level 3":
+        //        currentLevel = 3;
+        //        break;
+        //    default:
+        //        break;
+        //}
         print(currentSceneName);
+        currentLevel = int.Parse(currentSceneName.Substring(6));
 
         /*
             Test version, set to level 1 only
             remove below code after detailed implementation
         */
-        currentLevel = 1;
+        // currentLevel = 1;
 
     }
 
