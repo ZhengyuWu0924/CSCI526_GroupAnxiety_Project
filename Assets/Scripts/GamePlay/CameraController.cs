@@ -8,11 +8,12 @@ public class CameraController : MonoBehaviour
     private GameObject player;
     private Vector3 moveTemp;
 
-    public float xSpeed = 5f;
-    public float ySpeed = 8f;
-    public float xDifference;
-    public float yDifference;
-    public float movementThreshold = 2f;
+    private float maxSpeed = 15.0f;
+    private float xDifference;
+    private float yDifference;
+    private float movementThreshold = 2f;
+
+    
 
     private void Awake()
     {
@@ -31,20 +32,26 @@ public class CameraController : MonoBehaviour
         xDifference = player.transform.position.x >= transform.position.x ? calculateDifference(player.transform.position.x, transform.position.x) : 
                             calculateDifference(transform.position.x, player.transform.position.x);
 
+        yDifference = player.transform.position.y >= transform.position.y ? calculateDifference(player.transform.position.y, transform.position.y) :
+                            calculateDifference(transform.position.y, player.transform.position.y);
+
+        // auto adjust move speed
+        float speed = Mathf.Sqrt(xDifference * xDifference + yDifference * yDifference);
+        speed = Mathf.Min(speed, maxSpeed);
+
         if (xDifference >= movementThreshold)
         {
             moveTemp.x = player.transform.position.x;
             moveTemp.z = -10;
-            transform.position = Vector3.MoveTowards(transform.position, moveTemp, xSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, moveTemp, speed * Time.deltaTime);
         }
 
-        yDifference = player.transform.position.y >= transform.position.y ? calculateDifference(player.transform.position.y, transform.position.y) :
-                            calculateDifference(transform.position.y, player.transform.position.y);
+
         if (yDifference >= movementThreshold)
         {
             moveTemp.y = player.transform.position.y;
             moveTemp.z = -10;
-            transform.position = Vector3.MoveTowards(transform.position, moveTemp, ySpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, moveTemp, speed * Time.deltaTime);
         }
 
     }
