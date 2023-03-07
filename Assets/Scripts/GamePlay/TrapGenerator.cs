@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class TrapGenerator : MonoBehaviour
 {
-    public GameObject objectPrefab;
-    public Vector3 gereratePosition = new Vector3(0, -5, 0);
-    public float generationDelay;
-    public float destroyRange = -5;
+    [SerializeField]
+    private GameObject objectPrefab;
+    [SerializeField]
+    private float generationDelay;
+    [SerializeField]
+    private float destroyTime = 1;
     
     private float timer;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -24,15 +20,16 @@ public class TrapGenerator : MonoBehaviour
 
         if (timer >= generationDelay)
         {
-            Instantiate(objectPrefab, gereratePosition, Quaternion.identity);
+            GameObject trap = Instantiate(objectPrefab, gameObject.transform.position, objectPrefab.transform.rotation);
             timer = 0f;
-
-            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Trap")){
-                if (obj.transform.position.y < destroyRange){
-                    Destroy(obj);
-                }
-            }
+            StartCoroutine(TrapDestory(trap));
         }
 
+    }
+
+    IEnumerator TrapDestory(GameObject trap)
+    {
+        yield return new WaitForSeconds(destroyTime);
+        Destroy(trap);
     }
 }
