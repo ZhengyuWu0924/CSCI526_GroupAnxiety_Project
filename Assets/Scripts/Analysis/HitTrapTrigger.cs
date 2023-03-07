@@ -27,7 +27,7 @@ public class HitTrapTrigger : MonoBehaviour
                 case "Trap1":
                     gm.trapsHitted[1] += 1;
                     break;
-                case "Trap2":
+                case "CircleTrap(Clone)":
                     gm.trapsHitted[2] += 1;
                     break;
                 default:
