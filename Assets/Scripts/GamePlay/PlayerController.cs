@@ -101,7 +101,16 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.tag == "Checkpoint")
         {
-            if (currentCheckpoint == null)
+            Checkpoint collidedCheckPoint = collision.gameObject.GetComponent<Checkpoint>();
+            if (!collidedCheckPoint.activated)
+            {
+                collidedCheckPoint.activate();
+                currentCheckpoint = collision.gameObject;
+                respawnPoint = transform.position;
+            }
+            collidedCheckPoint.showText();
+
+            /*if (currentCheckpoint == null)
             {
                 currentCheckpoint = collision.gameObject;
                 respawnPoint = transform.position;
@@ -110,9 +119,16 @@ public class PlayerController : MonoBehaviour
             {
                 currentCheckpoint = collision.gameObject;
                 respawnPoint = transform.position;
-            }
+            }*/
 
         }
     }
-
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Checkpoint")
+        {
+            Checkpoint collidedCheckPoint = collision.gameObject.GetComponent<Checkpoint>();
+            collidedCheckPoint.clostText();
+        }
+    }
 }
