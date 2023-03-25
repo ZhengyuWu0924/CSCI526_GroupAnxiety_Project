@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpeedBoost : MonoBehaviour
+public class InfiniteInk : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public float speedBoost = 4f; 
-    public float powerUpDuration = 7f; 
-
-    private bool isPoweredUp = false;
-    private float originalSpeed;    
-
+    public float powerUpDuration = 7f;
+    private bool isPoweredUp = false; 
+    private float originalInk; 
+    private float powerUpEndTime;
+    private GameManager gameManager;
+    private void Start()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         //Debug.Log("collide");
@@ -19,26 +21,25 @@ public class SpeedBoost : MonoBehaviour
             // The player has picked up the powerup
             //Debug.Log("The player has picked up the powerup");
             isPoweredUp = true;
-            originalSpeed = other.gameObject.GetComponent<PlayerController>().moveSpeed;
-            other.gameObject.GetComponent<PlayerController>().moveSpeed = originalSpeed * speedBoost;
-            StartCoroutine(PowerUpTimer(other.gameObject));
+            originalInk = gameManager.getInk();
+            gameManager.setInk(1000000);
+            powerUpEndTime = Time.time + powerUpDuration;
+            StartCoroutine(PowerUpTimer());
             SpriteRenderer renderer = this.gameObject.GetComponent<SpriteRenderer>();
             BoxCollider2D collider = this.gameObject.GetComponent<BoxCollider2D>();
             renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 0.0f);
             collider.enabled = false;
-            /*gameObject.SetActive(false); */// Disable the powerup object
         }
     }
 
-    IEnumerator PowerUpTimer(GameObject player)
+    IEnumerator PowerUpTimer()
     {
-        Debug.Log("enter startcoroutine");
         yield return new WaitForSeconds(powerUpDuration);
-        Debug.Log("wait 7 seconed");
+
+
         // The powerup has expired
-        Debug.Log("The powerup has expired");
         isPoweredUp = false;
-        player.GetComponent<PlayerController>().moveSpeed = originalSpeed;
+        gameManager.setInk(originalInk);
         Destroy(this.gameObject);
     }
 }
