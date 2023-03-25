@@ -244,16 +244,28 @@ public class GameManager : Singleton<GameManager>
     public void updateInk(float ink)
     {
         remainInk -= ink;
-        GameObject.Find("RemainInkText").GetComponent<TextMeshProUGUI>().SetText("Remain Ink: " + remainInk.ToString("0.0"));
+        if (remainInk > 1000)
+        {
+            GameObject.Find("RemainInkText").GetComponent<TextMeshProUGUI>().SetText("Remain Ink: infinite");
+        }
+        else
+        {
+            GameObject.Find("RemainInkText").GetComponent<TextMeshProUGUI>().SetText("Remain Ink: " + remainInk.ToString("0.0"));
+        }
         GameObject.Find("RemaimInkSlider").GetComponent<RemainInkSliderControl>().UpdateSlider(remainInk);
+
     }
 
     public void setInk(float ink)
     {
         remainInk = ink;
-
-
-        GameObject.Find("RemainInkText").GetComponent<TextMeshProUGUI>().SetText("Remain Ink: " + remainInk.ToString("0.0"));
+        if (remainInk > 1000)
+        {
+            GameObject.Find("RemainInkText").GetComponent<TextMeshProUGUI>().SetText("Remain Ink: infinite");
+        }else
+        {
+            GameObject.Find("RemainInkText").GetComponent<TextMeshProUGUI>().SetText("Remain Ink: " + remainInk.ToString("0.0"));
+        }
         GameObject.Find("RemaimInkSlider").GetComponent<RemainInkSliderControl>().InitializedSlider(remainInk);
         GameObject.Find("RemaimInkSlider").GetComponent<RemainInkSliderControl>().UpdateSlider(remainInk);
     }
