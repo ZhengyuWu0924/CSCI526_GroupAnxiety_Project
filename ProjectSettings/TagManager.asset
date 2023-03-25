@@ -16,6 +16,7 @@ TagManager:
   - MainMenu
   - Star
   - Trap
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

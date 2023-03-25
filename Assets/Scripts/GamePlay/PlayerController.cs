@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D player;
     private bool isOnGround;
     private GameManager gameManager;
+    private Vector2 respawnPoint;
+    private GameObject currentCheckpoint;
 
     private GameObject levelUI;
     private GameObject victoryScreen;
@@ -33,6 +35,8 @@ public class PlayerController : MonoBehaviour
         levelUI = gameManager.levelUI;
         victoryScreen = levelUI.transform.Find("VictoryScreen").gameObject;
         loseScreen = levelUI.transform.Find("LoseScreen").gameObject;
+
+        respawnPoint = transform.position;
     }
 
     
@@ -64,6 +68,11 @@ public class PlayerController : MonoBehaviour
             loseScreen.SetActive(true);
         }
 
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            transform.position = respawnPoint;
+        }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -78,7 +87,7 @@ public class PlayerController : MonoBehaviour
         {
             victoryScreen.SetActive(true);
         }
-        else if(collision.tag == "NextLevel")
+        else if (collision.tag == "NextLevel")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
@@ -89,6 +98,20 @@ public class PlayerController : MonoBehaviour
         else if (collision.tag == "MainMenu")
         {
             SceneManager.LoadScene(0);
+        }
+        if (collision.tag == "Checkpoint")
+        {
+            if (currentCheckpoint == null)
+            {
+                currentCheckpoint = collision.gameObject;
+                respawnPoint = transform.position;
+            }
+            if (string.Compare(collision.gameObject.name.Substring(collision.gameObject.name.Length - 1, 1), currentCheckpoint.name.Substring(currentCheckpoint.name.Length - 1, 1), true) > 0)
+            {
+                currentCheckpoint = collision.gameObject;
+                respawnPoint = transform.position;
+            }
+
         }
     }
 
