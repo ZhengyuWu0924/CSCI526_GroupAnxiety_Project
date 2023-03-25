@@ -32,11 +32,8 @@ public class SpeedBoost : MonoBehaviour
 
     IEnumerator PowerUpTimer(GameObject player)
     {
-        Debug.Log("enter startcoroutine");
         yield return new WaitForSeconds(powerUpDuration);
-        Debug.Log("wait 7 seconed");
         // The powerup has expired
-        Debug.Log("The powerup has expired");
         isPoweredUp = false;
         player.GetComponent<PlayerController>().moveSpeed = originalSpeed;
         Destroy(this.gameObject);
