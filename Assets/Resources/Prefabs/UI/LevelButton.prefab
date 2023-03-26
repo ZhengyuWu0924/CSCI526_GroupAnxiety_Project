@@ -101,10 +101,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.45545566, g: 0.5040323, b: 0.8396226, a: 1}
-    m_HighlightedColor: {r: 0.45490196, g: 0.5058824, b: 0.8392157, a: 1}
-    m_PressedColor: {r: 0.45490196, g: 0.5058824, b: 0.8392157, a: 1}
-    m_SelectedColor: {r: 0.45490196, g: 0.5058824, b: 0.8392157, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -148,7 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e646111a3d6834f34b09d48de5a6c509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
   levelText: {fileID: 3968104178369938876}
   starBar: {fileID: 5976781041111097207}
 --- !u!1 &3968104178369938878
@@ -168,7 +167,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3968104178369938877
 RectTransform:
   m_ObjectHideFlags: 0
