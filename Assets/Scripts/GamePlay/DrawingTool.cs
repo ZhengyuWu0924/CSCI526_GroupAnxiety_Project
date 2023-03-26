@@ -104,7 +104,7 @@ public class DrawingTool : MonoBehaviour
                 Cursor.SetCursor(cantDrawSign, Vector2.zero, CursorMode.Auto);
                 GameObject chosenButton = GameObject.Find(pen.penName + "Button");
                 TextMeshProUGUI tmp = chosenButton.GetComponentInChildren<TextMeshProUGUI>();
-                tmp.SetText(tmp.text.Replace("-", ""));
+                //tmp.SetText(tmp.text.Replace("-", ""));
             }
             else
             {
@@ -113,14 +113,14 @@ public class DrawingTool : MonoBehaviour
                 {
                     GameObject chosenPenButton = GameObject.Find(chosenPen.penName + "Button");
                     TextMeshProUGUI buttonTmp = chosenPenButton.GetComponentInChildren<TextMeshProUGUI>();
-                    buttonTmp.SetText(buttonTmp.text.Replace("-", ""));
+                    //buttonTmp.SetText(buttonTmp.text.Replace("-", ""));
                     chosenPen = null;
                 }
                 if(chosenBrush != null)
                 {
                     GameObject chosenBrushButton = GameObject.Find(chosenBrush.brushName + "Button");
                     TextMeshProUGUI buttonTmp = chosenBrushButton.GetComponentInChildren<TextMeshProUGUI>();
-                    buttonTmp.SetText(buttonTmp.text.Replace("-", ""));
+                    //buttonTmp.SetText(buttonTmp.text.Replace("-", ""));
                     chosenBrush = null;
                 }
                 chosenBrush = null;
@@ -131,7 +131,7 @@ public class DrawingTool : MonoBehaviour
                 Cursor.SetCursor(pen.cursor, cursorHotsopt, CursorMode.Auto);
                 GameObject chosenButton = GameObject.Find(pen.penName + "Button");
                 TextMeshProUGUI tmp = chosenButton.GetComponentInChildren<TextMeshProUGUI>();
-                tmp.SetText("-" + tmp.text.Substring(0, tmp.text.IndexOf("\n")) + "-" + tmp.text.Substring(tmp.text.IndexOf("\n")));
+                //tmp.SetText("-" + tmp.text.Substring(0, tmp.text.IndexOf("\n")) + "-" + tmp.text.Substring(tmp.text.IndexOf("\n")));
             }
         }else if(toolPrefab.name.EndsWith("Brush"))
         {
@@ -144,7 +144,7 @@ public class DrawingTool : MonoBehaviour
                 Cursor.SetCursor(cantDrawSign, Vector2.zero, CursorMode.Auto);
                 GameObject chosenButton = GameObject.Find(brush.brushName + "Button");
                 TextMeshProUGUI tmp = chosenButton.GetComponentInChildren<TextMeshProUGUI>();
-                tmp.SetText(tmp.text.Replace("-", ""));
+                //tmp.SetText(tmp.text.Replace("-", ""));
             }
             else
             {
@@ -153,14 +153,14 @@ public class DrawingTool : MonoBehaviour
                 {
                     GameObject chosenPenButton = GameObject.Find(chosenPen.penName + "Button");
                     TextMeshProUGUI buttonTmp = chosenPenButton.GetComponentInChildren<TextMeshProUGUI>();
-                    buttonTmp.SetText(buttonTmp.text.Replace("-", ""));
+                    //buttonTmp.SetText(buttonTmp.text.Replace("-", ""));
                     chosenPen = null;
                 }
                 if (chosenBrush != null)
                 {
                     GameObject chosenBrushButton = GameObject.Find(chosenBrush.brushName + "Button");
                     TextMeshProUGUI buttonTmp = chosenBrushButton.GetComponentInChildren<TextMeshProUGUI>();
-                    buttonTmp.SetText(buttonTmp.text.Replace("-", ""));
+                    //buttonTmp.SetText(buttonTmp.text.Replace("-", ""));
                     chosenBrush = null;
                 }
                 //Change to new selected tool
@@ -170,7 +170,7 @@ public class DrawingTool : MonoBehaviour
                 Cursor.SetCursor(brush.cursor, cursorHotsopt, CursorMode.Auto);
                 GameObject chosenButton = GameObject.Find(brush.brushName + "Button");
                 TextMeshProUGUI tmp = chosenButton.GetComponentInChildren<TextMeshProUGUI>();
-                tmp.SetText("-" + tmp.text.Substring(0, tmp.text.IndexOf("\n")) + "-" + tmp.text.Substring(tmp.text.IndexOf("\n")));
+                //tmp.SetText("-" + tmp.text.Substring(0, tmp.text.IndexOf("\n")) + "-" + tmp.text.Substring(tmp.text.IndexOf("\n")));
             }
         }
     }
