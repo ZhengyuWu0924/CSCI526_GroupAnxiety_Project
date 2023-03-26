@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     private GameObject victoryScreen;
     private GameObject loseScreen;
 
+    private Animator playerAnimation;
+
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -28,6 +30,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         player = gameManager.player.GetComponent<Rigidbody2D>();
+        playerAnimation = GetComponent<Animator>();
         isOnGround = true;
 
         gameManager.setInk(remainInk);
@@ -64,6 +67,9 @@ public class PlayerController : MonoBehaviour
             player.velocity = new Vector2(player.velocity.x, jumpSpeed);
             isOnGround = false;
         }
+
+        playerAnimation.SetFloat("Speed", Mathf.Abs(player.velocity.x));
+        playerAnimation.SetBool("OnGround", isOnGround);
 
         if (gameManager.getInk() <= 0)
         {
