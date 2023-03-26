@@ -169,7 +169,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 60142599}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1317,7 +1317,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 535190389}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2351,7 +2351,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 746335655}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3293,7 +3293,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 977927001}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3488,7 +3488,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 990989754}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -4316,7 +4316,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1241070404}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -4538,7 +4538,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1284951647}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -5138,7 +5138,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1429651413}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
