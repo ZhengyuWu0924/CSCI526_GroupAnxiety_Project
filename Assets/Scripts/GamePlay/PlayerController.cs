@@ -165,7 +165,6 @@ public class PlayerController : MonoBehaviour
             if (!collidedCheckPoint.activated)
             {
                 collidedCheckPoint.activate();
-                currentCheckpoint = collision.gameObject;
                 respawnPoint = transform.position;
                 latestCheckpointInk = gameManager.getInk();
                 latestCheckpointNo.Add(int.Parse(collision.gameObject.name.Substring(collision.gameObject.name.Length - 1, 1)));
