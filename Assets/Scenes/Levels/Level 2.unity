@@ -321,7 +321,7 @@ PrefabInstance:
     - target: {fileID: 4916388965202034170, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
       propertyPath: lose
       value: 
-      objectReference: {fileID: 606190651}
+      objectReference: {fileID: 0}
     - target: {fileID: 4916388965202034170, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
       propertyPath: remainInk
       value: 30
@@ -1307,6 +1307,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2573286425133542681, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2686794351327817848, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2686794351327817848, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3343572585049891596, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
@@ -3395,11 +3403,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &606190651 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6179236876687515163, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
-  m_PrefabInstance: {fileID: 261450915}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &644459055
 GameObject:
   m_ObjectHideFlags: 0
@@ -6406,7 +6409,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18.4, y: 10.7}
+  m_AnchoredPosition: {x: 19.28, y: 10.7}
   m_SizeDelta: {x: 16.9556, y: 4.0528}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1564181602
