@@ -6,11 +6,13 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     [SerializeField] private GameObject textGameObject;
-    [SerializeField] private GameObject activatedBar;
     [SerializeField] private string text;
+    [SerializeField] private Sprite activatedSprite;
+    private SpriteRenderer spriteRenderer;
     public bool activated = false;
     private void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         if(text != null)
         {
             textGameObject.GetComponent<TextMeshPro>().text = text;
@@ -38,6 +40,6 @@ public class Checkpoint : MonoBehaviour
     public void activate()
     {
         activated = true;
-        activatedBar.SetActive(true);
+        spriteRenderer.sprite = activatedSprite;
     }
 }

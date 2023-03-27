@@ -121,8 +121,8 @@ public class DrawingTool : MonoBehaviour
                     GameObject chosenBrushButton = GameObject.Find(chosenBrush.brushName + "Button");
                     //TextMeshProUGUI buttonTmp = chosenBrushButton.GetComponentInChildren<TextMeshProUGUI>();
                     //buttonTmp.SetText(buttonTmp.text.Replace("-", ""));
-                    GameObject butImg = GameObject.Find(chosenBrush.brushName + "Image");
-                    butImg.SetActive(false);
+                    //GameObject butImg = GameObject.Find(chosenBrush.brushName + "Image");
+                    //butImg.SetActive(false);
                     chosenBrush = null;
                 }
                 chosenBrush = null;
