@@ -1479,6 +1479,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+--- !u!1 &261450916 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5037194635817866872, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+  m_PrefabInstance: {fileID: 261450915}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &261450917 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 913284009916741719, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+  m_PrefabInstance: {fileID: 261450915}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &310706074
 GameObject:
   m_ObjectHideFlags: 0
@@ -2709,7 +2719,7 @@ PrefabInstance:
     - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: toolButton
       value: 
-      objectReference: {fileID: 1143273759}
+      objectReference: {fileID: 261450916}
     - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: toolPrefab
       value: 
@@ -4503,11 +4513,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &802014987 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5201735427612651491, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
-  m_PrefabInstance: {fileID: 261450915}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &802902540 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5871847943347777865, guid: 965168e90dc583640ad2b63f08f0a6f4, type: 3}
@@ -5718,11 +5723,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1ac4cb73dcdd4d1288d28c380d4cbd2, type: 3}
---- !u!1 &1143273759 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5201735427950570894, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
-  m_PrefabInstance: {fileID: 261450915}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1150991178
 GameObject:
   m_ObjectHideFlags: 0
@@ -8558,7 +8558,7 @@ PrefabInstance:
     - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: toolButton
       value: 
-      objectReference: {fileID: 802014987}
+      objectReference: {fileID: 261450917}
     - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: toolPrefab
       value: 

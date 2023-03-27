@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &5983447 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5201735428547894890, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
-  m_PrefabInstance: {fileID: 1945202400}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &28015230 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 957471778074010176, guid: 393ce3c46e7d546458b5e9f454cc4266, type: 3}
@@ -2357,7 +2352,7 @@ PrefabInstance:
     - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: toolButton
       value: 
-      objectReference: {fileID: 5983447}
+      objectReference: {fileID: 1945202403}
     - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: toolPrefab
       value: 
@@ -3523,11 +3518,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &753523271 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5201735427135528446, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
-  m_PrefabInstance: {fileID: 1945202400}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &757894756
 GameObject:
   m_ObjectHideFlags: 0
@@ -9884,7 +9874,7 @@ PrefabInstance:
     - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: toolButton
       value: 
-      objectReference: {fileID: 753523271}
+      objectReference: {fileID: 1945202401}
     - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: toolPrefab
       value: 
@@ -10192,9 +10182,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+--- !u!1 &1945202401 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 203100098156705827, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+  m_PrefabInstance: {fileID: 1945202400}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1945202402 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6179236877005901988, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+  m_PrefabInstance: {fileID: 1945202400}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1945202403 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 218111577655147426, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
   m_PrefabInstance: {fileID: 1945202400}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1963963035

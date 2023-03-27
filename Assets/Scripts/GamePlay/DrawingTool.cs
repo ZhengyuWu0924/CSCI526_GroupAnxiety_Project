@@ -103,7 +103,7 @@ public class DrawingTool : MonoBehaviour
                 chosenPen = null;
                 Cursor.SetCursor(cantDrawSign, Vector2.zero, CursorMode.Auto);
                 GameObject chosenButton = GameObject.Find(pen.penName + "Button");
-                TextMeshProUGUI tmp = chosenButton.GetComponentInChildren<TextMeshProUGUI>();
+                //TextMeshProUGUI tmp = chosenButton.GetComponentInChildren<TextMeshProUGUI>();
                 //tmp.SetText(tmp.text.Replace("-", ""));
             }
             else
@@ -112,15 +112,17 @@ public class DrawingTool : MonoBehaviour
                 if(chosenPen != null)
                 {
                     GameObject chosenPenButton = GameObject.Find(chosenPen.penName + "Button");
-                    TextMeshProUGUI buttonTmp = chosenPenButton.GetComponentInChildren<TextMeshProUGUI>();
+                    //TextMeshProUGUI buttonTmp = chosenPenButton.GetComponentInChildren<TextMeshProUGUI>();
                     //buttonTmp.SetText(buttonTmp.text.Replace("-", ""));
                     chosenPen = null;
                 }
                 if(chosenBrush != null)
                 {
                     GameObject chosenBrushButton = GameObject.Find(chosenBrush.brushName + "Button");
-                    TextMeshProUGUI buttonTmp = chosenBrushButton.GetComponentInChildren<TextMeshProUGUI>();
+                    //TextMeshProUGUI buttonTmp = chosenBrushButton.GetComponentInChildren<TextMeshProUGUI>();
                     //buttonTmp.SetText(buttonTmp.text.Replace("-", ""));
+                    GameObject butImg = GameObject.Find(chosenBrush.brushName + "Image");
+                    butImg.SetActive(false);
                     chosenBrush = null;
                 }
                 chosenBrush = null;
@@ -130,7 +132,7 @@ public class DrawingTool : MonoBehaviour
                 cursorHotsopt = new Vector2(pen.cursor.width / 2, pen.cursor.height / 2);
                 Cursor.SetCursor(pen.cursor, cursorHotsopt, CursorMode.Auto);
                 GameObject chosenButton = GameObject.Find(pen.penName + "Button");
-                TextMeshProUGUI tmp = chosenButton.GetComponentInChildren<TextMeshProUGUI>();
+                //TextMeshProUGUI tmp = chosenButton.GetComponentInChildren<TextMeshProUGUI>();
                 //tmp.SetText("-" + tmp.text.Substring(0, tmp.text.IndexOf("\n")) + "-" + tmp.text.Substring(tmp.text.IndexOf("\n")));
             }
         }else if(toolPrefab.name.EndsWith("Brush"))
@@ -143,7 +145,7 @@ public class DrawingTool : MonoBehaviour
                 chosenBrush = null;
                 Cursor.SetCursor(cantDrawSign, Vector2.zero, CursorMode.Auto);
                 GameObject chosenButton = GameObject.Find(brush.brushName + "Button");
-                TextMeshProUGUI tmp = chosenButton.GetComponentInChildren<TextMeshProUGUI>();
+                //TextMeshProUGUI tmp = chosenButton.GetComponentInChildren<TextMeshProUGUI>();
                 //tmp.SetText(tmp.text.Replace("-", ""));
             }
             else
@@ -152,14 +154,14 @@ public class DrawingTool : MonoBehaviour
                 if (chosenPen != null)
                 {
                     GameObject chosenPenButton = GameObject.Find(chosenPen.penName + "Button");
-                    TextMeshProUGUI buttonTmp = chosenPenButton.GetComponentInChildren<TextMeshProUGUI>();
+                    //TextMeshProUGUI buttonTmp = chosenPenButton.GetComponentInChildren<TextMeshProUGUI>();
                     //buttonTmp.SetText(buttonTmp.text.Replace("-", ""));
                     chosenPen = null;
                 }
                 if (chosenBrush != null)
                 {
                     GameObject chosenBrushButton = GameObject.Find(chosenBrush.brushName + "Button");
-                    TextMeshProUGUI buttonTmp = chosenBrushButton.GetComponentInChildren<TextMeshProUGUI>();
+                    //TextMeshProUGUI buttonTmp = chosenBrushButton.GetComponentInChildren<TextMeshProUGUI>();
                     //buttonTmp.SetText(buttonTmp.text.Replace("-", ""));
                     chosenBrush = null;
                 }
@@ -169,7 +171,7 @@ public class DrawingTool : MonoBehaviour
                 cursorHotsopt = new Vector2(brush.cursor.width / 2, brush.cursor.height / 2);
                 Cursor.SetCursor(brush.cursor, cursorHotsopt, CursorMode.Auto);
                 GameObject chosenButton = GameObject.Find(brush.brushName + "Button");
-                TextMeshProUGUI tmp = chosenButton.GetComponentInChildren<TextMeshProUGUI>();
+                //TextMeshProUGUI tmp = chosenButton.GetComponentInChildren<TextMeshProUGUI>();
                 //tmp.SetText("-" + tmp.text.Substring(0, tmp.text.IndexOf("\n")) + "-" + tmp.text.Substring(tmp.text.IndexOf("\n")));
             }
         }

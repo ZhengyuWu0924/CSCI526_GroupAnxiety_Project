@@ -1488,7 +1488,7 @@ PrefabInstance:
     - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: toolButton
       value: 
-      objectReference: {fileID: 1051805734}
+      objectReference: {fileID: 285382281}
     - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: toolPrefab
       value: 
@@ -1747,6 +1747,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &285382281 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 203100098156705827, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+  m_PrefabInstance: {fileID: 858242138}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &299410927
 GameObject:
   m_ObjectHideFlags: 0
@@ -3093,6 +3098,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &641563742 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 913284009916741719, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+  m_PrefabInstance: {fileID: 858242138}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &657509734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5841,19 +5851,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
---- !u!1 &858242139 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5201735428547894890, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
-  m_PrefabInstance: {fileID: 858242138}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &858242141 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6179236877005901988, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
-  m_PrefabInstance: {fileID: 858242138}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &858242142 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5201735427950570894, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
   m_PrefabInstance: {fileID: 858242138}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &872259668
@@ -6441,7 +6441,7 @@ PrefabInstance:
     - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: toolButton
       value: 
-      objectReference: {fileID: 1502069591}
+      objectReference: {fileID: 641563742}
     - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: toolPrefab
       value: 
@@ -6636,11 +6636,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1051805734 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5201735427135528446, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
-  m_PrefabInstance: {fileID: 858242138}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1061382335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7083,6 +7078,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7307871067185668520, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
   m_PrefabInstance: {fileID: 221148311}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1160954990 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5037194635817866872, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+  m_PrefabInstance: {fileID: 858242138}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1181541506
 PrefabInstance:
@@ -9495,11 +9495,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1502069591 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5201735427612651491, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
-  m_PrefabInstance: {fileID: 858242138}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1505743607
 GameObject:
   m_ObjectHideFlags: 0
@@ -10036,7 +10031,7 @@ PrefabInstance:
     - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: toolButton
       value: 
-      objectReference: {fileID: 858242142}
+      objectReference: {fileID: 1160954990}
     - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: toolPrefab
       value: 
@@ -11929,7 +11924,7 @@ PrefabInstance:
     - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: toolButton
       value: 
-      objectReference: {fileID: 858242139}
+      objectReference: {fileID: 2095394021}
     - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: toolPrefab
       value: 
@@ -13602,6 +13597,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2095394021 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 218111577655147426, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+  m_PrefabInstance: {fileID: 858242138}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2099130414
 GameObject:
   m_ObjectHideFlags: 0
