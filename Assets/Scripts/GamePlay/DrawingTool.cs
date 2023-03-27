@@ -54,7 +54,7 @@ public class DrawingTool : MonoBehaviour
     {
         mainCamera = Camera.main;
         cantDrawOverLayerIndex = LayerMask.NameToLayer("CantDrawOver");
-
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
     private void Update()

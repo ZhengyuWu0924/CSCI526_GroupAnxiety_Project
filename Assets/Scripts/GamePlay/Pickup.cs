@@ -26,5 +26,9 @@ public class Pickup : MonoBehaviour
             drawingTool.PickUpTool(toolType, toolPrefab, toolButton);
         }
     }
-
+    
+    public void activeButton()
+    {
+        toolButton.SetActive(true);
+    }
 }
