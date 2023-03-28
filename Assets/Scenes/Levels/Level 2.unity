@@ -1054,7 +1054,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5516020849690252649, guid: 583cc358a2453bd4e92de1c9201f2dd0, type: 3}
       propertyPath: m_Name
-      value: Star (2)
+      value: Star3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516020849690252649, guid: 583cc358a2453bd4e92de1c9201f2dd0, type: 3}
+      propertyPath: m_TagString
+      value: Star
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 583cc358a2453bd4e92de1c9201f2dd0, type: 3}
@@ -2754,7 +2758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7307871067185668564, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: m_Name
-      value: Platform
+      value: PlatformPenPickup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
@@ -3252,11 +3256,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3909114679784172503, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
       propertyPath: m_Name
-      value: Checkpoint_No.
+      value: Checkpoint_No.2
       objectReference: {fileID: 0}
     - target: {fileID: 4770126800687358028, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4770126800687358028, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
       propertyPath: m_LocalScale.x
@@ -3958,10 +3962,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1777392602}
-  - {fileID: 1851371516}
   - {fileID: 1565808598}
   - {fileID: 914510109}
+  - {fileID: 1777392602}
+  - {fileID: 1851371516}
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4881,11 +4885,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3909114679784172503, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
       propertyPath: m_Name
-      value: Checkpoint_No.
+      value: Checkpoint_No.1
       objectReference: {fileID: 0}
     - target: {fileID: 4770126800687358028, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4770126800687358028, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
       propertyPath: m_LocalScale.x
@@ -6139,6 +6143,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5516020849690252649, guid: 583cc358a2453bd4e92de1c9201f2dd0, type: 3}
       propertyPath: m_Name
+      value: Star1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516020849690252649, guid: 583cc358a2453bd4e92de1c9201f2dd0, type: 3}
+      propertyPath: m_TagString
       value: Star
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6708,7 +6716,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 738478594}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1565808599
 SpriteRenderer:
@@ -7974,7 +7982,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 738478594}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1783890014
 GameObject:
@@ -8593,7 +8601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7307871067185668564, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: m_Name
-      value: Gravity
+      value: GravityBrushPickup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
@@ -9071,7 +9079,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5516020849690252649, guid: 583cc358a2453bd4e92de1c9201f2dd0, type: 3}
       propertyPath: m_Name
-      value: Star (1)
+      value: Star2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516020849690252649, guid: 583cc358a2453bd4e92de1c9201f2dd0, type: 3}
+      propertyPath: m_TagString
+      value: Star
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 583cc358a2453bd4e92de1c9201f2dd0, type: 3}

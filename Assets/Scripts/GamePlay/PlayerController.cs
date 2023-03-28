@@ -13,8 +13,16 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D player;
     private bool isOnGround;
     private GameManager gameManager;
-    private Vector2 respawnPoint;
-    private GameObject currentCheckpoint;
+
+    private static Vector2 respawnPoint;
+    private static bool ifLoadCheckPoint = false;
+    private static float latestCheckpointInk;
+    private static List<int> latestCheckpointNo;
+    private static List<int> latestCheckpointStar;
+    private static List<BasicPen> latestAvailablePens;
+    private static List<BasicBrush> latestAvailableBrushes;
+    private List<int> collectedStars;
+    private DrawingTool drawingTool;
 
     private GameObject levelUI;
     private GameObject victoryScreen;
@@ -26,7 +34,6 @@ public class PlayerController : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
     }
-
     void Start()
     {
         player = gameManager.player.GetComponent<Rigidbody2D>();
@@ -39,7 +46,19 @@ public class PlayerController : MonoBehaviour
         victoryScreen = levelUI.transform.Find("VictoryScreen").gameObject;
         loseScreen = levelUI.transform.Find("LoseScreen").gameObject;
 
-        respawnPoint = transform.position;
+        collectedStars = new List<int>();
+        drawingTool = GameObject.Find("DrawingTool").GetComponent<DrawingTool>();
+        if (!ifLoadCheckPoint)
+        {
+            respawnPoint = transform.position;
+            latestCheckpointInk = remainInk;
+            latestCheckpointStar = new List<int>();
+            latestCheckpointNo = new List<int>();
+        }
+        else
+        {
+            LoadCheckPoint();
+        }
     }
 
     
@@ -78,9 +97,40 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            transform.position = respawnPoint;
+            //transform.position = respawnPoint;
+            ifLoadCheckPoint = true;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
+    }
+
+    private void LoadCheckPoint()
+    {
+        foreach (int i in latestCheckpointNo)
+        {
+            GameObject.Find("Checkpoint_No." + i).GetComponent<Checkpoint>().activate();
+        }
+        foreach (int i in latestCheckpointStar)
+        {
+            Destroy(GameObject.Find("Star" + i));
+        }
+        transform.position = respawnPoint;
+        gameManager.updateInk(remainInk - latestCheckpointInk);
+        drawingTool.availablePens = new List<BasicPen>(latestAvailablePens);
+        drawingTool.availableBrushes = new List<BasicBrush>(latestAvailableBrushes);
+        foreach (BasicPen pen in latestAvailablePens)
+        {
+            GameObject pickup = GameObject.Find(pen.name + "Pickup");
+            pickup.GetComponent<Pickup>().activeButton();
+            Destroy(GameObject.Find(pen.name + "Pickup"));
+        }
+        foreach (BasicBrush brush in latestAvailableBrushes)
+        {
+            GameObject pickup = GameObject.Find(brush.name + "Pickup");
+            pickup.GetComponent<Pickup>().activeButton();
+            Destroy(GameObject.Find(brush.name + "Pickup"));
+        }
+        ifLoadCheckPoint = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -106,28 +156,23 @@ public class PlayerController : MonoBehaviour
         else if (collision.tag == "MainMenu")
         {
             SceneManager.LoadScene(0);
-        }
-        if (collision.tag == "Checkpoint")
+        }else if(collision.tag == "Star")
+        {
+            collectedStars.Add(int.Parse(collision.gameObject.name.Substring(collision.gameObject.name.Length - 1, 1)));
+        }else if(collision.tag == "Checkpoint")
         {
             Checkpoint collidedCheckPoint = collision.gameObject.GetComponent<Checkpoint>();
             if (!collidedCheckPoint.activated)
             {
                 collidedCheckPoint.activate();
-                currentCheckpoint = collision.gameObject;
                 respawnPoint = transform.position;
+                latestCheckpointInk = gameManager.getInk();
+                latestCheckpointNo.Add(int.Parse(collision.gameObject.name.Substring(collision.gameObject.name.Length - 1, 1)));
+                latestCheckpointStar = new List<int>(collectedStars);
+                latestAvailablePens = new List<BasicPen>(drawingTool.availablePens);
+                latestAvailableBrushes = new List<BasicBrush>(drawingTool.availableBrushes);
             }
             collidedCheckPoint.showText();
-
-            /*if (currentCheckpoint == null)
-            {
-                currentCheckpoint = collision.gameObject;
-                respawnPoint = transform.position;
-            }
-            if (string.Compare(collision.gameObject.name.Substring(collision.gameObject.name.Length - 1, 1), currentCheckpoint.name.Substring(currentCheckpoint.name.Length - 1, 1), true) > 0)
-            {
-                currentCheckpoint = collision.gameObject;
-                respawnPoint = transform.position;
-            }*/
 
         }
     }
