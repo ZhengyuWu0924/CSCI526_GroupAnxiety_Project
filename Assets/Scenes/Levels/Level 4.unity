@@ -387,7 +387,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 58743811}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1142,7 +1142,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 139495719}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1886,7 +1886,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 312146186}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2108,7 +2108,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 325055279}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2243,7 +2243,7 @@ PrefabInstance:
     - target: {fileID: 957471778074010181, guid: 393ce3c46e7d546458b5e9f454cc4266, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 957471778074010182, guid: 393ce3c46e7d546458b5e9f454cc4266, type: 3}
       propertyPath: m_Mass
       value: 500
@@ -2696,7 +2696,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 579530485}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3361,7 +3361,7 @@ PrefabInstance:
     - target: {fileID: 957471778074010181, guid: 393ce3c46e7d546458b5e9f454cc4266, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 957471778074010182, guid: 393ce3c46e7d546458b5e9f454cc4266, type: 3}
       propertyPath: m_Mass
       value: 120
@@ -3640,7 +3640,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 689378576}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3751,7 +3751,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 695366553}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3862,7 +3862,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 696400558}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3973,7 +3973,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 714408363}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -4145,7 +4145,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 746138942}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -4996,7 +4996,7 @@ PrefabInstance:
     - target: {fileID: 957471778074010181, guid: 393ce3c46e7d546458b5e9f454cc4266, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 957471778074010182, guid: 393ce3c46e7d546458b5e9f454cc4266, type: 3}
       propertyPath: m_Mass
       value: 500
@@ -6193,7 +6193,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 943273807}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -6304,7 +6304,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 986943588}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -6724,7 +6724,7 @@ PrefabInstance:
     - target: {fileID: 957471778074010181, guid: 393ce3c46e7d546458b5e9f454cc4266, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 957471778074010182, guid: 393ce3c46e7d546458b5e9f454cc4266, type: 3}
       propertyPath: m_Mass
       value: 500
@@ -7387,7 +7387,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1198891193}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -7582,7 +7582,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1241338001}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -11005,7 +11005,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1790164927}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -11699,7 +11699,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1857471010}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -12123,7 +12123,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1915955867}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -12234,7 +12234,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1920106611}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -12679,7 +12679,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1989395253}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -12924,7 +12924,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2012652521}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -13035,7 +13035,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2013759500}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -13208,7 +13208,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2039548532}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -14106,7 +14106,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2134367170}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1ef4f51d3ccc458f8b901e0c483062f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
