@@ -1233,7 +1233,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &336924240
 BoxCollider2D:
@@ -4297,6 +4297,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2387989574589088708, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
+      propertyPath: m_Size.x
+      value: 4.5221634
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387989574589088708, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
+      propertyPath: m_Size.y
+      value: 10.246545
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387989574589088708, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.00064468384
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387989574589088708, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.1604886
+      objectReference: {fileID: 0}
     - target: {fileID: 4916388965202034151, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
       propertyPath: m_Name
       value: Player
