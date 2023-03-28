@@ -105,6 +105,9 @@ MonoBehaviour:
   moveSpeed: 5
   jumpSpeed: 8
   remainInk: 100
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!50 &4916388965202034169
 Rigidbody2D:
   serializedVersion: 4

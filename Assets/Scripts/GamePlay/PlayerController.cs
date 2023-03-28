@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     private GameObject loseScreen;
 
     private Animator playerAnimation;
+    public LayerMask groundLayer;
 
     private void Awake()
     {
@@ -64,8 +65,8 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
+        // movement
         float direction = Input.GetAxis("Horizontal");
-
         if (direction > 0f)
         {
             player.velocity = new Vector2(direction * moveSpeed, player.velocity.y);
@@ -80,21 +81,41 @@ public class PlayerController : MonoBehaviour
         {
             player.velocity = new Vector2(0, player.velocity.y);
         }
+        playerAnimation.SetFloat("Speed", Mathf.Abs(player.velocity.x));
+
+        // jump
+        //if (Input.GetButtonDown("Jump") && isOnGround)
+        //{
+        //    player.velocity = new Vector2(player.velocity.x, jumpSpeed);
+        //    isOnGround = false;
+        //    playerAnimation.SetTrigger("Jump")
+        //}
+        //playerAnimation.SetBool("OnGround", isOnGround);
 
         if (Input.GetButtonDown("Jump") && isOnGround)
         {
+            playerAnimation.SetTrigger("Jump");
             player.velocity = new Vector2(player.velocity.x, jumpSpeed);
-            isOnGround = false;
         }
 
-        playerAnimation.SetFloat("Speed", Mathf.Abs(player.velocity.x));
-        playerAnimation.SetBool("OnGround", isOnGround);
+        if (Physics2D.Raycast(transform.position, Vector3.down, 1.28f, groundLayer))
+        {
+            isOnGround = true;
+            playerAnimation.SetBool("OnGround", isOnGround);
+        }
+        else
+        {
+            isOnGround = false;
+            playerAnimation.SetBool("OnGround", isOnGround);
+        }
 
+        // ink
         if (gameManager.getInk() <= 0)
         {
             loseScreen.SetActive(true);
         }
 
+        // restart
         if (Input.GetKeyDown(KeyCode.Q))
         {
             //transform.position = respawnPoint;
