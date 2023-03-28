@@ -119,7 +119,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             //transform.position = respawnPoint;
-            ifLoadCheckPoint = true;
+            if (latestCheckpointNo.Count > 0)
+            {
+                ifLoadCheckPoint = true;
+            }
+            else
+            {
+                ifLoadCheckPoint = false;
+            }
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
