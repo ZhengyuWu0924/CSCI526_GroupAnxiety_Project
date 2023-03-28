@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 957471778074010182}
   - component: {fileID: 5104666068091058745}
   - component: {fileID: 2000702629488927534}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mutable Object Sample
   m_TagString: Mutable Object
   m_Icon: {fileID: 0}

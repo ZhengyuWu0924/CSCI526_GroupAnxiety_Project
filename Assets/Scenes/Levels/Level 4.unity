@@ -5009,6 +5009,10 @@ PrefabInstance:
       propertyPath: maxMagnet
       value: 10000
       objectReference: {fileID: 0}
+    - target: {fileID: 5104666068091058745, guid: 393ce3c46e7d546458b5e9f454cc4266, type: 3}
+      propertyPath: m_Radius
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 393ce3c46e7d546458b5e9f454cc4266, type: 3}
 --- !u!1 &820750216
