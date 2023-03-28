@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2073788361775408127}
   - component: {fileID: 2073788361775407105}
   - component: {fileID: 2073788361775407104}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 2073788363065307539}
   - component: {fileID: 2073788363065307541}
   - component: {fileID: 2073788363065307540}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Triangle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2073788363242473343}
   - component: {fileID: 2073788363242473342}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TrapTwoSpike
   m_TagString: Trap
   m_Icon: {fileID: 0}

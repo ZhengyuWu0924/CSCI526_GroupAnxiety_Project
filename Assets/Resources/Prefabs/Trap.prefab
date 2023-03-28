@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1230309229254459571}
   - component: {fileID: 1230309229254460237}
   - component: {fileID: 1230309229254460236}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 1230309229264552780}
   - component: {fileID: 1230309229264552782}
   - component: {fileID: 1230309229264552777}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Triangle (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 1230309229264645368}
   - component: {fileID: 1230309229264645370}
   - component: {fileID: 1230309229264645365}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Triangle (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1230309229379101747}
   - component: {fileID: 1230309229379101746}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Trap
   m_TagString: Trap
   m_Icon: {fileID: 0}
@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 1230309229920731900}
   - component: {fileID: 1230309229920731902}
   - component: {fileID: 1230309229920731897}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Triangle (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -521,7 +521,7 @@ GameObject:
   - component: {fileID: 1230309230112019167}
   - component: {fileID: 1230309230112019161}
   - component: {fileID: 1230309230112019160}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Triangle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

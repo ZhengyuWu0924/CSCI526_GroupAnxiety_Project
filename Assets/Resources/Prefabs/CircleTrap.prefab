@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4056690583729359649}
   - component: {fileID: 4056690583729359648}
   - component: {fileID: 4056690583729359651}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CircleTrap
   m_TagString: Trap
   m_Icon: {fileID: 0}
