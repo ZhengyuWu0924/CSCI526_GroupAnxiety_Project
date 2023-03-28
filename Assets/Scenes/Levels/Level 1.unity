@@ -6310,6 +6310,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.058962345
       objectReference: {fileID: 0}
+    - target: {fileID: 1648119843742751074, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1820758293815189673, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -6333,6 +6337,22 @@ PrefabInstance:
     - target: {fileID: 3909114679784172503, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
       propertyPath: m_Name
       value: Checkpoint_No.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918920087829538169, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 22.844
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918920087829538169, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 11.221
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918920087829538169, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 16.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 3918920087829538169, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.61
       objectReference: {fileID: 0}
     - target: {fileID: 4770126800687358028, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
       propertyPath: m_RootOrder
@@ -6389,6 +6409,26 @@ PrefabInstance:
     - target: {fileID: 4770126800687358028, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149531821345139026, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149531821345139026, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
+      propertyPath: m_fontSize
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149531821345139026, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
+      propertyPath: m_margin.z
+      value: -3.4967995
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149531821345139026, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178778930541168583, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
+      propertyPath: text
+      value: Press Q to go back to the latest checkpoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
