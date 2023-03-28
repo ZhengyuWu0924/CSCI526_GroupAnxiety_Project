@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,31 +38,53 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
-        player = gameManager.player.GetComponent<Rigidbody2D>();
-        playerAnimation = GetComponent<Animator>();
-        isOnGround = true;
-
-        gameManager.setInk(remainInk);
-
-        levelUI = gameManager.levelUI;
-        victoryScreen = levelUI.transform.Find("VictoryScreen").gameObject;
-        loseScreen = levelUI.transform.Find("LoseScreen").gameObject;
-
-        collectedStars = new List<int>();
-        drawingTool = GameObject.Find("DrawingTool").GetComponent<DrawingTool>();
-        if (!ifLoadCheckPoint)
+        try
         {
+            player = gameManager.player.GetComponent<Rigidbody2D>();
+            playerAnimation = GetComponent<Animator>();
+            isOnGround = true;
+
+            gameManager.setInk(remainInk);
+
+            levelUI = gameManager.levelUI;
+            victoryScreen = levelUI.transform.Find("VictoryScreen").gameObject;
+            loseScreen = levelUI.transform.Find("LoseScreen").gameObject;
+
+            collectedStars = new List<int>();
+            drawingTool = GameObject.Find("DrawingTool").GetComponent<DrawingTool>();
+            if (!ifLoadCheckPoint)
+            {
+                respawnPoint = transform.position;
+                latestCheckpointInk = remainInk;
+                latestCheckpointStar = new List<int>();
+                latestCheckpointNo = new List<int>();
+            }
+            else
+            {
+                LoadCheckPoint();
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e);
+            ifLoadCheckPoint = false;
             respawnPoint = transform.position;
             latestCheckpointInk = remainInk;
             latestCheckpointStar = new List<int>();
             latestCheckpointNo = new List<int>();
+            latestAvailablePens = new List<BasicPen>();
+            latestAvailableBrushes = new List<BasicBrush>();
         }
-        else
-        {
-            LoadCheckPoint();
-        }
+        
     }
 
+    IEnumerator LoadCP()
+    {
+        AsyncOperation asyncLoadLevel = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        while (!asyncLoadLevel.isDone)
+            yield return null;
+        LoadCheckPoint();
+    }
     
     void Update()
     {
