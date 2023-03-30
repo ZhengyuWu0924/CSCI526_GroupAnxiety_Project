@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
 
     private Animator playerAnimation;
     public LayerMask groundLayer;
+    private Vector3 playerWidth = new Vector3(0.5f, 0, 0);
+    private float playerHeight = 1.4f;
 
     private void Awake()
     {
@@ -106,22 +108,15 @@ public class PlayerController : MonoBehaviour
         }
         playerAnimation.SetFloat("Speed", Mathf.Abs(player.velocity.x));
 
-        // jump
-        //if (Input.GetButtonDown("Jump") && isOnGround)
-        //{
-        //    player.velocity = new Vector2(player.velocity.x, jumpSpeed);
-        //    isOnGround = false;
-        //    playerAnimation.SetTrigger("Jump")
-        //}
-        //playerAnimation.SetBool("OnGround", isOnGround);
-
         if (Input.GetButtonDown("Jump") && isOnGround)
         {
             playerAnimation.SetTrigger("Jump");
             player.velocity = new Vector2(player.velocity.x, jumpSpeed);
         }
 
-        if (Physics2D.Raycast(transform.position, Vector3.down, 1.28f, groundLayer))
+        if (Physics2D.Raycast(transform.position, Vector3.down, playerHeight, groundLayer) ||
+            Physics2D.Raycast(transform.position - playerWidth, Vector3.down, playerHeight, groundLayer) ||
+            Physics2D.Raycast(transform.position + playerWidth, Vector3.down, playerHeight, groundLayer))
         {
             isOnGround = true;
             playerAnimation.SetBool("OnGround", isOnGround);
