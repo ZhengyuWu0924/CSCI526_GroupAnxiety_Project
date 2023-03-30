@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8219163204479216963}
   - component: {fileID: 8219163204479216962}
   - component: {fileID: 8219163204479216965}
-  - component: {fileID: -2822756410540752728}
+  - component: {fileID: 3257199445592920461}
   m_Layer: 0
-  m_Name: StickyPen
+  m_Name: ElectronicPen
   m_TagString: Drawn Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,7 +89,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 2
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -98,7 +98,7 @@ LineRenderer:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 1
+        value: 2
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -110,15 +110,15 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.80641526, g: 0.032075405, b: 1, a: 1}
-      key1: {r: 0.80641526, g: 0.032075405, b: 1, a: 1}
+      key0: {r: 0.44129562, g: 1, b: 0, a: 1}
+      key1: {r: 1, g: 0, b: 0, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
+      ctime0: 32189
       ctime1: 65535
       ctime2: 0
       ctime3: 0
@@ -190,7 +190,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-2822756410540752728
+--- !u!114 &3257199445592920461
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,17 +199,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 8219163204479216964}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b91706caa63bf5948bbc890fb257c2b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c1470f331ae702488abf50496a73b09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 8219163204479216963}
   edgeCollider2D: {fileID: 8219163204479216962}
   rigidBody2D: {fileID: 8219163204479216965}
-  penName: StickyPen
+  penName: ElectronicPen
   points: []
   pointCount: 0
   linePointsMinStep: 0.1
-  lineWidth: 0.25
+  lineWidth: 0.5
   massRatio: 1
   massRatioOffset: 1
   isStraight: 0
