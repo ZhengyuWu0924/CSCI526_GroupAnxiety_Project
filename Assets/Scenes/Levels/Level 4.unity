@@ -994,6 +994,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4916388965202034169, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4916388965202034169, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
       propertyPath: m_GravityScale
       value: 2
       objectReference: {fileID: 0}
@@ -2832,7 +2836,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 5
 --- !u!61 &588287842
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10805,7 +10809,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -16.1, y: -8.5, z: -0.20961614}
   m_LocalScale: {x: 8.464983, y: 7.9035316, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1808506390}
   m_RootOrder: 0
