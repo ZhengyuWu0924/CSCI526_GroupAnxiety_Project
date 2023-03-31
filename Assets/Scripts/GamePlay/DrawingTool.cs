@@ -74,7 +74,7 @@ public class DrawingTool : MonoBehaviour
             {
 
                 EndDraw();
-                Cursor.SetCursor(chosenPen.cursor, new Vector2(chosenPen.cursor.width / 2, chosenPen.cursor.height / 2), CursorMode.Auto);
+                Cursor.SetCursor(chosenPen.cursor, new Vector2(20, 20), CursorMode.Auto);
             }
         }
         else if (toolType == ToolType.BRUSH)
@@ -147,7 +147,8 @@ public class DrawingTool : MonoBehaviour
                 //Change to new selected tool
                 this.toolType = ToolType.PEN;
                 chosenPen = pen;
-                cursorHotsopt = new Vector2(pen.cursor.width / 2, pen.cursor.height / 2);
+                //cursorHotsopt = new Vector2(pen.cursor.width / 2, pen.cursor.height / 2);
+                cursorHotsopt = new Vector2(20, 20);
                 Cursor.SetCursor(pen.cursor, cursorHotsopt, CursorMode.Auto);
                 GameObject chosenButton = GameObject.Find(pen.penName + "Button");
                 Image img = FindBanner(chosenButton);
