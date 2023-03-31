@@ -2208,6 +2208,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4498726855536681897}
     m_Modifications:
+    - target: {fileID: 1170951026543343791, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 58
+      objectReference: {fileID: 0}
     - target: {fileID: 2547112340639928979, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2323,7 +2327,11 @@ PrefabInstance:
     - target: {fileID: 6624387103462714603, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 10844ddb7d3484ab796a047efc5c2ae5, type: 3}
+      objectReference: {fileID: 21300000, guid: b184c45127c8f45039e5e42ce7b90d41, type: 3}
+    - target: {fileID: 7334452990679433748, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7586369360852850857, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
       propertyPath: m_text
       value: 'Cost: 1/Tap'
@@ -2472,10 +2480,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4498726855536681897}
     m_Modifications:
+    - target: {fileID: 1170951026543343791, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 28
+      objectReference: {fileID: 0}
     - target: {fileID: 2547112340639928979, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 1b7a5327b616241c79a97b95e2d3895f, type: 3}
+    - target: {fileID: 3873273323343602707, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 28
+      objectReference: {fileID: 0}
     - target: {fileID: 4076146858181045487, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2562,7 +2578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4195155116202911317, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -92.5
+      value: -287.5
       objectReference: {fileID: 0}
     - target: {fileID: 4195155116202911317, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2587,7 +2603,11 @@ PrefabInstance:
     - target: {fileID: 6624387103462714603, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e24b4deff8c2f419390b82f2d340d5fa, type: 3}
+      objectReference: {fileID: 21300000, guid: 2a0188518e3d94f548195aefed817fc5, type: 3}
+    - target: {fileID: 7334452990679433748, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7586369360852850857, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
       propertyPath: m_text
       value: 'Cost: 2/Unit'
@@ -2614,6 +2634,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 125de98be57594bac9279515ae7aa500, type: 3}
+    - target: {fileID: 3873273323343602707, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 58
+      objectReference: {fileID: 0}
     - target: {fileID: 4076146858181045487, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2725,7 +2749,11 @@ PrefabInstance:
     - target: {fileID: 6624387103462714603, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 15a169f0b84ce4806997b7e8bbd8d940, type: 3}
+      objectReference: {fileID: 21300000, guid: 2e6225476e9ea4d7889233b899da8ab5, type: 3}
+    - target: {fileID: 7334452990679433748, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7586369360852850857, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
       propertyPath: m_text
       value: 'Cost: 1/Tap'
@@ -3656,10 +3684,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1170951026543343791, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 2547112340639928979, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: a9e22b2c2bed1435b84df9356a902e6d, type: 3}
+    - target: {fileID: 3873273323343602707, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 4076146858181045487, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3767,7 +3803,11 @@ PrefabInstance:
     - target: {fileID: 6624387103462714603, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b25f40607c36d4e6984fe8b329e3ab47, type: 3}
+      objectReference: {fileID: 21300000, guid: d7b83a1e865d041019c799b1da6a806c, type: 3}
+    - target: {fileID: 7334452990679433748, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
 --- !u!224 &5201735428244631120 stripped
@@ -3782,10 +3822,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4498726855536681897}
     m_Modifications:
+    - target: {fileID: 1170951026543343791, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2547112340639928979, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: d2b9ee40099054850b1af1f622982655, type: 3}
+    - target: {fileID: 3873273323343602707, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4076146858181045487, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3876,7 +3924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4195155116202911317, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -92.5
+      value: -352.5
       objectReference: {fileID: 0}
     - target: {fileID: 4195155116202911317, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3902,6 +3950,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 8245f29f2c5a94937baf0b99bc192f84, type: 3}
+    - target: {fileID: 7334452990679433748, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7586369360852850857, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
       propertyPath: m_text
       value: 'Cost: 0.5/Unit'
@@ -4140,7 +4192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4195155116202911317, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -92.5
+      value: -222.5
       objectReference: {fileID: 0}
     - target: {fileID: 4195155116202911317, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4165,7 +4217,11 @@ PrefabInstance:
     - target: {fileID: 6624387103462714603, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2fb84d477dc024027a363483b3cf1768, type: 3}
+      objectReference: {fileID: 21300000, guid: ac8d5740124d84924ab0f5621a546816, type: 3}
+    - target: {fileID: 7334452990679433748, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7586369360852850857, guid: 6153a81ca65b248d38f3a9d1a959cc4b, type: 3}
       propertyPath: m_text
       value: 'Cost: 5/Unit'
