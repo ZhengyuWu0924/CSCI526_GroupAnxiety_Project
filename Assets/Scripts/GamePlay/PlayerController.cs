@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class PlayerController : MonoBehaviour
 {
     [Header("Player Settings")]
     public float moveSpeed = 5f;
     public float jumpSpeed = 8f;
     public float remainInk = 100f;
-
+    public float playerGravity = 2f;
     private Rigidbody2D player;
     private bool isOnGround;
     private GameManager gameManager;
@@ -33,7 +34,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     private Vector3 playerWidth = new Vector3(0.5f, 0, 0);
     private float playerHeight = 1.4f;
-
+    private Magnetism magnetism = Magnetism.None; // Initialize Player's magnetism to None
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
         try
         {
             player = gameManager.player.GetComponent<Rigidbody2D>();
+            player.gravityScale = playerGravity; // Initialize Player gravity to default value
             playerAnimation = GetComponent<Animator>();
             isOnGround = true;
 
