@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum PlayerProperty {PositiveMag, NegativeMag, Antigravity, NONE}
 
 public class PlayerController : MonoBehaviour
 {
@@ -34,7 +35,8 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     private Vector3 playerWidth = new Vector3(0.5f, 0, 0);
     private float playerHeight = 1.4f;
-    private Magnetism magnetism = Magnetism.None; // Initialize Player's magnetism to None
+    private PlayerProperty playerPro = PlayerProperty.NONE; // Initialize character's property
+    private Magnetism playerMag = Magnetism.None; // Initialize character's magnetism to None
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -230,6 +232,40 @@ public class PlayerController : MonoBehaviour
         {
             Checkpoint collidedCheckPoint = collision.gameObject.GetComponent<Checkpoint>();
             collidedCheckPoint.clostText();
+        }
+    }
+
+    /*
+    @input: String type property the character gonna be changed to
+    This function will be called when the statues been brushed
+
+    */
+    public void OnStatueBrushed(String changeType){
+        player = gameManager.player.GetComponent<Rigidbody2D>();
+        switch(changeType){
+            case "Positive":
+                playerPro = PlayerProperty.PositiveMag;
+                playerMag = Magnetism.Postive;
+                playerGravity = 2f;
+                player.gravityScale = playerGravity;
+                jumpSpeed = 8f;
+                break;
+            case "Negative":
+                playerPro = PlayerProperty.NegativeMag;
+                playerMag = Magnetism.Negtive;
+                playerGravity = 2f;
+                player.gravityScale = playerGravity;
+                jumpSpeed = 8f;
+                break;
+            case "Gravity":
+                playerPro = PlayerProperty.NONE;
+                playerMag = Magnetism.None;
+                playerGravity = 1f;
+                player.gravityScale = playerGravity;
+                jumpSpeed = 10f;
+                break;
+            default:
+                break;
         }
     }
 }
