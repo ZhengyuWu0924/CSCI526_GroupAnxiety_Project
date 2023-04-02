@@ -71,9 +71,18 @@ public class ElectronicDevice : MonoBehaviour
         actived = true;
     }
 
-    public virtual void disactivateDevice(ElectronicDevice other)
+    public virtual void disactivateDevice()
     {
         actived = false;
     }
 
+    public void electronicEnable()
+    {
+        connectNode.GetComponent<SpriteRenderer>().enabled = true;
+    }
+
+    public void electronicdisable()
+    {
+        connectNode.GetComponent<SpriteRenderer>().enabled = false;
+    }
 }

@@ -63,6 +63,8 @@ public class ElectronicPen : BasicPen
 {
     ElectronicDevice device1;
     ElectronicDevice device2;
+    private bool validConnection = false;
+
     public override void InitializePen()
     {
         base.InitializePen();
@@ -79,20 +81,39 @@ public class ElectronicPen : BasicPen
             else if (electronicDevice != device1 && device2 == null)
             {
                 device2 = collision.transform.parent.GetComponent<ElectronicDevice>();
+            }
 
-                device1.activateDevice(device2);
-                device2.activateDevice(device1);
+            if(device1 && device2)
+            {
+                // two teleports
+                if (device1.GetType() == typeof(ElectronicTeleport) && device2.GetType() == typeof(ElectronicTeleport)) validConnection = true;
+                // input and output
+                if (device1.GetType() == typeof(ElectronicDoor) && device2.GetType() == typeof(ElectronicButton) ||
+                   device2.GetType() == typeof(ElectronicDoor) && device1.GetType() == typeof(ElectronicButton)) validConnection = true;
+
+                if(validConnection)
+                {
+                    device1.activateDevice(device2);
+                    device2.activateDevice(device1);
+                }
             }
         }
-
     }
 
     private void OnDestroy()
     {
-        device1.disactivateDevice(device2);
-        device2.disactivateDevice(device1);
+        if(device1) device1.disactivateDevice();
+        if(device2) device2.disactivateDevice();
     }
 
+    public void electronicEnable()
+    {
+        GetComponent<LineRenderer>().enabled = true;
+    }
 
+    public void electronicdisable()
+    {
+        GetComponent<LineRenderer>().enabled = false;
+    }
 
 }

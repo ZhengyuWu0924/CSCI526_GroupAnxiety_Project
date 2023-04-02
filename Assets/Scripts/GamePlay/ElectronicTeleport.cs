@@ -14,23 +14,21 @@ public class ElectronicTeleport : ElectronicDevice
         otherTeleport = (ElectronicTeleport)other;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public override void disactivateDevice()
+    {
+        base.disactivateDevice();
+    }
+
+    // teleport the player
+    private IEnumerator OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player") && actived)
         {
             GameManager.Instance.player.transform.position = destination;
             
             otherTeleport.actived = false;
+            yield return new WaitForSeconds(1.0f);
+            otherTeleport.actived = true;
         }
     }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            actived = true;
-        }
-    }
-
-
 }
