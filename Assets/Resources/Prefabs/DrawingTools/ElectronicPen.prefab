@@ -89,7 +89,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 2
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -98,7 +98,7 @@ LineRenderer:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 2
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -181,15 +181,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!114 &3257199445592920461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,9 +209,9 @@ MonoBehaviour:
   points: []
   pointCount: 0
   linePointsMinStep: 0.1
-  lineWidth: 0.5
+  lineWidth: 0.25
   massRatio: 1
   massRatioOffset: 1
   isStraight: 0
-  lineCostFactor: 1
+  lineCostFactor: 0
   cursor: {fileID: 2800000, guid: 88573790abb214c8298abe02af9aee6e, type: 3}
