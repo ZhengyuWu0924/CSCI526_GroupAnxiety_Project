@@ -9390,6 +9390,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7455130649559846244, guid: a1ac4cb73dcdd4d1288d28c380d4cbd2, type: 3}
+      propertyPath: onlyActivatedOnce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455130649559846244, guid: a1ac4cb73dcdd4d1288d28c380d4cbd2, type: 3}
       propertyPath: objectsToDisappear.Array.size
       value: 1
       objectReference: {fileID: 0}
