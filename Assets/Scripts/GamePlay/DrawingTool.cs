@@ -55,7 +55,7 @@ public class DrawingTool : MonoBehaviour
     {
         mainCamera = Camera.main;
         cantDrawOverLayerIndex = LayerMask.NameToLayer("CantDrawOver");
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        Cursor.SetCursor(cantDrawSign, Vector2.zero, CursorMode.Auto);
         playerControl = FindObjectOfType<PlayerController>();
     }
 
