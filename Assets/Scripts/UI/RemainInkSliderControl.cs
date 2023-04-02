@@ -15,6 +15,10 @@ public class RemainInkSliderControl : MonoBehaviour
     // Update is called once per frame
     public void UpdateSlider(float remainInk)
     {
+        if(remainInk > slider.maxValue)
+        {
+            slider.maxValue = remainInk;
+        }
         slider.value = remainInk;
     }
 
@@ -22,4 +26,5 @@ public class RemainInkSliderControl : MonoBehaviour
     {
         slider.maxValue = remainInk;
     }
+
 }
