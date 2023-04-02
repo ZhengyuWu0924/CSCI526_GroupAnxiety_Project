@@ -10,7 +10,7 @@ public class Restart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -22,9 +22,22 @@ public class Restart : MonoBehaviour
         }
     }
 
-    public void ResetTheGame(){
+    public void ResetTheGame()
+    {
         gm = FindObjectOfType<GameManager>();
         gm.resetInk();
+        generationTimes = GameManager.SceneRegenerationTimes;
+        generationTimes += 1;
+        GameManager.SceneRegenerationTimes = generationTimes;
+        print("times = " + generationTimes);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+    }
+
+    public void RestartFromCheckpoint()
+    {
+        PlayerController.ifLoadCheckPoint = true;
         generationTimes = GameManager.SceneRegenerationTimes;
         generationTimes += 1;
         GameManager.SceneRegenerationTimes = generationTimes;

@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     private GameManager gameManager;
 
     private static Vector2 respawnPoint;
-    private static bool ifLoadCheckPoint = false;
+    public static bool ifLoadCheckPoint = false;
     private static float latestCheckpointInk;
     private static List<int> latestCheckpointNo;
     private static List<int> latestCheckpointStar;
@@ -82,14 +82,6 @@ public class PlayerController : MonoBehaviour
             latestAvailableBrushes = new List<BasicBrush>();
         }
         
-    }
-
-    IEnumerator LoadCP()
-    {
-        AsyncOperation asyncLoadLevel = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
-        while (!asyncLoadLevel.isDone)
-            yield return null;
-        LoadCheckPoint();
     }
     
     void Update()
