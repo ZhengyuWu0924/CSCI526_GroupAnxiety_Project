@@ -237,8 +237,8 @@ public class PlayerController : MonoBehaviour
 
     /*
     @input: String type property the character gonna be changed to
+    @TODO: Modify the case statement when the magnet brush got splitted
     This function will be called when the shrines been brushed
-
     */
     public void OnShrineBrushed(BasicBrush currentBrush){
         player = gameManager.player.GetComponent<Rigidbody2D>();
