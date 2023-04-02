@@ -237,27 +237,27 @@ public class PlayerController : MonoBehaviour
 
     /*
     @input: String type property the character gonna be changed to
-    This function will be called when the statues been brushed
+    This function will be called when the shrines been brushed
 
     */
-    public void OnStatueBrushed(String changeType){
+    public void OnShrineBrushed(BasicBrush currentBrush){
         player = gameManager.player.GetComponent<Rigidbody2D>();
-        switch(changeType){
-            case "Positive":
+        switch(currentBrush.name){
+            case "MagnetBrush":
                 playerPro = PlayerProperty.PositiveMag;
                 playerMag = Magnetism.Postive;
                 playerGravity = 2f;
                 player.gravityScale = playerGravity;
                 jumpSpeed = 8f;
                 break;
-            case "Negative":
-                playerPro = PlayerProperty.NegativeMag;
-                playerMag = Magnetism.Negtive;
-                playerGravity = 2f;
-                player.gravityScale = playerGravity;
-                jumpSpeed = 8f;
-                break;
-            case "Gravity":
+            // case "Negative":
+            //     playerPro = PlayerProperty.NegativeMag;
+            //     playerMag = Magnetism.Negtive;
+            //     playerGravity = 2f;
+            //     player.gravityScale = playerGravity;
+            //     jumpSpeed = 8f;
+            //     break;
+            case "GravityBrush":
                 playerPro = PlayerProperty.NONE;
                 playerMag = Magnetism.None;
                 playerGravity = 1f;

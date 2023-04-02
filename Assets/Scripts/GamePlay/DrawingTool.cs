@@ -12,7 +12,8 @@ public enum ToolType { PEN = 0, BRUSH, NONE };
 /// </summary>
 public class DrawingTool : MonoBehaviour
 {
-
+    
+    private PlayerController playerControl;
     // General Variables
     [Header ("General Variables")]
     public Texture2D cantDrawSign;
@@ -55,6 +56,7 @@ public class DrawingTool : MonoBehaviour
         mainCamera = Camera.main;
         cantDrawOverLayerIndex = LayerMask.NameToLayer("CantDrawOver");
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        playerControl = FindObjectOfType<PlayerController>();
     }
 
     private void Update()
@@ -317,6 +319,11 @@ public class DrawingTool : MonoBehaviour
                             break;
                         
                     }
+                }
+            }
+            if (hit.transform.CompareTag("Shrine")){
+                if(chosenBrush.name != "EraserBrush"){
+                    playerControl.OnShrineBrushed(chosenBrush);
                 }
             }
             if (chosenBrush.name == "EraserBrush" && hit.transform.CompareTag("Drawn Object"))
