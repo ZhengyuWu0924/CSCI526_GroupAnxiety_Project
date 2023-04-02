@@ -98,12 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e616d6dc245dbb479f3c60a14d2f20b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  xSpeed: 5
-  ySpeed: 8
-  xDifference: 0
-  yDifference: 0
-  movementThreshold: 2
+  defaultSize: 13.2672
+  zoomSize: 20
 --- !u!114 &5871847943347777877
 MonoBehaviour:
   m_ObjectHideFlags: 0

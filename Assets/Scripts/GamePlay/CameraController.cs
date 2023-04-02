@@ -13,7 +13,8 @@ public class CameraController : MonoBehaviour
     private float yDifference;
     private float movementThreshold = 2f;
 
-    
+    [SerializeField] private float defaultSize = 13.2672f;
+    [SerializeField] private float zoomSize;
 
     private void Awake()
     {
@@ -29,7 +30,7 @@ public class CameraController : MonoBehaviour
     void Update()
     {
 
-        xDifference = player.transform.position.x >= transform.position.x ? calculateDifference(player.transform.position.x, transform.position.x) : 
+        /*xDifference = player.transform.position.x >= transform.position.x ? calculateDifference(player.transform.position.x, transform.position.x) : 
                             calculateDifference(transform.position.x, player.transform.position.x);
 
         yDifference = player.transform.position.y >= transform.position.y ? calculateDifference(player.transform.position.y, transform.position.y) :
@@ -52,8 +53,16 @@ public class CameraController : MonoBehaviour
             moveTemp.y = player.transform.position.y;
             moveTemp.z = -10;
             transform.position = Vector3.MoveTowards(transform.position, moveTemp, speed * Time.deltaTime);
+        }*/
+        transform.position = player.transform.position + new Vector3(0, 0, -10);
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            GetComponent<Camera>().orthographicSize = zoomSize;
         }
-
+        else if (Input.GetKeyUp(KeyCode.M))
+        {
+            GetComponent<Camera>().orthographicSize = defaultSize;
+        }
     }
 
     /*
