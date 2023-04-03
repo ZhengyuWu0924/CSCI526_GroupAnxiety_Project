@@ -5,7 +5,7 @@ using UnityEngine;
 public class InfiniteInk : MonoBehaviour
 {
     public float powerUpDuration = 7f;
-    //private bool isPoweredUp = false; 
+    private bool isPoweredUp = false;
     private float originalInk; 
     private GameManager gameManager;
     private GameObject player;
@@ -23,7 +23,7 @@ public class InfiniteInk : MonoBehaviour
         {
             // The player has picked up the powerup
             //Debug.Log("The player has picked up the powerup");
-            //isPoweredUp = true;
+            isPoweredUp = true;
             originalInk = gameManager.getInk();
             gameManager.setInk(1000000);
             StartCoroutine(PowerUpTimer());
@@ -40,7 +40,7 @@ public class InfiniteInk : MonoBehaviour
 
 
         // The powerup has expired
-        //isPoweredUp = false;
+        isPoweredUp = false;
         float initialInk = player.GetComponent<PlayerController>().remainInk;
         gameManager.setInk(initialInk);
         gameManager.updateInk(initialInk - originalInk);

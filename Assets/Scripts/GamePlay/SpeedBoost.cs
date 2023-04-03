@@ -6,9 +6,9 @@ public class SpeedBoost : MonoBehaviour
 {
     // Start is called before the first frame update
     public float speedBoost = 4f; 
-    public float powerUpDuration = 7f; 
+    public float powerUpDuration = 7f;
 
-    //private bool isPoweredUp = false;
+    private bool isPoweredUp = false;
     private float originalSpeed;    
 
     void OnTriggerEnter2D(Collider2D other)
@@ -18,7 +18,7 @@ public class SpeedBoost : MonoBehaviour
         {
             // The player has picked up the powerup
             //Debug.Log("The player has picked up the powerup");
-            //isPoweredUp = true;
+            isPoweredUp = true;
             originalSpeed = other.gameObject.GetComponent<PlayerController>().moveSpeed;
             other.gameObject.GetComponent<PlayerController>().moveSpeed = originalSpeed * speedBoost;
             StartCoroutine(PowerUpTimer(other.gameObject));
@@ -34,7 +34,7 @@ public class SpeedBoost : MonoBehaviour
     {
         yield return new WaitForSeconds(powerUpDuration);
         // The powerup has expired
-        //isPoweredUp = false;
+        isPoweredUp = false;
         player.GetComponent<PlayerController>().moveSpeed = originalSpeed;
         Destroy(this.gameObject);
     }
