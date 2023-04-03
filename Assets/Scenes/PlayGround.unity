@@ -1728,7 +1728,7 @@ GameObject:
   - component: {fileID: 1543021497}
   - component: {fileID: 1543021496}
   m_Layer: 0
-  m_Name: Telepport Destination
+  m_Name: Teleport Destination
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
