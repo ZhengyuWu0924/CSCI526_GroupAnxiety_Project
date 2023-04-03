@@ -83,18 +83,18 @@ public class ElectronicPen : BasicPen
                 device2 = collision.transform.parent.GetComponent<ElectronicDevice>();
             }
 
-            if(device1 && device2)
+            if(device1 && device2 )
             {
                 // two teleports
-                if (device1.GetType() == typeof(ElectronicTeleport) && device2.GetType() == typeof(ElectronicTeleport)) validConnection = true;
+                if (device1.getDeviceType() == DeviceType.TELEPORT && device2.getDeviceType() == DeviceType.TELEPORT) validConnection = true;
                 // input and output
-                if (device1.GetType() == typeof(ElectronicDoor) && device2.GetType() == typeof(ElectronicButton) ||
-                   device2.GetType() == typeof(ElectronicDoor) && device1.GetType() == typeof(ElectronicButton)) validConnection = true;
+                if ((device1.getDeviceType() == DeviceType.OUTPUT && device2.getDeviceType() == DeviceType.SOURCE) ||
+                   (device2.getDeviceType() == DeviceType.OUTPUT && device1.getDeviceType() == DeviceType.SOURCE)) validConnection = true;
 
-                if(validConnection)
+                if (validConnection && !device1.connected && !device2.connected)
                 {
-                    device1.activateDevice(device2);
-                    device2.activateDevice(device1);
+                    device1.connectDevice(device2);
+                    device2.connectDevice(device1);
                 }
             }
         }
@@ -102,8 +102,8 @@ public class ElectronicPen : BasicPen
 
     private void OnDestroy()
     {
-        if(device1) device1.disactivateDevice();
-        if(device2) device2.disactivateDevice();
+        if(device1) device1.disconnectDevice();
+        if(device2) device2.disconnectDevice();
     }
 
     public void electronicEnable()

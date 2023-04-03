@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+public enum DeviceType { SOURCE, OUTPUT, TELEPORT};
 
-
-public class ElectronicDevice : MonoBehaviour
+public abstract class ElectronicDevice : MonoBehaviour
 {
 
 
@@ -64,17 +64,29 @@ public class ElectronicDevice : MonoBehaviour
     ////}
 
     public GameObject connectNode;
-    public bool actived;
+    public bool connected;
 
-    public virtual void activateDevice(ElectronicDevice other)
+    public virtual void connectDevice(ElectronicDevice other)
     {
-        actived = true;
+        connected = true;
     }
 
-    public virtual void disactivateDevice()
+    public virtual void disconnectDevice()
     {
-        actived = false;
+        connected = false;
     }
+
+    public virtual void deviceStart()
+    {
+        
+    }
+
+    public virtual void deviceStop()
+    {
+        
+    }
+
+    public abstract DeviceType getDeviceType();
 
     public void electronicEnable()
     {
