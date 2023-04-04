@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public enum PlayerProperty {PositiveMag, NegativeMag, Antigravity, NONE}
-
 public class PlayerController : MonoBehaviour
 {
     [Header("Player Settings")]
@@ -231,11 +230,16 @@ public class PlayerController : MonoBehaviour
     @input: String type property the character gonna be changed to
     @TODO: Modify the case statement when the magnet brush got splitted
     This function will be called when the shrines been brushed
+    then change the character properties based on the brush
+    Shrine color will also be changed, corresponding to the brush
     */
     public void OnShrineBrushed(BasicBrush currentBrush){
         player = gameManager.player.GetComponent<Rigidbody2D>();
         switch(currentBrush.name){
             case "MagnetBrush":
+                /*
+                    Implement this part later when the magnet brush issues have been fixed
+                */
                 playerPro = PlayerProperty.PositiveMag;
                 playerMag = Magnetism.Postive;
                 playerGravity = 2f;
@@ -250,14 +254,39 @@ public class PlayerController : MonoBehaviour
             //     jumpSpeed = 8f;
             //     break;
             case "GravityBrush":
-                playerPro = PlayerProperty.NONE;
-                playerMag = Magnetism.None;
-                playerGravity = 1f;
+                // check current activatived character property first
+                // if none is activating, change it to anti-gravity
+                // otherwise, cancel the anti-gravity influence and change it back to default state
+                playerPro = playerPro == PlayerProperty.NONE ? PlayerProperty.Antigravity : PlayerProperty.NONE;
+
+                // remove the influence of magetism
+                playerMag = Magnetism.None; 
+
+                // change the player's gravity scale based on its current property state
+                playerGravity = playerPro == PlayerProperty.Antigravity ? 1f : 2f; 
                 player.gravityScale = playerGravity;
-                jumpSpeed = 10f;
+
+                // change the player's jump ability based on its current property state
+                jumpSpeed = playerPro == PlayerProperty.Antigravity ? 10f : 8f;
                 break;
             default:
                 break;
         }
+        shrineColorChange(currentBrush);
+        
+    }
+
+    private void shrineColorChange(BasicBrush currentBrush){
+        // Find all shrine tag objects
+        GameObject[] shrineObjects = GameObject.FindGameObjectsWithTag("Shrine");
+        foreach (GameObject shrineObject in shrineObjects){
+            Renderer renderer = shrineObject.GetComponent<Renderer>();
+
+            renderer.material.color = renderer.material.color == currentBrush.brushColor ? resetShrineColor() : currentBrush.brushColor;
+        }
+    }
+
+    private Color resetShrineColor(){
+        return Color.white;
     }
 }
