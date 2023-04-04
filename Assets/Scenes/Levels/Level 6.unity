@@ -7930,6 +7930,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1648079449662521561, guid: e7a2e6f95ef8ce84697699d527363555, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1004487026295360146, guid: e7a2e6f95ef8ce84697699d527363555, type: 3}
       propertyPath: m_Name
       value: Shrine (1)
@@ -9548,6 +9552,10 @@ PrefabInstance:
     - target: {fileID: -6217583563951173382, guid: e7a2e6f95ef8ce84697699d527363555, type: 3}
       propertyPath: m_Offset.y
       value: -1.4367256
+      objectReference: {fileID: 0}
+    - target: {fileID: -1648079449662521561, guid: e7a2e6f95ef8ce84697699d527363555, type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1004487026295360146, guid: e7a2e6f95ef8ce84697699d527363555, type: 3}
       propertyPath: m_Name
