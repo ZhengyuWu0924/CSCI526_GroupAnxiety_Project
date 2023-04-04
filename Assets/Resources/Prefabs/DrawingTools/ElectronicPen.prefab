@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8219163204479216962}
   - component: {fileID: 8219163204479216965}
   - component: {fileID: 3257199445592920461}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ElectronicPen
   m_TagString: Drawn Object
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Positions:
   - {x: -1, y: 0, z: 0}
   - {x: -2, y: 1, z: 0}
