@@ -1443,6 +1443,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ElectronicTeleport
       objectReference: {fileID: 0}
+    - target: {fileID: 8415807935341992336, guid: f898b251529e2744197d1d224ca6330b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8415807935341992337, guid: f898b251529e2744197d1d224ca6330b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -59.1
@@ -6784,7 +6788,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 932320727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.75, y: 9.75, z: 0}
+  m_LocalPosition: {x: -19.1, y: 15.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
