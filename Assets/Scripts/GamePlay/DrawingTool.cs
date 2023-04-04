@@ -117,6 +117,7 @@ public class DrawingTool : MonoBehaviour
             BasicPen pen = toolPrefab.GetComponent<BasicPen>();
             if (chosenPen == pen)
             {
+                HideElectronicPenInstance();
                 //Cancel selection
                 this.toolType = ToolType.NONE;
                 chosenPen = null;
@@ -132,6 +133,11 @@ public class DrawingTool : MonoBehaviour
                 //Cancel current selection
                 if(chosenPen != null)
                 {
+                    HideElectronicPenInstance();
+                    if (pen.name == "ElectronicPen")
+                    {
+                        ShowElectronicPenInstance();
+                    }
                     GameObject chosenPenButton = GameObject.Find(chosenPen.penName + "Button");
                     Image buttonImg = FindBanner(chosenPenButton);
                     buttonImg.sprite = Resources.Load<Sprite>("Sprites/art/UI-LevelPage/banner-transparent");
@@ -141,6 +147,7 @@ public class DrawingTool : MonoBehaviour
                 }
                 if(chosenBrush != null)
                 {
+                    ShowElectronicPenInstance();
                     GameObject chosenBrushButton = GameObject.Find(chosenBrush.brushName + "Button");
                     Image buttonImg = FindBanner(chosenBrushButton);
                     buttonImg.sprite = Resources.Load<Sprite>("Sprites/art/UI-LevelPage/banner-transparent");
@@ -151,6 +158,10 @@ public class DrawingTool : MonoBehaviour
                 chosenBrush = null;
                 //Change to new selected tool
                 this.toolType = ToolType.PEN;
+                if (pen.name == "ElectronicPen")
+                {
+                    ShowElectronicPenInstance();
+                }
                 chosenPen = pen;
                 //cursorHotsopt = new Vector2(pen.cursor.width / 2, pen.cursor.height / 2);
                 cursorHotsopt = new Vector2(20, 20);
@@ -163,6 +174,7 @@ public class DrawingTool : MonoBehaviour
             }
         }else if(toolPrefab.name.EndsWith("Brush"))
         {
+            HideElectronicPenInstance();
             BasicBrush brush = toolPrefab.GetComponent<BasicBrush>();
             if (chosenBrush == brush)
             {
@@ -199,6 +211,10 @@ public class DrawingTool : MonoBehaviour
                 }
                 //Change to new selected tool
                 this.toolType = ToolType.BRUSH;
+                //if (brush.name == "EraserBrush")
+                //{
+                //    ShowElectronicPenInstance();
+                //}
                 chosenBrush = brush;
                 cursorHotsopt = new Vector2(brush.cursor.width / 2, brush.cursor.height / 2);
                 Cursor.SetCursor(brush.cursor, cursorHotsopt, CursorMode.Auto);
