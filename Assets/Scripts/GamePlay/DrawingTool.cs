@@ -32,6 +32,8 @@ public class DrawingTool : MonoBehaviour
 
     public LayerMask cantDrawOverLayer;
     private int cantDrawOverLayerIndex;
+    private int electronicPenIndex;
+    public List<GameObject> electronicPenInstance;
 
     private BasicPen drawnObject;
 
@@ -55,6 +57,7 @@ public class DrawingTool : MonoBehaviour
     {
         mainCamera = Camera.main;
         cantDrawOverLayerIndex = LayerMask.NameToLayer("CantDrawOver");
+        electronicPenIndex = LayerMask.NameToLayer("ElectronicPen");
         Cursor.SetCursor(cantDrawSign, Vector2.zero, CursorMode.Auto);
         playerControl = FindObjectOfType<PlayerController>();
     }
@@ -280,6 +283,14 @@ public class DrawingTool : MonoBehaviour
         }else if (drawnObject.isStraight)
         {
             Redraw();
+        }else if (chosenPen.name == "ElectronicPen")
+        {
+            electronicPenInstance.Add(drawnObject.GetComponent<ElectronicPen>().GetObject());
+            drawnObject.GetComponent<Rigidbody2D>().mass = drawnObject.massRatio * drawnObject.massRatioOffset * totalDrawDistance;
+            totalDrawDistance = 0;
+            drawnObject.gameObject.layer = electronicPenIndex;
+            drawnObject.UsePhysics(true);
+            drawnObject = null;
         }
         else
         {
@@ -363,6 +374,21 @@ public class DrawingTool : MonoBehaviour
         drawnObject.gameObject.layer = cantDrawOverLayerIndex;
         drawnObject.UsePhysics(true);
         drawnObject = null;
+    }
+
+    void HideElectronicPenInstance()
+    {
+        foreach (GameObject elecPen in electronicPenInstance)
+        {
+            elecPen.SetActive(false);
+        }
+    }
+    void ShowElectronicPenInstance()
+    {
+        foreach (GameObject elecPen in electronicPenInstance)
+        {
+            elecPen.SetActive(true);
+        }
     }
 
     /// <summary>
