@@ -161,13 +161,13 @@ public class PlayerController : MonoBehaviour
         drawingTool.availableBrushes = new List<BasicBrush>(latestAvailableBrushes);
         foreach (BasicPen pen in latestAvailablePens)
         {
-            GameObject pickup = GameObject.Find(pen.name + "Pickup");
+            GameObject pickup = GameObject.Find(pen.penName + "Pickup");
             pickup.GetComponent<Pickup>().activeButton();
             Destroy(GameObject.Find(pen.name + "Pickup"));
         }
         foreach (BasicBrush brush in latestAvailableBrushes)
         {
-            GameObject pickup = GameObject.Find(brush.name + "Pickup");
+            GameObject pickup = GameObject.Find(brush.brushName + "Pickup");
             pickup.GetComponent<Pickup>().activeButton();
             Destroy(GameObject.Find(brush.name + "Pickup"));
         }

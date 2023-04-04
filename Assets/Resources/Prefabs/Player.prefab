@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5023584317750247011}
   - component: {fileID: 8164849259429100860}
   - component: {fileID: 2387989574589088708}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -105,6 +105,7 @@ MonoBehaviour:
   moveSpeed: 5
   jumpSpeed: 8
   remainInk: 100
+  playerGravity: 2
   groundLayer:
     serializedVersion: 2
     m_Bits: 8

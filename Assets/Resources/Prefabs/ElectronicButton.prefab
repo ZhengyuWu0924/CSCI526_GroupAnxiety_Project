@@ -100,9 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connectNode: {fileID: 8415807935341992351}
-  actived: 0
-  onlyActivatedOnce: 0
-  objectToDisappear: {fileID: 0}
+  connected: 0
+  otherDevice: {fileID: 0}
 --- !u!61 &756705173668663807
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -116,7 +115,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.06735611, y: -0.25594997}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -127,7 +126,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.58, y: 4.86}
+  m_Size: {x: 4.7447968, y: 3.863141}
   m_EdgeRadius: 0
 --- !u!1 &8415807935341992351
 GameObject:
