@@ -211,10 +211,10 @@ public class DrawingTool : MonoBehaviour
                 }
                 //Change to new selected tool
                 this.toolType = ToolType.BRUSH;
-                //if (brush.name == "EraserBrush")
-                //{
-                //    ShowElectronicPenInstance();
-                //}
+                if (brush.name == "EraserBrush")
+                {
+                    ShowElectronicPenInstance();
+                }
                 chosenBrush = brush;
                 cursorHotsopt = new Vector2(brush.cursor.width / 2, brush.cursor.height / 2);
                 Cursor.SetCursor(brush.cursor, cursorHotsopt, CursorMode.Auto);
@@ -251,7 +251,7 @@ public class DrawingTool : MonoBehaviour
         var pos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         // Prevent crossing between lines
         RaycastHit2D hit = Physics2D.CircleCast(pos, chosenPen.lineWidth / 3f, Vector2.zero, 1f, cantDrawOverLayer);
-        if (hit)
+        if (hit && chosenPen.name != "ElectronicPen")
         {
             //cursorHotsopt = new Vector2(pen.cursor.width / 2, pen.cursor.height / 2);
             if (hit.transform.name != "UIBlocker")
@@ -260,6 +260,10 @@ public class DrawingTool : MonoBehaviour
             }
             EndDraw();
         }
+        //else if (hit.transform.name == "UIBlocker" && chosenPen.name == "ElectronicPen")
+        //{
+        //    EndDraw();
+        //}
         else
         {
             // add remain ink
@@ -293,7 +297,7 @@ public class DrawingTool : MonoBehaviour
         //Debug.Log("enddraw");
         endPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         if (null == drawnObject) return;
-        if (drawnObject.pointCount < 2)
+        if (drawnObject.pointCount < 3)
         {
             Destroy(drawnObject.gameObject);
         }else if (drawnObject.isStraight)
@@ -396,14 +400,20 @@ public class DrawingTool : MonoBehaviour
     {
         foreach (GameObject elecPen in electronicPenInstance)
         {
-            elecPen.SetActive(false);
+            if(elecPen != null)
+            {
+                elecPen.SetActive(false);
+            }
         }
     }
     void ShowElectronicPenInstance()
     {
         foreach (GameObject elecPen in electronicPenInstance)
         {
-            elecPen.SetActive(true);
+            if (elecPen != null)
+            {
+                elecPen.SetActive(true);
+            }
         }
     }
 

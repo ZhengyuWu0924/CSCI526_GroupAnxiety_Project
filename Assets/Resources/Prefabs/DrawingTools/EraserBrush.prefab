@@ -48,3 +48,4 @@ MonoBehaviour:
   brushColor: {r: 1, g: 1, b: 1, a: 0}
   cursor: {fileID: 2800000, guid: 4129fde84a89a4d049ba2d87c8a40bc8, type: 3}
   brushCost: 0
+  drawingTool: {fileID: 148626785208231098, guid: 13637fd7c2fceea47abbd692fcab2274, type: 3}
