@@ -75,4 +75,9 @@ public abstract class BasicPen : MonoBehaviour
     {
         rigidBody2D.isKinematic = !usePhysics;
     }
+
+    public GameObject GetObject()
+    {
+        return this.gameObject;
+    }
 }
