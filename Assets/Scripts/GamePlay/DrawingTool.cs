@@ -66,20 +66,30 @@ public class DrawingTool : MonoBehaviour
     {
         if (toolType == ToolType.PEN)
         {
-            if (Input.GetMouseButtonDown(0) && GameManager.remainInk > 0)
+            if(chosenPen.name == "EraserPen")
             {
-                beginPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-                BeginDraw();
+                if (Input.GetMouseButton(0))
+                {
+                    Erase();
+                }
             }
-            if (null != drawnObject && GameManager.remainInk > 0)
+            else
             {
-                Draw();
-            }
-            if (Input.GetMouseButtonUp(0) || GameManager.remainInk < 0)
-            {
+                if (Input.GetMouseButtonDown(0) && GameManager.remainInk > 0)
+                {
+                    beginPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+                    BeginDraw();
+                }
+                if (null != drawnObject && GameManager.remainInk > 0)
+                {
+                    Draw();
+                }
+                if (Input.GetMouseButtonUp(0) || GameManager.remainInk < 0)
+                {
 
-                EndDraw();
-                Cursor.SetCursor(chosenPen.cursor, new Vector2(20, 20), CursorMode.Auto);
+                    EndDraw();
+                    Cursor.SetCursor(chosenPen.cursor, new Vector2(20, 20), CursorMode.Auto);
+                }
             }
         }
         else if (toolType == ToolType.BRUSH)
@@ -134,7 +144,7 @@ public class DrawingTool : MonoBehaviour
                 if(chosenPen != null)
                 {
                     HideElectronicPenInstance();
-                    if (pen.name == "ElectronicPen")
+                    if (pen.name == "ElectronicPen" || pen.name == "EraserPen")
                     {
                         ShowElectronicPenInstance();
                     }
@@ -158,7 +168,7 @@ public class DrawingTool : MonoBehaviour
                 chosenBrush = null;
                 //Change to new selected tool
                 this.toolType = ToolType.PEN;
-                if (pen.name == "ElectronicPen")
+                if (pen.name == "ElectronicPen" || pen.name == "EraserPen")
                 {
                     ShowElectronicPenInstance();
                 }
@@ -288,6 +298,17 @@ public class DrawingTool : MonoBehaviour
                 default:
                     break;
             }            
+        }
+    }
+
+    void Erase()
+    {
+        var pos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        // Prevent crossing between lines
+        RaycastHit2D hit = Physics2D.CircleCast(pos, chosenPen.lineWidth, Vector2.zero);
+        if(hit && hit.transform.CompareTag("Drawn Object"))
+        {
+            Destroy(hit.transform.gameObject);
         }
     }
 
