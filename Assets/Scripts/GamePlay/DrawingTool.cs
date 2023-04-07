@@ -59,7 +59,7 @@ public class DrawingTool : MonoBehaviour
         mainCamera = Camera.main;
         cantDrawOverLayerIndex = LayerMask.NameToLayer("CantDrawOver");
         electronicPenIndex = LayerMask.NameToLayer("ElectronicPen");
-        Cursor.SetCursor(cantDrawSign, Vector2.zero, CursorMode.Auto);
+        Cursor.SetCursor(cantDrawSign, new Vector2(cantDrawSign.width / 2, cantDrawSign.height / 2), CursorMode.Auto);
         playerControl = FindObjectOfType<PlayerController>();
     }
 
@@ -136,7 +136,7 @@ public class DrawingTool : MonoBehaviour
                 //Cancel selection
                 this.toolType = ToolType.NONE;
                 chosenPen = null;
-                Cursor.SetCursor(cantDrawSign, Vector2.zero, CursorMode.Auto);
+                Cursor.SetCursor(cantDrawSign, new Vector2(cantDrawSign.width / 2, cantDrawSign.height / 2), CursorMode.Auto);
                 GameObject chosenButton = GameObject.Find(pen.penName + "Button");
                 Image img = FindBanner(chosenButton);
                 img.sprite = Resources.Load<Sprite>("Sprites/art/UI-LevelPage/banner-transparent");
@@ -196,7 +196,7 @@ public class DrawingTool : MonoBehaviour
                 //Cancel Selection
                 this.toolType = ToolType.NONE;
                 chosenBrush = null;
-                Cursor.SetCursor(cantDrawSign, Vector2.zero, CursorMode.Auto);
+                Cursor.SetCursor(cantDrawSign, new Vector2(cantDrawSign.width / 2, cantDrawSign.height / 2), CursorMode.Auto);
                 GameObject chosenButton = GameObject.Find(brush.brushName + "Button");
                 Image img = FindBanner(chosenButton);
                 img.sprite = Resources.Load<Sprite>("Sprites/art/UI-LevelPage/banner-transparent");
