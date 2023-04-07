@@ -277,16 +277,16 @@ RectTransform:
   m_GameObject: {fileID: 3556936117597296227}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -3.3849373}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.89, y: 0.89, z: 0.89}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2209076298297680626}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -185.24213, y: 194.68237}
-  m_SizeDelta: {x: 557, y: 166}
+  m_AnchoredPosition: {x: -168, y: 194.68237}
+  m_SizeDelta: {x: 630, y: 166}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6651120303496676489
 CanvasRenderer:
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 44050a54247044383a691686cb241dd2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 445504b06ab234099acf037ca45c1743, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1682,8 +1682,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -127, y: 189}
-  m_SizeDelta: {x: 193, y: 29}
+  m_AnchoredPosition: {x: -120, y: 189}
+  m_SizeDelta: {x: 203, y: 29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &178075845229642403
 MonoBehaviour:
@@ -2998,7 +2998,7 @@ PrefabInstance:
     - target: {fileID: 2157587045656806619, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: fa60424196a3947ebaed51ee2f79aa60, type: 3}
+      objectReference: {fileID: 21300000, guid: 5a948df8303fa4e688672654b9df02d7, type: 3}
     - target: {fileID: 2157587045656806620, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_Name
       value: RestartButton
@@ -3460,7 +3460,23 @@ PrefabInstance:
     - target: {fileID: 2157587045656806619, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 440d1a6867280470c97b29e214b7c48f, type: 3}
+      objectReference: {fileID: 21300000, guid: 1754866878da64262ac8f1e9b4541581, type: 3}
+    - target: {fileID: 2157587045656806619, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157587045656806619, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157587045656806619, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157587045656806619, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2157587045656806620, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_Name
       value: PauseButton
