@@ -7,10 +7,10 @@ using UnityEngine;
 /// </summary>
 public class GravityBrush : BasicBrush
 {
-    public override void changeProperties(GameObject gameObject)
+    public override void changeProperties(GameObject gameObject, BrushType currentBrush)
     {
         // Firstly, call this function in BasicBrush
-        base.changeProperties(gameObject);
+        base.changeProperties(gameObject, currentBrush);
         base.brushName = "GravityBrush";
 
         // Then, do something special to this brush

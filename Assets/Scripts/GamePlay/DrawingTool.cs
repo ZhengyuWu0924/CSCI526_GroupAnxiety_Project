@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 
 public enum ToolType { PEN = 0, BRUSH, NONE };
-
+public enum BrushType { NONE = 0, GRAVITY = 1, MAGNET_POS = 2, MAGNET_NEG = 3, ERASER = 4};
 
 /// <summary>
 /// Drawing Tool controls every pen and brush in the scene
@@ -33,6 +33,7 @@ public class DrawingTool : MonoBehaviour
     public LayerMask cantDrawOverLayer;
     private int cantDrawOverLayerIndex;
     private int electronicPenIndex;
+    private bool mouseSecondaryButton = false;
     public List<GameObject> electronicPenInstance;
 
     private BasicPen drawnObject;
@@ -98,8 +99,12 @@ public class DrawingTool : MonoBehaviour
             if(Input.GetMouseButtonDown(0) && GameManager.remainInk > 0)
             {
                 Brush();
+            } else if (Input.GetMouseButtonDown(1) && GameManager.RemainInk > 0){
+                mouseSecondaryButton = true;
+                Brush();
+                mouseSecondaryButton = false;
             }
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1))
             {
                 Cursor.SetCursor(chosenBrush.cursor, new Vector2(chosenBrush.cursor.width / 2, chosenBrush.cursor.height / 2), CursorMode.Auto);
             }
@@ -352,25 +357,28 @@ public class DrawingTool : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
         Debug.DrawRay(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Color.yellow, 1000f);
+        BrushType currentBrush = BrushType.NONE;
         if (hit.collider != null)
         {
             if (hit.transform.CompareTag("Mutable Object"))
             {
                 if (chosenBrush.name != "EraserBrush")
-                {
-                    chosenBrush.changeProperties(hit.transform.gameObject);
-                    GameManager.Instance.updateInk(chosenBrush.brushCost);
+                {   
                     switch(chosenBrush.brushName){
                         case "GravityBrush":
                             GameManager.gravityInkUsed += chosenBrush.brushCost;
+                            currentBrush = BrushType.GRAVITY;
                             break;
                         case "MagnetBrush":
                             GameManager.magnetInkUsed += chosenBrush.brushCost;
+                            currentBrush = mouseSecondaryButton == true ? BrushType.MAGNET_NEG : BrushType.MAGNET_POS;
                             break;
                         default:
                             break;
-                        
                     }
+                    
+                    chosenBrush.changeProperties(hit.transform.gameObject, currentBrush);
+                    GameManager.Instance.updateInk(chosenBrush.brushCost);
                 }
             }
             if (hit.transform.CompareTag("Shrine")){
@@ -380,7 +388,8 @@ public class DrawingTool : MonoBehaviour
             }
             if (chosenBrush.name == "EraserBrush" && hit.transform.CompareTag("Drawn Object"))
             {
-                chosenBrush.changeProperties(hit.transform.gameObject);
+                currentBrush = BrushType.ERASER;
+                chosenBrush.changeProperties(hit.transform.gameObject, currentBrush);
                 GameManager.Instance.updateInk(chosenBrush.brushCost);
                 // update eraser brush cost
                 GameManager.eraserInkUsed += chosenBrush.brushCost;

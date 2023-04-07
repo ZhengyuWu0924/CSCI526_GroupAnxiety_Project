@@ -5,7 +5,7 @@ using UnityEngine;
 public class EraserBrush : BasicBrush
 {
     //public GameObject drawingTool;
-   public override void changeProperties(GameObject gameObject)
+   public override void changeProperties(GameObject gameObject, BrushType currentBrush)
     {
         if (gameObject.CompareTag("Drawn Object"))
         {

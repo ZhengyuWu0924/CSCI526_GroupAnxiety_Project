@@ -18,7 +18,7 @@ public abstract class BasicBrush : MonoBehaviour
     public int brushCost;
 
     // Called by DrawingTool.cs, change current object's propertiess
-    public virtual void changeProperties(GameObject gameObject)
+    public virtual void changeProperties(GameObject gameObject, BrushType currentBrush)
     {
         mutableObject = gameObject.GetComponent<MutableObject>();
         mutableObject.ChangeColor(brushColor);
