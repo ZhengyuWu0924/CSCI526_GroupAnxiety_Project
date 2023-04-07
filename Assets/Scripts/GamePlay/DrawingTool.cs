@@ -370,8 +370,12 @@ public class DrawingTool : MonoBehaviour
                             currentBrush = BrushType.GRAVITY;
                             break;
                         case "MagnetBrush":
+                            Texture2D positiveCursor = Resources.Load<Texture2D>("Sprites/Cursors/MagnetBrush-S");
+                            Texture2D negativeCursor = Resources.Load<Texture2D>("Sprites/Cursors/MagnetBrush-N");
                             GameManager.magnetInkUsed += chosenBrush.brushCost;
-                            currentBrush = mouseSecondaryButton == true ? BrushType.MAGNET_NEG : BrushType.MAGNET_POS;
+                            currentBrush = mouseSecondaryButton == true ? BrushType.MAGNET_POS : BrushType.MAGNET_NEG;
+                            chosenBrush.cursor = mouseSecondaryButton == true ? positiveCursor : negativeCursor;
+                            Cursor.SetCursor(chosenBrush.cursor, new Vector2(chosenBrush.cursor.width / 2, chosenBrush.cursor.height / 2), CursorMode.Auto);
                             break;
                         default:
                             break;
