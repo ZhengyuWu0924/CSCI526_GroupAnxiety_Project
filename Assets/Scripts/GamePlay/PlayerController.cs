@@ -59,10 +59,10 @@ public class PlayerController : MonoBehaviour
             starBar = levelUI.transform.Find("LevelStar").gameObject;
             levelStar = starBar.GetComponent<LevelStar>();
 
-            collectedStars = new List<int>();
             drawingTool = GameObject.Find("DrawingTool").GetComponent<DrawingTool>();
             if (!ifLoadCheckPoint)
             {
+                collectedStars = new List<int>();
                 respawnPoint = transform.position;
                 latestCheckpointInk = remainInk;
                 latestCheckpointStar = new List<int>();
@@ -139,11 +139,12 @@ public class PlayerController : MonoBehaviour
         {
             GameObject.Find("Checkpoint_No." + i).GetComponent<Checkpoint>().activate();
         }
+        collectedStars = new List<int>(latestCheckpointStar);
+        levelStar.SetStars(latestCheckpointStar.Count);
         foreach (int i in latestCheckpointStar)
         {
             Destroy(GameObject.Find("Star" + i));
         }
-        levelStar.SetStars(latestCheckpointStar.Count);
         transform.position = respawnPoint;
         gameManager.updateInk(remainInk - latestCheckpointInk);
         drawingTool.availablePens = new List<BasicPen>(latestAvailablePens);

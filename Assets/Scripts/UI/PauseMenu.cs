@@ -9,12 +9,13 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] public GameObject win;
     [SerializeField] public GameObject lose;
     private Restart restartScript;
-    private bool pause = false;
+    private Texture2D cantDrawSign;
 
 
     void Start()
     {
         restartScript = GameObject.FindObjectOfType(typeof(Restart)) as Restart;
+        cantDrawSign = Resources.Load<Texture2D>("Sprites/Cursors/WrongMouse");
     }
 
     void Update()
@@ -34,16 +35,14 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuPanel.SetActive(true);
         Time.timeScale = 0f;
-        pause = true;
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        Cursor.SetCursor(cantDrawSign, new Vector2(cantDrawSign.width / 2, cantDrawSign.height / 2), CursorMode.Auto);
     }
 
     public void Resume()
     {
         pauseMenuPanel.SetActive(false);
         Time.timeScale = 1f;
-        pause = false;
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        Cursor.SetCursor(cantDrawSign, new Vector2(cantDrawSign.width / 2, cantDrawSign.height / 2), CursorMode.Auto);
     }
 
     public void MainMenu()
@@ -52,7 +51,7 @@ public class PauseMenu : MonoBehaviour
         win.SetActive(false);
         lose.SetActive(false);
         Resume();
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        Cursor.SetCursor(cantDrawSign, new Vector2(cantDrawSign.width / 2, cantDrawSign.height / 2), CursorMode.Auto);
         SceneManager.LoadScene("Main Menu");
     }
     
@@ -62,7 +61,7 @@ public class PauseMenu : MonoBehaviour
         Resume();
         win.SetActive(false);
         lose.SetActive(false);
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        Cursor.SetCursor(cantDrawSign, new Vector2(cantDrawSign.width / 2, cantDrawSign.height / 2), CursorMode.Auto);
         SceneManager.LoadScene("LevelSelection");
     }
 
@@ -71,7 +70,7 @@ public class PauseMenu : MonoBehaviour
         string sceneName = SceneManager.GetActiveScene().name;
         // Debug.Log("Current scene name: " + sceneName);
         int nextLevel = int.Parse(sceneName.Substring(6)) + 1;
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        Cursor.SetCursor(cantDrawSign, new Vector2(cantDrawSign.width / 2, cantDrawSign.height / 2), CursorMode.Auto);
         SceneManager.LoadScene("Level " + nextLevel.ToString());
     }
 }
