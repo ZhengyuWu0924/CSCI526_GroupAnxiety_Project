@@ -131,22 +131,6 @@ public class PlayerController : MonoBehaviour
         {
             loseScreen.SetActive(true);
         }
-
-        // restart
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            //transform.position = respawnPoint;
-            if (latestCheckpointNo.Count > 0)
-            {
-                ifLoadCheckPoint = true;
-            }
-            else
-            {
-                ifLoadCheckPoint = false;
-            }
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-
     }
 
     private void LoadCheckPoint()

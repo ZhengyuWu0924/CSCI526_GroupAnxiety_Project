@@ -55,11 +55,11 @@ public class CameraController : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, moveTemp, speed * Time.deltaTime);
         }*/
         transform.position = player.transform.position + new Vector3(0, 0, -10);
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             GetComponent<Camera>().orthographicSize = zoomSize;
         }
-        else if (Input.GetKeyUp(KeyCode.M))
+        else if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             GetComponent<Camera>().orthographicSize = defaultSize;
         }
