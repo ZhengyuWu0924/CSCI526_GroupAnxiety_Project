@@ -23,13 +23,15 @@ public class LevelStar : MonoBehaviour
                 break;
 
             case 1:
-                starBar[1].sprite = brightStar;
+                starBar[0].sprite = brightStar;
+                starBar[1].sprite = emptyStar;
+                starBar[2].sprite = emptyStar;
                 break;
 
             case 2:
                 starBar[0].sprite = brightStar;
-                starBar[1].sprite = emptyStar;
-                starBar[2].sprite = brightStar;
+                starBar[1].sprite = brightStar;
+                starBar[2].sprite = emptyStar;
                 break;
             case 3:
                 starBar[0].sprite = brightStar;

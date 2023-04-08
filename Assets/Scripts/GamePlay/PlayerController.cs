@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     private GameObject levelUI;
     private GameObject victoryScreen;
     private GameObject loseScreen;
+    private GameObject starBar;
+    private LevelStar levelStar;
 
     private Animator playerAnimation;
     public LayerMask groundLayer;
@@ -54,6 +56,8 @@ public class PlayerController : MonoBehaviour
             levelUI = gameManager.levelUI;
             victoryScreen = levelUI.transform.Find("VictoryScreen").gameObject;
             loseScreen = levelUI.transform.Find("LoseScreen").gameObject;
+            starBar = levelUI.transform.Find("LevelStar").gameObject;
+            levelStar = starBar.GetComponent<LevelStar>();
 
             collectedStars = new List<int>();
             drawingTool = GameObject.Find("DrawingTool").GetComponent<DrawingTool>();
@@ -155,6 +159,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(GameObject.Find("Star" + i));
         }
+        levelStar.SetStars(latestCheckpointStar.Count);
         transform.position = respawnPoint;
         gameManager.updateInk(remainInk - latestCheckpointInk);
         drawingTool.availablePens = new List<BasicPen>(latestAvailablePens);
@@ -200,6 +205,8 @@ public class PlayerController : MonoBehaviour
         }else if(collision.tag == "Star")
         {
             collectedStars.Add(int.Parse(collision.gameObject.name.Substring(collision.gameObject.name.Length - 1, 1)));
+            levelStar.SetStars(collectedStars.Count);
+            
         }else if(collision.tag == "Checkpoint")
         {
             Checkpoint collidedCheckPoint = collision.gameObject.GetComponent<Checkpoint>();

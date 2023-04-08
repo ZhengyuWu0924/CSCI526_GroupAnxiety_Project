@@ -51,6 +51,17 @@ public class DrawingTool : MonoBehaviour
 
     private Vector2 beginPosition;
     private Vector2 endPosition;
+
+    // Magnet Brush
+    private Texture2D positiveCursor;
+    private Texture2D negativeCursor;
+    private Sprite positiveBanner;
+    private Sprite negativeBanner;
+    private Sprite positiveIcon;
+    private Sprite negativeIcon;
+    private Sprite originalIcon;
+
+
     /// <summary>
     /// General Functions
     /// </summary>
@@ -61,6 +72,7 @@ public class DrawingTool : MonoBehaviour
         electronicPenIndex = LayerMask.NameToLayer("ElectronicPen");
         Cursor.SetCursor(cantDrawSign, new Vector2(cantDrawSign.width / 2, cantDrawSign.height / 2), CursorMode.Auto);
         playerControl = FindObjectOfType<PlayerController>();
+        LoadMagnetBrush();
     }
 
     private void Update()
@@ -111,13 +123,13 @@ public class DrawingTool : MonoBehaviour
         }
     }
 
-    private Image FindBanner(GameObject button)
+    private Image FindBanner(GameObject button, string name)
     {
         Image[] images = button.GetComponentsInChildren<Image>();
 
         foreach (Image image in images)
         {
-            if (image.name == "SelectedBanner")
+            if (image.name == name)
             {
                 return image;
             }
@@ -138,7 +150,7 @@ public class DrawingTool : MonoBehaviour
                 chosenPen = null;
                 Cursor.SetCursor(cantDrawSign, new Vector2(cantDrawSign.width / 2, cantDrawSign.height / 2), CursorMode.Auto);
                 GameObject chosenButton = GameObject.Find(pen.penName + "Button");
-                Image img = FindBanner(chosenButton);
+                Image img = FindBanner(chosenButton, "SelectedBanner");
                 img.sprite = Resources.Load<Sprite>("Sprites/art/UI-LevelPage/banner-transparent");
                 //TextMeshProUGUI tmp = chosenButton.GetComponentInChildren<TextMeshProUGUI>();
                 //tmp.SetText(tmp.text.Replace("-", ""));
@@ -154,7 +166,7 @@ public class DrawingTool : MonoBehaviour
                         ShowElectronicPenInstance();
                     }
                     GameObject chosenPenButton = GameObject.Find(chosenPen.penName + "Button");
-                    Image buttonImg = FindBanner(chosenPenButton);
+                    Image buttonImg = FindBanner(chosenPenButton, "SelectedBanner");
                     buttonImg.sprite = Resources.Load<Sprite>("Sprites/art/UI-LevelPage/banner-transparent");
                     //TextMeshProUGUI buttonTmp = chosenPenButton.GetComponentInChildren<TextMeshProUGUI>();
                     //buttonTmp.SetText(buttonTmp.text.Replace("-", ""));
@@ -164,7 +176,13 @@ public class DrawingTool : MonoBehaviour
                 {
                     ShowElectronicPenInstance();
                     GameObject chosenBrushButton = GameObject.Find(chosenBrush.brushName + "Button");
-                    Image buttonImg = FindBanner(chosenBrushButton);
+                    Image buttonImg = FindBanner(chosenBrushButton, "SelectedBanner");
+                    if (chosenBrush.brushName == "MagnetBrush")
+                    {
+                        Image icon = FindBanner(chosenBrushButton, "Image");
+                        icon.sprite = originalIcon;
+                        chosenBrush.cursor = positiveCursor;
+                    }
                     buttonImg.sprite = Resources.Load<Sprite>("Sprites/art/UI-LevelPage/banner-transparent");
                     //TextMeshProUGUI buttonTmp = chosenBrushButton.GetComponentInChildren<TextMeshProUGUI>();
                     //buttonTmp.SetText(buttonTmp.text.Replace("-", ""));
@@ -182,7 +200,7 @@ public class DrawingTool : MonoBehaviour
                 cursorHotsopt = new Vector2(20, 20);
                 Cursor.SetCursor(pen.cursor, cursorHotsopt, CursorMode.Auto);
                 GameObject chosenButton = GameObject.Find(pen.penName + "Button");
-                Image img = FindBanner(chosenButton);
+                Image img = FindBanner(chosenButton, "SelectedBanner");
                 img.sprite = Resources.Load<Sprite>("Sprites/art/UI-LevelPage/banner-" + pen.penName);
                 //TextMeshProUGUI tmp = chosenButton.GetComponentInChildren<TextMeshProUGUI>();
                 //tmp.SetText("-" + tmp.text.Substring(0, tmp.text.IndexOf("\n")) + "-" + tmp.text.Substring(tmp.text.IndexOf("\n")));
@@ -195,11 +213,17 @@ public class DrawingTool : MonoBehaviour
             {
                 //Cancel Selection
                 this.toolType = ToolType.NONE;
-                chosenBrush = null;
                 Cursor.SetCursor(cantDrawSign, new Vector2(cantDrawSign.width / 2, cantDrawSign.height / 2), CursorMode.Auto);
                 GameObject chosenButton = GameObject.Find(brush.brushName + "Button");
-                Image img = FindBanner(chosenButton);
+                Image img = FindBanner(chosenButton, "SelectedBanner");
                 img.sprite = Resources.Load<Sprite>("Sprites/art/UI-LevelPage/banner-transparent");
+                if (chosenBrush.brushName == "MagnetBrush")
+                { 
+                    Image icon = FindBanner(chosenButton, "Image");
+                    icon.sprite = originalIcon;
+                    chosenBrush.cursor = positiveCursor;
+                }
+                chosenBrush = null;
                 //TextMeshProUGUI tmp = chosenButton.GetComponentInChildren<TextMeshProUGUI>();
                 //tmp.SetText(tmp.text.Replace("-", ""));
             }
@@ -209,7 +233,7 @@ public class DrawingTool : MonoBehaviour
                 if (chosenPen != null)
                 {
                     GameObject chosenPenButton = GameObject.Find(chosenPen.penName + "Button");
-                    Image buttonImg = FindBanner(chosenPenButton);
+                    Image buttonImg = FindBanner(chosenPenButton, "SelectedBanner");
                     buttonImg.sprite = Resources.Load<Sprite>("Sprites/art/UI-LevelPage/banner-transparent");
                     //TextMeshProUGUI buttonTmp = chosenPenButton.GetComponentInChildren<TextMeshProUGUI>();
                     //buttonTmp.SetText(buttonTmp.text.Replace("-", ""));
@@ -218,8 +242,14 @@ public class DrawingTool : MonoBehaviour
                 if (chosenBrush != null)
                 {
                     GameObject chosenBrushButton = GameObject.Find(chosenBrush.brushName + "Button");
-                    Image buttonImg = FindBanner(chosenBrushButton);
+                    Image buttonImg = FindBanner(chosenBrushButton, "SelectedBanner");
                     buttonImg.sprite = Resources.Load<Sprite>("Sprites/art/UI-LevelPage/banner-transparent");
+                    if (chosenBrush.brushName == "MagnetBrush")
+                    {
+                        Image icon = FindBanner(chosenBrushButton, "Image");
+                        icon.sprite = originalIcon;
+                        chosenBrush.cursor = positiveCursor;
+                    }
                     //TextMeshProUGUI buttonTmp = chosenBrushButton.GetComponentInChildren<TextMeshProUGUI>();
                     //buttonTmp.SetText(buttonTmp.text.Replace("-", ""));
                     chosenBrush = null;
@@ -234,7 +264,7 @@ public class DrawingTool : MonoBehaviour
                 cursorHotsopt = new Vector2(brush.cursor.width / 2, brush.cursor.height / 2);
                 Cursor.SetCursor(brush.cursor, cursorHotsopt, CursorMode.Auto);
                 GameObject chosenButton = GameObject.Find(brush.brushName + "Button");
-                Image img = FindBanner(chosenButton);
+                Image img = FindBanner(chosenButton, "SelectedBanner");
                 img.sprite = Resources.Load<Sprite>("Sprites/art/UI-LevelPage/banner-" + brush.brushName);
                 //TextMeshProUGUI tmp = chosenButton.GetComponentInChildren<TextMeshProUGUI>();
                 //tmp.SetText("-" + tmp.text.Substring(0, tmp.text.IndexOf("\n")) + "-" + tmp.text.Substring(tmp.text.IndexOf("\n")));
@@ -370,12 +400,15 @@ public class DrawingTool : MonoBehaviour
                             currentBrush = BrushType.GRAVITY;
                             break;
                         case "MagnetBrush":
-                            Texture2D positiveCursor = Resources.Load<Texture2D>("Sprites/Cursors/MagnetBrush-S");
-                            Texture2D negativeCursor = Resources.Load<Texture2D>("Sprites/Cursors/MagnetBrush-N");
                             GameManager.magnetInkUsed += chosenBrush.brushCost;
-                            currentBrush = mouseSecondaryButton == true ? BrushType.MAGNET_POS : BrushType.MAGNET_NEG;
-                            chosenBrush.cursor = mouseSecondaryButton == true ? positiveCursor : negativeCursor;
+                            currentBrush = mouseSecondaryButton == true ? BrushType.MAGNET_NEG : BrushType.MAGNET_POS;
+                            chosenBrush.cursor = mouseSecondaryButton == false ? positiveCursor : negativeCursor;
                             Cursor.SetCursor(chosenBrush.cursor, new Vector2(chosenBrush.cursor.width / 2, chosenBrush.cursor.height / 2), CursorMode.Auto);
+                            GameObject magnetBrushButton = GameObject.Find("MagnetBrushButton");
+                            Image banner = FindBanner(magnetBrushButton, "SelectedBanner");
+                            banner.sprite = mouseSecondaryButton == false ? positiveBanner : negativeBanner;
+                            Image icon = FindBanner(magnetBrushButton, "Image");
+                            icon.sprite = mouseSecondaryButton == false ? positiveIcon : negativeIcon;
                             break;
                         default:
                             break;
@@ -467,5 +500,16 @@ public class DrawingTool : MonoBehaviour
             availableBrushes.Add(pickupBrush);
         }
         toolButton.SetActive(true);
+    }
+
+    private void LoadMagnetBrush()
+    {
+        positiveCursor = Resources.Load<Texture2D>("Sprites/Cursors/MagnetBrush-S");
+        negativeCursor = Resources.Load<Texture2D>("Sprites/Cursors/MagnetBrush-N");
+        positiveBanner = Resources.Load<Sprite>("Sprites/art/UI-LevelPage/banner-MagnetBrush");
+        negativeBanner = Resources.Load<Sprite>("Sprites/art/UI-LevelPage/banner-MagnetBrush-N");
+        positiveIcon = Resources.Load<Sprite>("Sprites/art/UI-LevelPage/ui-magnet-N");
+        negativeIcon = Resources.Load<Sprite>("Sprites/art/UI-LevelPage/ui-magnet-S");
+        originalIcon = Resources.Load<Sprite>("Sprites/art/UI-LevelPage/ui-magnet");
     }
 }
