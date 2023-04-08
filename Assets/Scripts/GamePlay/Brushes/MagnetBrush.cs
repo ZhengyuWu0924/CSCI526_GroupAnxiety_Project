@@ -33,7 +33,7 @@ public class MagnetBrush : BasicBrush
         // if the current mutable object already has non-none magnetism
         // change it back to default state and reset the color
         // otherwise, give it the current magnetism and related color
-        if (mutableObject.magnetism != Magnetism.None){
+        if (mutableObject.magnetism == magnetism){
             mutableObject.ResetColor();
             mutableObject.magnetism = Magnetism.None;
             return;

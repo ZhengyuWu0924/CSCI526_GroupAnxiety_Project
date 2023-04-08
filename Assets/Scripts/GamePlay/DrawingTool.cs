@@ -59,7 +59,7 @@ public class DrawingTool : MonoBehaviour
         mainCamera = Camera.main;
         cantDrawOverLayerIndex = LayerMask.NameToLayer("CantDrawOver");
         electronicPenIndex = LayerMask.NameToLayer("ElectronicPen");
-        Cursor.SetCursor(cantDrawSign, Vector2.zero, CursorMode.Auto);
+        Cursor.SetCursor(cantDrawSign, new Vector2(cantDrawSign.width / 2, cantDrawSign.height / 2), CursorMode.Auto);
         playerControl = FindObjectOfType<PlayerController>();
     }
 
@@ -136,7 +136,7 @@ public class DrawingTool : MonoBehaviour
                 //Cancel selection
                 this.toolType = ToolType.NONE;
                 chosenPen = null;
-                Cursor.SetCursor(cantDrawSign, Vector2.zero, CursorMode.Auto);
+                Cursor.SetCursor(cantDrawSign, new Vector2(cantDrawSign.width / 2, cantDrawSign.height / 2), CursorMode.Auto);
                 GameObject chosenButton = GameObject.Find(pen.penName + "Button");
                 Image img = FindBanner(chosenButton);
                 img.sprite = Resources.Load<Sprite>("Sprites/art/UI-LevelPage/banner-transparent");
@@ -196,7 +196,7 @@ public class DrawingTool : MonoBehaviour
                 //Cancel Selection
                 this.toolType = ToolType.NONE;
                 chosenBrush = null;
-                Cursor.SetCursor(cantDrawSign, Vector2.zero, CursorMode.Auto);
+                Cursor.SetCursor(cantDrawSign, new Vector2(cantDrawSign.width / 2, cantDrawSign.height / 2), CursorMode.Auto);
                 GameObject chosenButton = GameObject.Find(brush.brushName + "Button");
                 Image img = FindBanner(chosenButton);
                 img.sprite = Resources.Load<Sprite>("Sprites/art/UI-LevelPage/banner-transparent");
@@ -370,8 +370,12 @@ public class DrawingTool : MonoBehaviour
                             currentBrush = BrushType.GRAVITY;
                             break;
                         case "MagnetBrush":
+                            Texture2D positiveCursor = Resources.Load<Texture2D>("Sprites/Cursors/MagnetBrush-S");
+                            Texture2D negativeCursor = Resources.Load<Texture2D>("Sprites/Cursors/MagnetBrush-N");
                             GameManager.magnetInkUsed += chosenBrush.brushCost;
-                            currentBrush = mouseSecondaryButton == true ? BrushType.MAGNET_NEG : BrushType.MAGNET_POS;
+                            currentBrush = mouseSecondaryButton == true ? BrushType.MAGNET_POS : BrushType.MAGNET_NEG;
+                            chosenBrush.cursor = mouseSecondaryButton == true ? positiveCursor : negativeCursor;
+                            Cursor.SetCursor(chosenBrush.cursor, new Vector2(chosenBrush.cursor.width / 2, chosenBrush.cursor.height / 2), CursorMode.Auto);
                             break;
                         default:
                             break;

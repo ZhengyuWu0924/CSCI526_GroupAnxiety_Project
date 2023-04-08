@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SpeedBoost : MonoBehaviour
 {
@@ -9,8 +10,10 @@ public class SpeedBoost : MonoBehaviour
     public float powerUpDuration = 7f;
 
     private bool isPoweredUp = false;
-    private float originalSpeed;    
+    private float originalSpeed;
 
+    private TextMeshPro countDownText;
+    private float countDownTime;
     void OnTriggerEnter2D(Collider2D other)
     {
         //Debug.Log("collide");
@@ -18,6 +21,9 @@ public class SpeedBoost : MonoBehaviour
         {
             // The player has picked up the powerup
             //Debug.Log("The player has picked up the powerup");
+            //countDownText = other.transform.Find("Canvas").gameObject.transform.Find("CountDownText").gameObject.GetComponent<TextMeshPro>();
+            countDownText = other.transform.Find("CountDownText").gameObject.GetComponent<TextMeshPro>();
+            countDownTime = powerUpDuration;
             isPoweredUp = true;
             originalSpeed = other.gameObject.GetComponent<PlayerController>().moveSpeed;
             other.gameObject.GetComponent<PlayerController>().moveSpeed = originalSpeed * speedBoost;
@@ -27,6 +33,24 @@ public class SpeedBoost : MonoBehaviour
             renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 0.0f);
             collider.enabled = false;
             /*gameObject.SetActive(false); */// Disable the powerup object
+        }
+    }
+
+    private void Update()
+    {
+
+        if (isPoweredUp)
+        {
+            if (countDownTime > 0)
+            {
+                countDownTime -= Time.deltaTime;
+            }
+            double b = System.Math.Round(countDownTime, 2);
+            countDownText.text = b.ToString();
+            if(countDownTime < 0)
+            {
+                countDownText.text = "";
+            }
         }
     }
 
