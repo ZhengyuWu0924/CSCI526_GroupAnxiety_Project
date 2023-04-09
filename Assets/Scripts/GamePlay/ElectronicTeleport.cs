@@ -6,9 +6,12 @@ public class ElectronicTeleport : ElectronicDevice
 {
     public Vector3 destination;
     private ElectronicTeleport otherTeleport;
+    [SerializeField] Color connectedColor;
+    [SerializeField] Color disconnectedColor;
 
     public override void connectDevice(ElectronicDevice other)
     {
+        gameObject.GetComponent<SpriteRenderer>().color = connectedColor;
         base.connectDevice(other);
         destination = other.transform.position;
         otherTeleport = (ElectronicTeleport)other;
@@ -16,6 +19,7 @@ public class ElectronicTeleport : ElectronicDevice
 
     public override void disconnectDevice()
     {
+        gameObject.GetComponent<SpriteRenderer>().color = disconnectedColor;
         base.disconnectDevice();
     }
 
