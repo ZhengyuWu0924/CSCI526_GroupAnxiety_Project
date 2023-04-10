@@ -1975,6 +1975,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee8eea8ad07c12d40b557c2098b60eba, type: 3}
+--- !u!1 &573842008 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3821966340114167300, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+  m_PrefabInstance: {fileID: 858242138}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &576189923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4363,11 +4368,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 393ce3c46e7d546458b5e9f454cc4266, type: 3}
---- !u!1 &1036273580 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 957471778074010177, guid: 393ce3c46e7d546458b5e9f454cc4266, type: 3}
-  m_PrefabInstance: {fileID: 1036273579}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1065415632
 GameObject:
   m_ObjectHideFlags: 0
@@ -6513,7 +6513,7 @@ PrefabInstance:
     - target: {fileID: 7307871067185668521, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 88573790abb214c8298abe02af9aee6e, type: 3}
+      objectReference: {fileID: 21300000, guid: ea7baa2f7bad24f4fa288d0f2d640e05, type: 3}
     - target: {fileID: 7307871067185668521, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -6537,7 +6537,7 @@ PrefabInstance:
     - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: toolButton
       value: 
-      objectReference: {fileID: 1036273580}
+      objectReference: {fileID: 573842008}
     - target: {fileID: 7307871067185668522, guid: 20d2072ae3f247048a16df50dd8f9ba4, type: 3}
       propertyPath: toolPrefab
       value: 
