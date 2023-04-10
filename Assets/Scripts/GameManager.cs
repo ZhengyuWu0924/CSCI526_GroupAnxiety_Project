@@ -188,9 +188,9 @@ public class GameManager : Singleton<GameManager>
 
     private void HandleVictory(){
         updateCurrentLevel();
-        SendAtVictory();
-        SendTrapInfoAtVictory();
-        SendUsageAtVictory();
+        // SendAtVictory();
+        // SendTrapInfoAtVictory();
+        // SendUsageAtVictory();
         passStarsToPrefs(currentLevel, currentLevelStars);
 
     }
@@ -201,7 +201,7 @@ public class GameManager : Singleton<GameManager>
         TBD: Add function calls for printing the lose information and restart button
     */
     private void HandleLose(){
-        SendAtLose();
+        // SendAtLose();
     }
 
 

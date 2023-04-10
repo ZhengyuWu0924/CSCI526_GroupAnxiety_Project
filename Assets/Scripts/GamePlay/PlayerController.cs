@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
         try
         {
             player = gameManager.player.GetComponent<Rigidbody2D>();
-            player.gravityScale = playerGravity; // Initialize Player gravity to default value
+            player.gravityScale = 2f; // Initialize Player gravity to default value
             playerAnimation = GetComponent<Animator>();
             isOnGround = true;
 
