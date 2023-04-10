@@ -28,7 +28,7 @@ public class OneWayTeleport : MonoBehaviour
             isActivated = false;
             //When we need two way transport:
             //teleportDestination.GetComponent<OneWayTeleport>().isActivated = false;
-            yield return new WaitForSeconds(5.0f);
+            yield return new WaitForSeconds(2.0f);
             isActivated = true;
             //teleportDestination.GetComponent<OneWayTeleport>().isActivated = true;
         }
