@@ -13,6 +13,7 @@ public class SpeedBoost : MonoBehaviour
     private float originalSpeed;
 
     private TextMeshPro countDownText;
+    private GameObject player;
     private float countDownTime;
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -22,7 +23,7 @@ public class SpeedBoost : MonoBehaviour
             // The player has picked up the powerup
             //Debug.Log("The player has picked up the powerup");
             //countDownText = other.transform.Find("Canvas").gameObject.transform.Find("CountDownText").gameObject.GetComponent<TextMeshPro>();
-            countDownText = other.transform.Find("CountDownText").gameObject.GetComponent<TextMeshPro>();
+            //countDownText = other.transform.Find("CountDownText").gameObject.GetComponent<TextMeshPro>();
             countDownTime = powerUpDuration;
             isPoweredUp = true;
             originalSpeed = other.gameObject.GetComponent<PlayerController>().moveSpeed;
@@ -36,9 +37,15 @@ public class SpeedBoost : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        countDownText = GameObject.Find("CountDownText").GetComponent<TextMeshPro>();
+        player = GameObject.Find("Player");
+    }
+
     private void Update()
     {
-
+        countDownText.transform.position = player.transform.position + new Vector3(0.2f, 1.7f, 0f);
         if (isPoweredUp)
         {
             if (countDownTime > 0)

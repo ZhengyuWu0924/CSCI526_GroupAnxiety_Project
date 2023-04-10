@@ -356,14 +356,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 217899580143256811, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
-      propertyPath: m_MotionVectors
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 217899580143256811, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
-      propertyPath: m_DynamicOccludee
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4916388965202034151, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
       propertyPath: m_Name
       value: Player
@@ -434,10 +426,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4916388965202034172, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8454267443162030497, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1442,18 +1430,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4710840297259043336, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4710840297259043336, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4710840297259043336, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5006860289580394734, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1996,14 +1972,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpeedBoostPowerup
       objectReference: {fileID: 0}
-    - target: {fileID: 781438667333313283, guid: efe8182470e70c44fa639a7a5dd8a029, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 126290683}
-    - target: {fileID: 781438667333313283, guid: efe8182470e70c44fa639a7a5dd8a029, type: 3}
-      propertyPath: countDownText
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 781438667333313285, guid: efe8182470e70c44fa639a7a5dd8a029, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2539,8 +2507,6 @@ MonoBehaviour:
   connectNode: {fileID: 0}
   connected: 0
   destination: {x: 0, y: 0, z: 0}
-  connectedColor: {r: 0, g: 0, b: 0, a: 0}
-  disconnectedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!212 &1543021498
 SpriteRenderer:
   m_ObjectHideFlags: 0
