@@ -214,4 +214,4 @@ MonoBehaviour:
   massRatioOffset: 1
   isStraight: 0
   lineCostFactor: 1
-  cursor: {fileID: 2800000, guid: 88573790abb214c8298abe02af9aee6e, type: 3}
+  cursor: {fileID: 2800000, guid: 4cdee75568d134fe188c750e34f5a3cb, type: 3}
