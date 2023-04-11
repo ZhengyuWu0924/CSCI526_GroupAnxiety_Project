@@ -619,7 +619,7 @@ PrefabInstance:
     - target: {fileID: 8164849259429100860, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 619a3827d76be4c14acf2a1bf4d49de4, type: 2}
+      objectReference: {fileID: 9100000, guid: 24de4c483932e43e0b1f60af2ada8710, type: 2}
     m_RemovedComponents:
     - {fileID: 5023584317750247011, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
@@ -4009,6 +4009,30 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3343572585049891596, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5006860289580394734, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5006860289580394734, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5006860289580394734, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5006860289580394734, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5006860289580394734, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5006860289580394734, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -7535,6 +7559,8 @@ MonoBehaviour:
   connectNode: {fileID: 0}
   connected: 0
   destination: {x: 0, y: 0, z: 0}
+  connectedColor: {r: 0, g: 0, b: 0, a: 0}
+  disconnectedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!212 &1606553680
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8260,6 +8286,8 @@ MonoBehaviour:
   connectNode: {fileID: 0}
   connected: 0
   destination: {x: 0, y: 0, z: 0}
+  connectedColor: {r: 0, g: 0, b: 0, a: 0}
+  disconnectedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!212 &1820452054
 SpriteRenderer:
   m_ObjectHideFlags: 0
