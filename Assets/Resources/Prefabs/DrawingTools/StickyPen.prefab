@@ -210,7 +210,7 @@ MonoBehaviour:
   pointCount: 0
   linePointsMinStep: 0.1
   lineWidth: 0.25
-  massRatio: 0.1
+  massRatio: 1
   massRatioOffset: 1
   isStraight: 0
   lineCostFactor: 1

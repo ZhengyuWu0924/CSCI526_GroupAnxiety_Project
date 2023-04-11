@@ -17,7 +17,9 @@ public class StickyPen : BasicPen
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Mutable Object"))
+        if (collision.gameObject.CompareTag("Mutable Object") || 
+            collision.gameObject.CompareTag("ElectronicDevice") ||
+            collision.gameObject.CompareTag("Trap"))
         {
             otherObject = collision.gameObject;
         }

@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 4304461801475079459}
   m_Layer: 0
   m_Name: Hammer
-  m_TagString: Trap
+  m_TagString: ElectronicDevice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
