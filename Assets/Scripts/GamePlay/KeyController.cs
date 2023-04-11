@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class KeyController : MonoBehaviour
 {
-    public GameObject door;
+    public ElectronicDoor door;
+    public GameObject player;
 
-    private void OnTriggerEnter2D(Collider2D col) 
+    private void Start()
     {
-        if(col.CompareTag("Player")){
-            this.gameObject.SetActive(false);
-            SpriteRenderer renderer = door.GetComponent<SpriteRenderer>();
-            renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 0.5f);
-            door.GetComponent<BoxCollider2D>().enabled = false;
-        }
+        player = GameManager.Instance.player;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision) 
+    {
+        if(collision.CompareTag("Player")){
+            followWithPlayer(player);
+        }
+        else if(door = collision.gameObject.GetComponent<ElectronicDoor>())
+        {
+            door.deviceStart();
+            Destroy(gameObject);
+        }
+
+    }
+
+    void followWithPlayer(GameObject player)
+    {
+        transform.position = player.transform.position + new Vector3(1.0f, 0.0f, 0.0f);
+        transform.parent = player.transform;
+    }
+
 }
