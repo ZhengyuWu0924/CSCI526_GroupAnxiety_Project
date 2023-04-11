@@ -13,6 +13,12 @@ public class TrapGenerator : MonoBehaviour
     
     private float timer;
 
+    private void Start()
+    {
+        GameObject trap = Instantiate(objectPrefab, gameObject.transform.position, objectPrefab.transform.rotation);
+        StartCoroutine(TrapDestory(trap));
+    }
+
     // Update is called once per frame
     void Update()
     {

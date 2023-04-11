@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class InfiniteInk : MonoBehaviour
 {
@@ -10,10 +11,13 @@ public class InfiniteInk : MonoBehaviour
     private GameManager gameManager;
     private GameObject player;
 
+    private TextMeshPro countDownText;
+    private float countDownTime;
     private void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         player = GameObject.Find("Player");
+        countDownText = GameObject.Find("CountDownText").GetComponent<TextMeshPro>();
 
     }
     void OnTriggerEnter2D(Collider2D other)
@@ -23,6 +27,7 @@ public class InfiniteInk : MonoBehaviour
         {
             // The player has picked up the powerup
             //Debug.Log("The player has picked up the powerup");
+            countDownTime = powerUpDuration;
             isPoweredUp = true;
             originalInk = gameManager.getInk();
             gameManager.setInk(1000000);
@@ -31,6 +36,24 @@ public class InfiniteInk : MonoBehaviour
             BoxCollider2D collider = this.gameObject.GetComponent<BoxCollider2D>();
             renderer.color = new Color(renderer.color.r, renderer.color.g, renderer.color.b, 0.0f);
             collider.enabled = false;
+        }
+    }
+
+    private void Update()
+    {
+        countDownText.transform.position = player.transform.position + new Vector3(0.2f, 1.7f, 0f);
+        if (isPoweredUp)
+        {
+            if (countDownTime > 0)
+            {
+                countDownTime -= Time.deltaTime;
+            }
+            double b = System.Math.Round(countDownTime, 2);
+            countDownText.text = b.ToString();
+            if (countDownTime < 0)
+            {
+                countDownText.text = "";
+            }
         }
     }
 
