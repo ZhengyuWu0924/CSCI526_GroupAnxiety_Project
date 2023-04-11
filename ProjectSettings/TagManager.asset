@@ -19,6 +19,7 @@ TagManager:
   - Checkpoint
   - Shrine
   - connectNode
+  - ElectronicDevice
   layers:
   - Default
   - TransparentFX
