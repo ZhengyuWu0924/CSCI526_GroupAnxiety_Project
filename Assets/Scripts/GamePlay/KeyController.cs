@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class KeyController : MonoBehaviour
 {
-    public ElectronicDoor door;
-    public GameObject player;
+    public GameObject door;
+    private GameObject player;
+    static public int keyNum = 0;
 
     private void Start()
     {
@@ -16,18 +17,26 @@ public class KeyController : MonoBehaviour
     {
         if(collision.CompareTag("Player")){
             followWithPlayer(player);
+            keyNum++;
         }
-        else if(door = collision.gameObject.GetComponent<ElectronicDoor>())
+        else if(collision.gameObject == door)
         {
-            door.deviceStart();
+            door.GetComponent<ElectronicDoor>().deviceStart();
             Destroy(gameObject);
         }
-
     }
 
     void followWithPlayer(GameObject player)
     {
-        transform.position = player.transform.position + new Vector3(1.0f, 0.0f, 0.0f);
+        if(player.transform.localScale.x < 0)
+        {
+            transform.position = player.transform.position + new Vector3(-1.0f - 0.2f * keyNum, 0.0f, 0.0f);
+        }
+        else
+        {
+            transform.position = player.transform.position + new Vector3(1.0f + 0.2f * keyNum, 0.0f, 0.0f);
+        }
+        
         transform.parent = player.transform;
     }
 
