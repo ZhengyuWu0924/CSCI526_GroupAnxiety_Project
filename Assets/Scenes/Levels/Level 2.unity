@@ -3253,7 +3253,7 @@ PrefabInstance:
     - target: {fileID: 8164849259429100860, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 24de4c483932e43e0b1f60af2ada8710, type: 2}
+      objectReference: {fileID: 9100000, guid: 619a3827d76be4c14acf2a1bf4d49de4, type: 2}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 4db6bd1f961229d4baea60fffcb8c062, type: 3}
@@ -7649,6 +7649,10 @@ PrefabInstance:
     - target: {fileID: 3596477297227010021, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
       propertyPath: m_text
       value: 'Cost: 2/Tap'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710840297259043336, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3.079956
       objectReference: {fileID: 0}
     - target: {fileID: 5006860289580394734, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
       propertyPath: m_AnchorMax.y
