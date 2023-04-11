@@ -45,14 +45,14 @@ public class SpeedBoost : MonoBehaviour
 
     private void Update()
     {
-        countDownText.transform.position = player.transform.position + new Vector3(0.2f, 1.7f, 0f);
+        countDownText.transform.position = player.transform.position + new Vector3(2f, 1.7f, 0f);
         if (isPoweredUp)
         {
             if (countDownTime > 0)
             {
                 countDownTime -= Time.deltaTime;
             }
-            double b = System.Math.Round(countDownTime, 2);
+            double b = System.Math.Round(countDownTime, 1);
             countDownText.text = b.ToString();
             if(countDownTime < 0)
             {
