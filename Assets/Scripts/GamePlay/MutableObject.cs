@@ -9,6 +9,7 @@ public class MutableObject : MonoBehaviour
 {
     private Rigidbody2D rigidbody2D;
     private SpriteRenderer spriteRenderer;
+    private LineRenderer lineRenderer;
     private Color originColor;
 
     public Magnetism magnetism = Magnetism.None;
@@ -19,6 +20,10 @@ public class MutableObject : MonoBehaviour
     {
         rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null)
+        {
+            lineRenderer = gameObject.GetComponent<LineRenderer>();
+        }
         originColor = Color.white;
     }
 
@@ -90,13 +95,30 @@ public class MutableObject : MonoBehaviour
     // Reset to original status
     public void ResetColor()
     {
-        spriteRenderer.color = originColor;
+        if (spriteRenderer)
+        {
+            spriteRenderer.color = originColor;
+        }else //if it change the rockpen object
+        {
+            lineRenderer.startColor = new Color (0.3056548237800598f, 0.289782851934433f, 0.31132078170776369f, 1);
+            lineRenderer.endColor = new Color(0.3056548237800598f, 0.289782851934433f, 0.31132078170776369f, 1);
+        }
+        
     }
 
     // Change object color to brush color
     public void ChangeColor(Color color)
     {
-        spriteRenderer.color = color;
+        //spriteRenderer.color = color;
+        if (spriteRenderer)
+        {
+            spriteRenderer.color = color;
+        }
+        else //if it change the rockpen object
+        {
+            lineRenderer.startColor = color;
+            lineRenderer.endColor = color;
+        }
     }
     
     // Change object gravity

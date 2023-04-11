@@ -392,6 +392,10 @@ public class DrawingTool : MonoBehaviour
         {
             if (hit.transform.CompareTag("Mutable Object"))
             {
+                //if(hit.transform.name.Contains("RockPen"))
+                //{
+                //    Debug.Log("rockobject");
+                //}
                 if (chosenBrush.name != "EraserBrush")
                 {   
                     switch(chosenBrush.brushName){
@@ -414,6 +418,28 @@ public class DrawingTool : MonoBehaviour
                             break;
                     }
                     
+                    chosenBrush.changeProperties(hit.transform.gameObject, currentBrush);
+                    GameManager.Instance.updateInk(chosenBrush.brushCost);
+                }
+            }
+            if (hit.transform.name.Contains("RockPen"))
+            {
+                //if(hit.transform.name.Contains("RockPen"))
+                //{
+                //    Debug.Log("rockobject");
+                //}
+                if (chosenBrush.name == "GravityBrush")
+                {
+                    switch (chosenBrush.brushName)
+                    {
+                        case "GravityBrush":
+                            GameManager.gravityInkUsed += chosenBrush.brushCost;
+                            currentBrush = BrushType.GRAVITY;
+                            break;
+                        default:
+                            break;
+                    }
+
                     chosenBrush.changeProperties(hit.transform.gameObject, currentBrush);
                     GameManager.Instance.updateInk(chosenBrush.brushCost);
                 }
