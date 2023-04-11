@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2706197991949856365}
   m_Layer: 0
   m_Name: ElectronicDoor
-  m_TagString: Untagged
+  m_TagString: ElectronicDevice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connectNode: {fileID: 8415807935341992351}
-  actived: 0
+  connected: 0
+  spriteRenderer: {fileID: 0}
+  boxCollider: {fileID: 0}
 --- !u!61 &2706197991949856365
 BoxCollider2D:
   m_ObjectHideFlags: 0
