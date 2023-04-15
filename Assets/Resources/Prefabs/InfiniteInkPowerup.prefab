@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6955487069106231432}
   - component: {fileID: 6955487069106231435}
   - component: {fileID: 6955487069106231434}
+  - component: {fileID: -2082869064479359420}
   m_Layer: 0
   m_Name: InfiniteInkPowerup
   m_TagString: Untagged
@@ -125,3 +126,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpDuration: 7
+--- !u!114 &-2082869064479359420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6955487069106231431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6620f88971446840bf7bde1f55621bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movingHeight: 0.6
+  movingTime: 0.8
+  ifMove: 0

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brushName: MagnetBrush
   brushColor: {r: 0.06666667, g: 0, b: 1, a: 1}
-  cursor: {fileID: 2800000, guid: 176dccdb9aa794e1c87b7c9995c76878, type: 3}
+  cursor: {fileID: 2800000, guid: a54685e40ffa448b6a2bc498458f5d86, type: 3}
   brushCost: 1
   positiveColor: {r: 0.06666667, g: 0, b: 1, a: 1}
   negtiveColor: {r: 1, g: 0, b: 0, a: 1}

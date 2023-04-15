@@ -19,7 +19,9 @@ public class StickyPen : BasicPen
     {
         if (collision.gameObject.CompareTag("Mutable Object") || 
             collision.gameObject.CompareTag("ElectronicDevice") ||
-            collision.gameObject.CompareTag("Trap"))
+            collision.gameObject.CompareTag("Trap") ||
+            collision.gameObject.CompareTag("Player") ||
+            collision.gameObject.CompareTag("Drawn Object"))
         {
             otherObject = collision.gameObject;
         }

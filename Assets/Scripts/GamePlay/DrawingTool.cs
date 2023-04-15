@@ -17,6 +17,7 @@ public class DrawingTool : MonoBehaviour
     // General Variables
     [Header ("General Variables")]
     public Texture2D cantDrawSign;
+    public Texture2D defaultCursor;
     public Camera mainCamera;
     public ToolType toolType = ToolType.NONE;
 
@@ -70,7 +71,8 @@ public class DrawingTool : MonoBehaviour
         mainCamera = Camera.main;
         cantDrawOverLayerIndex = LayerMask.NameToLayer("CantDrawOver");
         electronicPenIndex = LayerMask.NameToLayer("ElectronicPen");
-        Cursor.SetCursor(cantDrawSign, new Vector2(cantDrawSign.width / 2, cantDrawSign.height / 2), CursorMode.Auto);
+        //Cursor.SetCursor(cantDrawSign, new Vector2(cantDrawSign.width / 2, cantDrawSign.height / 2), CursorMode.Auto);
+        Cursor.SetCursor(defaultCursor, new Vector2(5, 5), CursorMode.Auto);
         playerControl = FindObjectOfType<PlayerController>();
         LoadMagnetBrush();
     }

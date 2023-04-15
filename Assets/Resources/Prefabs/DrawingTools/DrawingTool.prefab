@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cantDrawSign: {fileID: 2800000, guid: e68abdc7bb6f24458af987261515b20e, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 6e7c554c8acd641fc97f4566452a52f4, type: 3}
   mainCamera: {fileID: 0}
   toolType: 2
   availablePens: []
@@ -53,5 +54,6 @@ MonoBehaviour:
   cantDrawOverLayer:
     serializedVersion: 2
     m_Bits: 72
+  electronicPenInstance: []
   availableBrushes: []
   chosenBrush: {fileID: 0}
