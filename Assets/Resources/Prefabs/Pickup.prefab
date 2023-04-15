@@ -100,6 +100,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toolType: 2
   toolPrefab: {fileID: 0}
+  toolButton: {fileID: 0}
+  movingHeight: 0.6
+  movingTime: 0.8
 --- !u!60 &7307871067185668523
 PolygonCollider2D:
   m_ObjectHideFlags: 0
