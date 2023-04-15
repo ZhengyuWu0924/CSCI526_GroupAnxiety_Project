@@ -5,6 +5,7 @@ using UnityEngine;
 public class StarController : MonoBehaviour
 {
     private GameManager gameManager;
+
     private void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
