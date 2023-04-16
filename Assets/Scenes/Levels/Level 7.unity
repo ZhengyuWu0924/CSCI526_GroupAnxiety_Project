@@ -9255,6 +9255,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4288070197731917339, guid: b37dd253b1e8e43e89e6aafdb54aaadd, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4288070197731917340, guid: b37dd253b1e8e43e89e6aafdb54aaadd, type: 3}
       propertyPath: m_Name
       value: ElectronicButton
