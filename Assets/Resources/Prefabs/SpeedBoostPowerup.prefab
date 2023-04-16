@@ -101,6 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedBoost: 4
   powerUpDuration: 7
+  statusImage: {fileID: 21300000, guid: cbb6d32db52c7b44bbe605ac18c4fb24, type: 3}
+  playerStatusController: {fileID: 481771015284258557, guid: 5a47e1f39d00f3744ae9a001ed968bf2, type: 3}
 --- !u!61 &781438667333313286
 BoxCollider2D:
   m_ObjectHideFlags: 0

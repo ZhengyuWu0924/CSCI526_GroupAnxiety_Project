@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class SpeedBoost : MonoBehaviour
 {
@@ -9,12 +10,17 @@ public class SpeedBoost : MonoBehaviour
     public float speedBoost = 4f; 
     public float powerUpDuration = 7f;
 
-    private bool isPoweredUp = false;
+    //private bool isPoweredUp = false;
     private float originalSpeed;
 
-    private TextMeshPro countDownText;
-    private GameObject player;
-    private float countDownTime;
+    //private TextMeshPro countDownText;
+    //private GameObject player;
+    //private float countDownTime;
+
+    //private GameObject playerStatus;
+
+    [SerializeField] private Sprite statusImage;
+    private PlayerStatusController playerStatusController;
     void OnTriggerEnter2D(Collider2D other)
     {
         //Debug.Log("collide");
@@ -24,8 +30,13 @@ public class SpeedBoost : MonoBehaviour
             //Debug.Log("The player has picked up the powerup");
             //countDownText = other.transform.Find("Canvas").gameObject.transform.Find("CountDownText").gameObject.GetComponent<TextMeshPro>();
             //countDownText = other.transform.Find("CountDownText").gameObject.GetComponent<TextMeshPro>();
-            countDownTime = powerUpDuration;
-            isPoweredUp = true;
+            
+            //countDownTime = powerUpDuration;
+            //isPoweredUp = true;
+
+            playerStatusController.ActivateStatus(statusImage);
+            playerStatusController.ActivateCountDown(powerUpDuration);
+
             originalSpeed = other.gameObject.GetComponent<PlayerController>().moveSpeed;
             other.gameObject.GetComponent<PlayerController>().moveSpeed = originalSpeed * speedBoost;
             StartCoroutine(PowerUpTimer(other.gameObject));
@@ -39,13 +50,15 @@ public class SpeedBoost : MonoBehaviour
 
     private void Start()
     {
-        countDownText = GameObject.Find("CountDownText").GetComponent<TextMeshPro>();
-        player = GameObject.Find("Player");
+        //countDownText = GameObject.Find("CountDownText").GetComponent<TextMeshPro>();
+        //player = GameObject.Find("Player");
+        playerStatusController = GameObject.FindObjectOfType<PlayerStatusController>(true);
     }
 
     private void Update()
     {
-        countDownText.transform.position = player.transform.position + new Vector3(2f, 1.7f, 0f);
+        /*playerStatus.transform.position = player.transform.position;
+        countDownText.transform.position = player.transform.position + new Vector3(1.5f, 1.7f, 0f);
         if (isPoweredUp)
         {
             if (countDownTime > 0)
@@ -58,14 +71,14 @@ public class SpeedBoost : MonoBehaviour
             {
                 countDownText.text = "";
             }
-        }
+        }*/
     }
 
     IEnumerator PowerUpTimer(GameObject player)
     {
         yield return new WaitForSeconds(powerUpDuration);
         // The powerup has expired
-        isPoweredUp = false;
+        //isPoweredUp = false;
         player.GetComponent<PlayerController>().moveSpeed = originalSpeed;
         Destroy(this.gameObject);
     }

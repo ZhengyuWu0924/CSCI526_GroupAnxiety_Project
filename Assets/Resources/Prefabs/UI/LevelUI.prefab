@@ -492,13 +492,14 @@ GameObject:
   - component: {fileID: 4710840297259043336}
   - component: {fileID: 4710840297259043339}
   - component: {fileID: 4710840297259043338}
+  - component: {fileID: 5288917041559130657}
   m_Layer: 0
   m_Name: CountDownText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4710840297259043336
 RectTransform:
   m_ObjectHideFlags: 0
@@ -653,6 +654,17 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 4710840297259043339}
   m_maskType: 0
+--- !u!210 &5288917041559130657
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4710840297259043349}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 4
 --- !u!1 &4937208976836017480
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,18 +6,22 @@ using TMPro;
 public class InfiniteInk : MonoBehaviour
 {
     public float powerUpDuration = 7f;
-    private bool isPoweredUp = false;
+    //private bool isPoweredUp = false;
     private float originalInk; 
     private GameManager gameManager;
     private GameObject player;
 
-    private TextMeshPro countDownText;
-    private float countDownTime;
+    //private TextMeshPro countDownText;
+    //private float countDownTime;
+
+    [SerializeField] private Sprite statusImage;
+    private PlayerStatusController playerStatusController;
     private void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         player = GameObject.Find("Player");
-        countDownText = GameObject.Find("CountDownText").GetComponent<TextMeshPro>();
+        playerStatusController = GameObject.FindObjectOfType<PlayerStatusController>(true);
+        //countDownText = GameObject.Find("CountDownText").GetComponent<TextMeshPro>();
 
     }
     void OnTriggerEnter2D(Collider2D other)
@@ -27,8 +31,12 @@ public class InfiniteInk : MonoBehaviour
         {
             // The player has picked up the powerup
             //Debug.Log("The player has picked up the powerup");
-            countDownTime = powerUpDuration;
-            isPoweredUp = true;
+            //countDownTime = powerUpDuration;
+            //isPoweredUp = true;
+
+            playerStatusController.ActivateStatus(statusImage);
+            playerStatusController.ActivateCountDown(powerUpDuration);
+
             originalInk = gameManager.getInk();
             gameManager.setInk(1000000);
             StartCoroutine(PowerUpTimer());
@@ -41,7 +49,7 @@ public class InfiniteInk : MonoBehaviour
 
     private void Update()
     {
-        countDownText.transform.position = player.transform.position + new Vector3(2f, 1.7f, 0f);
+        /*countDownText.transform.position = player.transform.position + new Vector3(1.5f, 1.7f, 0f);
         if (isPoweredUp)
         {
             if (countDownTime > 0)
@@ -54,7 +62,7 @@ public class InfiniteInk : MonoBehaviour
             {
                 countDownText.text = "";
             }
-        }
+        }*/
     }
 
     IEnumerator PowerUpTimer()
@@ -63,7 +71,7 @@ public class InfiniteInk : MonoBehaviour
 
 
         // The powerup has expired
-        isPoweredUp = false;
+        //isPoweredUp = false;
         float initialInk = player.GetComponent<PlayerController>().remainInk;
         gameManager.setInk(initialInk);
         gameManager.updateInk(initialInk - originalInk);

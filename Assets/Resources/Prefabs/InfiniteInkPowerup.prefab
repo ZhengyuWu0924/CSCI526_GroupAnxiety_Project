@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpDuration: 7
+  statusImage: {fileID: 21300000, guid: 0626902177d08704aa277886194dea54, type: 3}
 --- !u!114 &-2082869064479359420
 MonoBehaviour:
   m_ObjectHideFlags: 0
