@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public enum PlayerProperty {PositiveMag, NegativeMag, Antigravity, NONE}
 public class PlayerController : MonoBehaviour
@@ -12,6 +13,10 @@ public class PlayerController : MonoBehaviour
     public float jumpSpeed = 8f;
     public float remainInk = 100f;
     public float playerGravity = 2f;
+    public Sprite gravityStatusImage;
+    public Sprite positiveStatusImage;
+    public Sprite negativeStatusImage;
+
     private Rigidbody2D player;
     private bool isOnGround;
     private GameManager gameManager;
@@ -38,7 +43,10 @@ public class PlayerController : MonoBehaviour
     private float playerHeight = 1.4f;
     public Magnetism playerMag = Magnetism.None; // Initialize character's magnetism to None
     private PlayerProperty playerPro = PlayerProperty.NONE; // Initialize character's property
-    
+
+    private PlayerStatusController playerStatusController;
+
+
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -51,6 +59,8 @@ public class PlayerController : MonoBehaviour
             player.gravityScale = 2f; // Initialize Player gravity to default value
             playerAnimation = GetComponent<Animator>();
             isOnGround = true;
+
+            playerStatusController = GameObject.FindObjectOfType<PlayerStatusController>(true);
 
             gameManager.setInk(remainInk);
 
@@ -239,6 +249,7 @@ public class PlayerController : MonoBehaviour
                 playerGravity = 2f;
                 player.gravityScale = playerGravity;
                 jumpSpeed = 8f;
+                playerStatusController.ActivateStatus(positiveStatusImage);
                 break;
             case BrushType.MAGNET_NEG:
                 playerPro = playerPro == PlayerProperty.NegativeMag ? PlayerProperty.NONE : PlayerProperty.NegativeMag;
@@ -247,6 +258,7 @@ public class PlayerController : MonoBehaviour
                 playerGravity = 2f;
                 player.gravityScale = playerGravity;
                 jumpSpeed = 8f;
+                playerStatusController.ActivateStatus(negativeStatusImage);
                 break;
             case BrushType.GRAVITY:
                 // check current activatived character property first
@@ -263,6 +275,7 @@ public class PlayerController : MonoBehaviour
 
                 // change the player's jump ability based on its current property state
                 jumpSpeed = playerPro == PlayerProperty.Antigravity ? 10f : 8f;
+                playerStatusController.ActivateStatus(gravityStatusImage);
                 break;
             default:
                 break;
@@ -283,6 +296,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private Color resetShrineColor(){
+        playerStatusController.DeactivateStatus();
         return Color.white;
     }
 }

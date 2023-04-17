@@ -106,6 +106,9 @@ MonoBehaviour:
   jumpSpeed: 8
   remainInk: 100
   playerGravity: 2
+  gravityStatusImage: {fileID: 21300000, guid: 4e456a562222e407faeb100ebdfc135c, type: 3}
+  positiveStatusImage: {fileID: 21300000, guid: dee846b9ad3c046e8b6510e63ef0e613, type: 3}
+  negativeStatusImage: {fileID: 21300000, guid: 7f44c41ba9ffe479893b7c0d60a1a1e9, type: 3}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
