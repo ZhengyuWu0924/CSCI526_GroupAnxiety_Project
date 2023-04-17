@@ -23,7 +23,7 @@ public class SwitchesController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Mutable Object") || collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Mutable Object") || collision.gameObject.CompareTag("Drawn Object") || collision.gameObject.CompareTag("Player"))
         {
             //isOn = !isOn;
             //foreach (GameObject obj in objectsToDisappear)
