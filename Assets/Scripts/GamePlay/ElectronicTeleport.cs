@@ -26,13 +26,25 @@ public class ElectronicTeleport : ElectronicDevice
     // teleport the player
     private IEnumerator OnTriggerEnter2D(Collider2D collision)
     {
+        if ((collision.gameObject.CompareTag("Mutable Object") || collision.gameObject.CompareTag("ElectronicDevice")) && connected)
+        {
+            if (collision.gameObject.transform.position.x - this.gameObject.transform.position.x < 2.0)
+            {
+                collision.gameObject.transform.position = destination;
+                otherTeleport.connected = false;
+                yield return new WaitForSeconds(0.2f);
+                otherTeleport.connected = true;
+            }
+        }
         if (collision.gameObject.CompareTag("Player") && connected)
         {
-            GameManager.Instance.player.transform.position = destination;
-            
-            otherTeleport.connected = false;
-            yield return new WaitForSeconds(1.0f);
-            otherTeleport.connected = true;
+            if (collision.gameObject.transform.position.x - this.gameObject.transform.position.x < 1.6)
+            {
+                GameManager.Instance.player.transform.position = destination;
+                otherTeleport.connected = false;
+                yield return new WaitForSeconds(0.3f);
+                otherTeleport.connected = true;
+            }
         }
     }
 

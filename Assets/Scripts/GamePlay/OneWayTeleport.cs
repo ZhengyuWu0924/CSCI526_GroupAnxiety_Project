@@ -20,6 +20,13 @@ public class OneWayTeleport : MonoBehaviour
 
     private IEnumerator OnTriggerEnter2D(Collider2D collision)
     {
+        if ((collision.gameObject.CompareTag("Mutable Object") || collision.gameObject.CompareTag("ElectronicDevice")) && isActivated)
+        {
+            if (collision.gameObject.transform.position.x - this.gameObject.transform.position.x < 2.0)
+            {
+                collision.gameObject.transform.position = destination;
+            }
+        }
         if (collision.gameObject.CompareTag("Player") && isActivated)
         {
             //GameManager.Instance.player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
