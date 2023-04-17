@@ -369,6 +369,16 @@ public class DrawingTool : MonoBehaviour
             drawnObject.gameObject.layer = electronicPenIndex;
             drawnObject.UsePhysics(true);
             drawnObject = null;
+        }else if (chosenPen.name == "RockPen")
+        {
+            drawnObject.GetComponent<Rigidbody2D>().mass = drawnObject.massRatio * drawnObject.massRatioOffset * totalDrawDistance;
+            totalDrawDistance = 0;
+            drawnObject.gameObject.layer = cantDrawOverLayerIndex;
+            drawnObject.UsePhysics(true);
+            Vector2 midPoint = beginPosition + (endPosition - beginPosition) * 1 / 2;
+            Vector3 midPoint3D = new Vector3(midPoint.x, midPoint.y, 0);
+            drawnObject.AddCircleCollider(midPoint3D);
+            drawnObject = null;
         }
         else
         {
@@ -380,6 +390,30 @@ public class DrawingTool : MonoBehaviour
         }
         
 
+    }
+
+    void Redraw()
+    {
+        Destroy(drawnObject.gameObject);
+        chosenPen.InitializePen();
+        drawnObject = Instantiate(chosenPen, this.transform).GetComponent<BasicPen>();
+        drawnObject.UsePhysics(false);
+        totalDrawDistance = Vector2.Distance(beginPosition, endPosition);
+        drawnObject.AddPoint(beginPosition);
+        int numOfPoints = (int)(totalDrawDistance / 0.1f);
+        for (int i = 1; i <= numOfPoints; i++)
+        {
+            Vector2 point = beginPosition + (endPosition - beginPosition) * (i / (numOfPoints + 1.0f));
+            drawnObject.AddPoint(point);
+        }
+
+        drawnObject.AddPoint(endPosition);
+
+        drawnObject.GetComponent<Rigidbody2D>().mass = drawnObject.massRatio * drawnObject.massRatioOffset * totalDrawDistance;
+        totalDrawDistance = 0;
+        drawnObject.gameObject.layer = cantDrawOverLayerIndex;
+        drawnObject.UsePhysics(true);
+        drawnObject = null;
     }
 
     /// <summary>
@@ -430,13 +464,24 @@ public class DrawingTool : MonoBehaviour
                 //{
                 //    Debug.Log("rockobject");
                 //}
-                if (chosenBrush.name == "GravityBrush")
+                if (chosenBrush.name == "GravityBrush" || chosenBrush.name == "MagnetBrush")
                 {
                     switch (chosenBrush.brushName)
                     {
                         case "GravityBrush":
                             GameManager.gravityInkUsed += chosenBrush.brushCost;
                             currentBrush = BrushType.GRAVITY;
+                            break;
+                        case "MagnetBrush":
+                            GameManager.magnetInkUsed += chosenBrush.brushCost;
+                            currentBrush = mouseSecondaryButton == true ? BrushType.MAGNET_NEG : BrushType.MAGNET_POS;
+                            chosenBrush.cursor = mouseSecondaryButton == false ? positiveCursor : negativeCursor;
+                            Cursor.SetCursor(chosenBrush.cursor, new Vector2(chosenBrush.cursor.width / 2, chosenBrush.cursor.height / 2), CursorMode.Auto);
+                            magnetBrushButton = GameObject.Find("MagnetBrushButton");
+                            banner = FindBanner(magnetBrushButton, "SelectedBanner");
+                            banner.sprite = mouseSecondaryButton == false ? positiveBanner : negativeBanner;
+                            icon = FindBanner(magnetBrushButton, "Image");
+                            icon.sprite = mouseSecondaryButton == false ? positiveIcon : negativeIcon;
                             break;
                         default:
                             break;
@@ -491,29 +536,7 @@ public class DrawingTool : MonoBehaviour
         }
     }
 
-    void Redraw()
-    {
-        Destroy(drawnObject.gameObject);
-        chosenPen.InitializePen();
-        drawnObject = Instantiate(chosenPen, this.transform).GetComponent<BasicPen>();
-        drawnObject.UsePhysics(false);
-        totalDrawDistance = Vector2.Distance(beginPosition, endPosition);
-        drawnObject.AddPoint(beginPosition);
-        int numOfPoints = (int)(totalDrawDistance / 0.1f);
-        for (int i = 1; i <= numOfPoints; i++)
-        {
-            Vector2 point = beginPosition + (endPosition - beginPosition) * (i / (numOfPoints + 1.0f));
-            drawnObject.AddPoint(point);
-        }
 
-        drawnObject.AddPoint(endPosition);
-        
-        drawnObject.GetComponent<Rigidbody2D>().mass = drawnObject.massRatio * drawnObject.massRatioOffset * totalDrawDistance;
-        totalDrawDistance = 0;
-        drawnObject.gameObject.layer = cantDrawOverLayerIndex;
-        drawnObject.UsePhysics(true);
-        drawnObject = null;
-    }
 
     void HideElectronicPenInstance()
     {

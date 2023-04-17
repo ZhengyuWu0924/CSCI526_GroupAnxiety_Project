@@ -63,6 +63,18 @@ public abstract class BasicPen : MonoBehaviour
             edgeCollider2D.points = points.ToArray();
     }
 
+    public void AddCircleCollider(Vector3 newPoint)
+    {
+        var circleCollider = gameObject.AddComponent<CircleCollider2D>();
+        //Debug.Log("circle collider added");
+        circleCollider.offset = newPoint;
+        circleCollider.radius = 22.2f;
+        circleCollider.isTrigger = true;
+        //circleCollider2D.isTrigger = true;
+        //circleCollider2D.radius = 4.2f;
+        //circleCollider2D.transform.position = newPoint;
+    }
+
 
     // Get the last point drawn
     public Vector2 GetLastPoint()
@@ -80,4 +92,5 @@ public abstract class BasicPen : MonoBehaviour
     {
         return this.gameObject;
     }
+
 }
