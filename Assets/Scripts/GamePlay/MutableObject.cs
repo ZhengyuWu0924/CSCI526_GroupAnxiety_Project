@@ -62,6 +62,22 @@ public class MutableObject : MonoBehaviour
                     mo.rigidbody2D.AddForce(force, ForceMode2D.Force);
                 }
             }
+            GameObject player = GameManager.Instance.player;
+            if(player.GetComponent<PlayerController>().playerMag == Magnetism.None){
+                return;
+            }
+            if(player.GetComponent<PlayerController>().playerMag == magnetism){
+                Vector3 playerMODistance = player.transform.position - transform.position;
+                Vector2 playerMOForce = (Vector2)playerMODistance.normalized * Time.deltaTime * magnetFactor * rigidbody2D.mass * player.GetComponent<Rigidbody2D>().mass / Mathf.Pow(playerMODistance.magnitude, 2);
+                if(playerMOForce.magnitude >= maxMagnet) playerMOForce = playerMOForce.normalized * maxMagnet;
+                player.GetComponent<Rigidbody2D>().AddForce(playerMOForce, ForceMode2D.Force);
+            } else {
+                Vector3 playerMODistance = transform.position - player.transform.position;
+                Vector2 playerMOForce = (Vector2) playerMODistance.normalized * Time.deltaTime * magnetFactor * rigidbody2D.mass * player.GetComponent<Rigidbody2D>().mass / Mathf.Pow(playerMODistance.magnitude, 2);
+                if(playerMOForce.magnitude >= maxMagnet) playerMOForce = playerMOForce.normalized * maxMagnet;
+                player.GetComponent<Rigidbody2D>().AddForce(playerMOForce, ForceMode2D.Force);
+            }
+            
         }
     }
 

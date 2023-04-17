@@ -27,7 +27,7 @@ public class MagnetBrush : BasicBrush
         magnetism = currentBrush == BrushType.MAGNET_POS ? Magnetism.Postive : Magnetism.Negtive;
 
         // set the brush color corrensponding to the magnetsim
-        brushColor = magnetism == Magnetism.Postive ? positiveColor : negtiveColor;
+        brushColor = getColor(currentBrush);
 
 
         // if the current mutable object already has non-none magnetism
@@ -43,6 +43,12 @@ public class MagnetBrush : BasicBrush
             // brush the mutable obejct with related color
             mutableObject.ChangeColor(brushColor);
         }
+    }
+    public override Color getColor(BrushType currentBrush){
+        // set the brush color corrensponding to the magnetsim
+
+        brushColor = currentBrush == BrushType.MAGNET_POS ? positiveColor : negtiveColor;
+        return brushColor;
     }
 
     /*

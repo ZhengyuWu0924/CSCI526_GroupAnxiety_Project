@@ -390,14 +390,14 @@ public class DrawingTool : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
         Debug.DrawRay(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Color.yellow, 1000f);
         BrushType currentBrush = BrushType.NONE;
+        currentBrush = getCurrentBrushType(chosenBrush, mouseSecondaryButton);
+        GameObject magnetBrushButton;
+        Image banner;
+        Image icon;
         if (hit.collider != null)
         {
             if (hit.transform.CompareTag("Mutable Object"))
             {
-                //if(hit.transform.name.Contains("RockPen"))
-                //{
-                //    Debug.Log("rockobject");
-                //}
                 if (chosenBrush.name != "EraserBrush")
                 {   
                     switch(chosenBrush.brushName){
@@ -410,10 +410,10 @@ public class DrawingTool : MonoBehaviour
                             currentBrush = mouseSecondaryButton == true ? BrushType.MAGNET_NEG : BrushType.MAGNET_POS;
                             chosenBrush.cursor = mouseSecondaryButton == false ? positiveCursor : negativeCursor;
                             Cursor.SetCursor(chosenBrush.cursor, new Vector2(chosenBrush.cursor.width / 2, chosenBrush.cursor.height / 2), CursorMode.Auto);
-                            GameObject magnetBrushButton = GameObject.Find("MagnetBrushButton");
-                            Image banner = FindBanner(magnetBrushButton, "SelectedBanner");
+                            magnetBrushButton = GameObject.Find("MagnetBrushButton");
+                            banner = FindBanner(magnetBrushButton, "SelectedBanner");
                             banner.sprite = mouseSecondaryButton == false ? positiveBanner : negativeBanner;
-                            Image icon = FindBanner(magnetBrushButton, "Image");
+                            icon = FindBanner(magnetBrushButton, "Image");
                             icon.sprite = mouseSecondaryButton == false ? positiveIcon : negativeIcon;
                             break;
                         default:
@@ -448,7 +448,31 @@ public class DrawingTool : MonoBehaviour
             }
             if (hit.transform.CompareTag("Shrine")){
                 if(chosenBrush.name != "EraserBrush"){
-                    playerControl.OnShrineBrushed(chosenBrush);
+                    switch(currentBrush){
+                        case BrushType.MAGNET_POS:
+                            chosenBrush.cursor = positiveCursor;
+                            Cursor.SetCursor(chosenBrush.cursor, new Vector2(chosenBrush.cursor.width / 2, chosenBrush.cursor.height / 2), CursorMode.Auto);
+                            magnetBrushButton = GameObject.Find("MagnetBrushButton");
+                            banner = FindBanner(magnetBrushButton, "SelectedBanner");
+                            banner.sprite = positiveBanner;
+                            icon = FindBanner(magnetBrushButton, "Image");
+                            icon.sprite = positiveIcon;
+                            break;
+                        case BrushType.MAGNET_NEG:
+                            chosenBrush.cursor = negativeCursor;
+                            Cursor.SetCursor(chosenBrush.cursor, new Vector2(chosenBrush.cursor.width / 2, chosenBrush.cursor.height / 2), CursorMode.Auto);
+                            magnetBrushButton = GameObject.Find("MagnetBrushButton");
+                            banner = FindBanner(magnetBrushButton, "SelectedBanner");
+                            banner.sprite = negativeBanner;
+                            icon = FindBanner(magnetBrushButton, "Image");
+                            icon.sprite = negativeIcon;
+                            break;
+                        case BrushType.GRAVITY:
+                            break;
+                        default:
+                            break;
+                    }
+                    playerControl.OnShrineBrushed(chosenBrush,currentBrush);
                 }
             }
             if (chosenBrush.name == "EraserBrush" && hit.transform.CompareTag("Drawn Object"))
@@ -539,5 +563,19 @@ public class DrawingTool : MonoBehaviour
         positiveIcon = Resources.Load<Sprite>("Sprites/art/UI-LevelPage/ui-magnet-N");
         negativeIcon = Resources.Load<Sprite>("Sprites/art/UI-LevelPage/ui-magnet-S");
         originalIcon = Resources.Load<Sprite>("Sprites/art/UI-LevelPage/ui-magnet");
+    }
+    private BrushType getCurrentBrushType(BasicBrush givenBrush, bool mouseSecondaryButton){
+        BrushType currentBrush = BrushType.NONE;
+        switch(chosenBrush.brushName){
+            case "GravityBrush":
+                currentBrush = BrushType.GRAVITY;
+                break;
+            case "MagnetBrush":
+                currentBrush = mouseSecondaryButton == true ? BrushType.MAGNET_NEG : BrushType.MAGNET_POS;
+                break;
+            default:
+                break;
+        }
+        return currentBrush;
     }
 }

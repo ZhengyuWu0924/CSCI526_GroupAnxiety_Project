@@ -16,4 +16,8 @@ public class GravityBrush : BasicBrush
         // Then, do something special to this brush
         mutableObject.ChangeGravity();
     }
+    
+    public override Color getColor(BrushType currentBrush){
+        return brushColor;
+    } 
 }

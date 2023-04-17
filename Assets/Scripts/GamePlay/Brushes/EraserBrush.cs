@@ -19,4 +19,7 @@ public class EraserBrush : BasicBrush
         //// Then, do something special to this brush
         //mutableObject.ChangeGravity();
     }
+    public override Color getColor(BrushType currentBrush){
+        return brushColor;
+    }
 }

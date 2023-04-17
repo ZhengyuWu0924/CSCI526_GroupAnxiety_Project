@@ -23,4 +23,8 @@ public abstract class BasicBrush : MonoBehaviour
         mutableObject = gameObject.GetComponent<MutableObject>();
         mutableObject.ChangeColor(brushColor);
     }
+
+    public virtual Color getColor(BrushType currentBrush){
+        return brushColor;
+    }
 }
