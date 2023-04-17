@@ -36,8 +36,9 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     private Vector3 playerWidth = new Vector3(0.5f, 0, 0);
     private float playerHeight = 1.4f;
+    public Magnetism playerMag = Magnetism.None; // Initialize character's magnetism to None
     private PlayerProperty playerPro = PlayerProperty.NONE; // Initialize character's property
-    private Magnetism playerMag = Magnetism.None; // Initialize character's magnetism to None
+    
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -86,7 +87,7 @@ public class PlayerController : MonoBehaviour
         }
         
     }
-    
+
     void Update()
     {
         // movement
@@ -225,31 +226,33 @@ public class PlayerController : MonoBehaviour
     then change the character properties based on the brush
     Shrine color will also be changed, corresponding to the brush
     */
-    public void OnShrineBrushed(BasicBrush currentBrush){
+    public void OnShrineBrushed(BasicBrush chosenBrush, BrushType currentBrush){
         player = gameManager.player.GetComponent<Rigidbody2D>();
-        switch(currentBrush.name){
-            case "MagnetBrush":
+        switch(currentBrush){
+            case BrushType.MAGNET_POS:
                 /*
                     Implement this part later when the magnet brush issues have been fixed
                 */
-                playerPro = PlayerProperty.PositiveMag;
-                playerMag = Magnetism.Postive;
+                playerPro = playerPro == PlayerProperty.PositiveMag ? PlayerProperty.NONE : PlayerProperty.PositiveMag;
+                playerMag = playerPro == PlayerProperty.PositiveMag ? Magnetism.Postive : Magnetism.None;
+                
                 playerGravity = 2f;
                 player.gravityScale = playerGravity;
                 jumpSpeed = 8f;
                 break;
-            // case "Negative":
-            //     playerPro = PlayerProperty.NegativeMag;
-            //     playerMag = Magnetism.Negtive;
-            //     playerGravity = 2f;
-            //     player.gravityScale = playerGravity;
-            //     jumpSpeed = 8f;
-            //     break;
-            case "GravityBrush":
+            case BrushType.MAGNET_NEG:
+                playerPro = playerPro == PlayerProperty.NegativeMag ? PlayerProperty.NONE : PlayerProperty.NegativeMag;
+                playerMag = playerPro == PlayerProperty.NegativeMag ? Magnetism.Negtive : Magnetism.None;
+                
+                playerGravity = 2f;
+                player.gravityScale = playerGravity;
+                jumpSpeed = 8f;
+                break;
+            case BrushType.GRAVITY:
                 // check current activatived character property first
                 // if none is activating, change it to anti-gravity
                 // otherwise, cancel the anti-gravity influence and change it back to default state
-                playerPro = playerPro == PlayerProperty.NONE ? PlayerProperty.Antigravity : PlayerProperty.NONE;
+                playerPro = playerPro == PlayerProperty.Antigravity ? PlayerProperty.NONE : PlayerProperty.Antigravity;
 
                 // remove the influence of magetism
                 playerMag = Magnetism.None; 
@@ -264,17 +267,18 @@ public class PlayerController : MonoBehaviour
             default:
                 break;
         }
-        shrineColorChange(currentBrush);
+        print(playerMag);
+        shrineColorChange(chosenBrush, currentBrush);
         
     }
 
-    private void shrineColorChange(BasicBrush currentBrush){
+    private void shrineColorChange(BasicBrush chosenBrush, BrushType currentBrush){
         // Find all shrine tag objects
         GameObject[] shrineObjects = GameObject.FindGameObjectsWithTag("Shrine");
         foreach (GameObject shrineObject in shrineObjects){
             Renderer renderer = shrineObject.GetComponent<Renderer>();
-
-            renderer.material.color = renderer.material.color == currentBrush.brushColor ? resetShrineColor() : currentBrush.brushColor;
+            renderer.material.color = renderer.material.color == chosenBrush.getColor(currentBrush) ? resetShrineColor() : chosenBrush.getColor(currentBrush);
+            
         }
     }
 
