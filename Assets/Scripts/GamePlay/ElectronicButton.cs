@@ -5,11 +5,24 @@ using UnityEngine;
 public class ElectronicButton : ElectronicDevice
 {
     private bool isStart;
+    private GameObject electronicButton;
     public ElectronicDevice otherDevice;
 
     void Start()
     {
+        electronicButton = gameObject;
         isStart = false;
+    }
+
+    private void Update()
+    {
+        if(connected)
+        {
+            electronicButton.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+        }else
+        {
+            electronicButton.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -33,12 +46,14 @@ public class ElectronicButton : ElectronicDevice
     public override void connectDevice(ElectronicDevice other)
     {
         base.connectDevice(other);
+        //this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
         otherDevice = other.gameObject.GetComponent<ElectronicDevice>();
     }
 
     public override void disconnectDevice()
     {
         base.disconnectDevice();
+        //this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
     }
 
 
