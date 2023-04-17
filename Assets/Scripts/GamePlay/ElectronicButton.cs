@@ -25,18 +25,20 @@ public class ElectronicButton : ElectronicDevice
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private IEnumerator OnCollisionEnter2D(Collision2D collision)
     {
         if ((collision.gameObject.CompareTag("Mutable Object") || collision.gameObject.CompareTag("Player")) && connected)
         {
             if (!isStart)
             {
                 otherDevice.deviceStart();
+                yield return new WaitForSeconds(0.2f);
                 isStart = true;
             }
             else
             {
                 otherDevice.deviceStop();
+                yield return new WaitForSeconds(0.3f);
                 isStart = false;
             }
             
