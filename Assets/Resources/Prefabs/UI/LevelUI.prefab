@@ -4886,10 +4886,10 @@ PrefabInstance:
     - target: {fileID: 8567822208829063624, guid: 4493d94d8a2824f41a0b5917ed4a0b7e, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8b8c11e15f4a54599b9928ab7efa1922, type: 3}
+      objectReference: {fileID: 21300000, guid: 86dd1882d5104439abcb9248b6a9cd3e, type: 3}
     - target: {fileID: 8567822208829063628, guid: 4493d94d8a2824f41a0b5917ed4a0b7e, type: 3}
       propertyPath: m_Name
-      value: MainMenuButton
+      value: CheckpointButton
       objectReference: {fileID: 0}
     - target: {fileID: 8567822208829063629, guid: 4493d94d8a2824f41a0b5917ed4a0b7e, type: 3}
       propertyPath: m_Pivot.x
@@ -4978,14 +4978,14 @@ PrefabInstance:
     - target: {fileID: 8567822208829063631, guid: 4493d94d8a2824f41a0b5917ed4a0b7e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1681286057025537930}
+      objectReference: {fileID: 3525864882114554710}
     - target: {fileID: 8567822208829063631, guid: 4493d94d8a2824f41a0b5917ed4a0b7e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MainMenu
+      value: RestartFromCheckpoint
       objectReference: {fileID: 0}
     - target: {fileID: 8567822208829063631, guid: 4493d94d8a2824f41a0b5917ed4a0b7e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PauseMenu, Assembly-CSharp
+      value: Restart, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8567822208829063631, guid: 4493d94d8a2824f41a0b5917ed4a0b7e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
