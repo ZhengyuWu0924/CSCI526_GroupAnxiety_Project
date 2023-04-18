@@ -477,7 +477,7 @@ GameObject:
   - component: {fileID: 44341509}
   - component: {fileID: 44341508}
   - component: {fileID: 44341507}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5138,7 +5138,7 @@ GameObject:
   - component: {fileID: 341190692}
   - component: {fileID: 341190691}
   - component: {fileID: 341190690}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square
   m_TagString: Mutable Object
   m_Icon: {fileID: 0}
