@@ -12080,7 +12080,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3909114679784172503, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
       propertyPath: m_Name
-      value: Checkpoint_No. (2)
+      value: Checkpoint_No.3
       objectReference: {fileID: 0}
     - target: {fileID: 4770126800687358028, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
       propertyPath: m_RootOrder
@@ -18268,7 +18268,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3909114679784172503, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
       propertyPath: m_Name
-      value: Checkpoint_No.
+      value: Checkpoint_No.1
       objectReference: {fileID: 0}
     - target: {fileID: 4770126800687358028, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
       propertyPath: m_RootOrder
@@ -24528,7 +24528,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3909114679784172503, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
       propertyPath: m_Name
-      value: Checkpoint_No. (1)
+      value: Checkpoint_No.2
       objectReference: {fileID: 0}
     - target: {fileID: 4770126800687358028, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
       propertyPath: m_RootOrder
@@ -24872,7 +24872,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3909114679784172503, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
       propertyPath: m_Name
-      value: Checkpoint_No. (3)
+      value: Checkpoint_No.4
       objectReference: {fileID: 0}
     - target: {fileID: 4770126800687358028, guid: 701c91b9ce1cb2e45894a93f1811a7b6, type: 3}
       propertyPath: m_RootOrder
