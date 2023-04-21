@@ -32,13 +32,13 @@ public class ElectronicButton : ElectronicDevice
             if (!isStart)
             {
                 otherDevice.deviceStart();
-                yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.5f);
                 isStart = true;
             }
             else
             {
                 otherDevice.deviceStop();
-                yield return new WaitForSeconds(0.3f);
+                yield return new WaitForSeconds(0.5f);
                 isStart = false;
             }
             
