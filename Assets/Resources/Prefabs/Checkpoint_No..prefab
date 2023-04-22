@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 2989537754757948892}
   - component: {fileID: 1630212962898551391}
   - component: {fileID: 5178778930541168583}
+  - component: {fileID: -9130098700588394012}
   m_Layer: 0
   m_Name: Checkpoint_No.
   m_TagString: Checkpoint
@@ -318,3 +319,19 @@ MonoBehaviour:
   text: 
   activatedSprite: {fileID: 21300000, guid: 7ba119ae4951941f491c4ecae0fa7c75, type: 3}
   activated: 0
+--- !u!114 &-9130098700588394012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3909114679784172503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6620f88971446840bf7bde1f55621bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ifMoveOnAwake: 0
+  specificMovingTimes: 2
+  movingHeight: 0.4
+  movingTime: 0.2
