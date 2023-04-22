@@ -40,6 +40,7 @@ public class Checkpoint : MonoBehaviour
     public void activate()
     {
         activated = true;
+        GetComponent<MoveUpAndDownEffect>().SpecifyMove();
         GetComponent<SpriteRenderer>().sprite = activatedSprite;
     }
 }

@@ -129,4 +129,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movingHeight: 0.6
   movingTime: 0.8
-  ifMove: 0
+  ifMove: 1
