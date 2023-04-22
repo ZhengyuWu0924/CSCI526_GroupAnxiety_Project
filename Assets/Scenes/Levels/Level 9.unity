@@ -14818,14 +14818,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpeedBoostPowerup
       objectReference: {fileID: 0}
-    - target: {fileID: 781438667333313283, guid: efe8182470e70c44fa639a7a5dd8a029, type: 3}
-      propertyPath: speedBoost
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 781438667333313283, guid: efe8182470e70c44fa639a7a5dd8a029, type: 3}
-      propertyPath: powerUpDuration
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 781438667333313284, guid: efe8182470e70c44fa639a7a5dd8a029, type: 3}
       propertyPath: m_SortingOrder
       value: 2
