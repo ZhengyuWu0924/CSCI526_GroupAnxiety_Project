@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     private GameObject loseScreen;
     private GameObject starBar;
     private LevelStar levelStar;
+    private GameObject instructionScreen;
 
     private Animator playerAnimation;
     public LayerMask groundLayer;
@@ -66,6 +67,7 @@ public class PlayerController : MonoBehaviour
 
             levelUI = gameManager.levelUI;
             victoryScreen = levelUI.transform.Find("VictoryScreen").gameObject;
+            instructionScreen = levelUI.transform.Find("InstructionScreen").gameObject;
             loseScreen = levelUI.transform.Find("LoseScreen").gameObject;
             starBar = levelUI.transform.Find("LevelStar").gameObject;
             levelStar = starBar.GetComponent<LevelStar>();
@@ -173,6 +175,10 @@ public class PlayerController : MonoBehaviour
             Destroy(GameObject.Find(brush.name + "Pickup"));
         }
         ifLoadCheckPoint = false;
+        if (instructionScreen != null)
+        {
+            instructionScreen.SetActive(false);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
