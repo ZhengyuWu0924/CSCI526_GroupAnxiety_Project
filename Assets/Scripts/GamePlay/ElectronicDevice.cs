@@ -69,11 +69,13 @@ public abstract class ElectronicDevice : MonoBehaviour
     public virtual void connectDevice(ElectronicDevice other)
     {
         connected = true;
+        connectNode.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f);
     }
 
     public virtual void disconnectDevice()
     {
         connected = false;
+        connectNode.GetComponent<SpriteRenderer>().color = new Color(0.6f, 0.6f, 0.6f);
     }
 
     public virtual void deviceStart()
