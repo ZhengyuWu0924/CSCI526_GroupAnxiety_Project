@@ -7094,6 +7094,10 @@ PrefabInstance:
       propertyPath: unlockedPages
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8533914851274002863, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8746995030891208482, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
