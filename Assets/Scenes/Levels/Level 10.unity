@@ -9120,7 +9120,6 @@ GameObject:
   - component: {fileID: 751533512}
   - component: {fileID: 751533511}
   - component: {fileID: 751533510}
-  - component: {fileID: 751533509}
   m_Layer: 3
   m_Name: Special
   m_TagString: Untagged
@@ -9143,18 +9142,6 @@ Transform:
   m_Father: {fileID: 1808506390}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &751533509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 751533507}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e143e2c3632484ba6ae7b83dc53072e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &751533510
 Rigidbody2D:
   serializedVersion: 4
