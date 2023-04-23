@@ -21,6 +21,11 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
+        SceneManager.LoadScene("Level 1");
+    }
+
+    public void OpenLevelMap()
+    {
         SceneManager.LoadScene("LevelSelection");
     }
 
