@@ -1286,14 +1286,14 @@ MonoBehaviour:
   notes:
   - {fileID: 21300000, guid: 9f49013b9ac40473887c77ffb177aae8, type: 3}
   - {fileID: 21300000, guid: 553da58668adb42ae8cf41ffd6f33a71, type: 3}
-  - {fileID: 21300000, guid: 2c270543501aa406680c26e76a3f94d8, type: 3}
+  - {fileID: 21300000, guid: 84a7e033dd7db4f5dae137de6912be6c, type: 3}
   - {fileID: 21300000, guid: d9ae9f1e28bca4af58e9b9e293737636, type: 3}
   - {fileID: 21300000, guid: c7a14fdfae9844e89a11e410addf777b, type: 3}
-  - {fileID: 21300000, guid: acd7a0e0ed666442183eb44c9c197fdd, type: 3}
+  - {fileID: 21300000, guid: b95e56c97f9514f4aba1af6b87cf635a, type: 3}
   - {fileID: 21300000, guid: c5d3aacc7f43b49b297c6d60a6b49c93, type: 3}
   - {fileID: 21300000, guid: beada0e30e4a7407f80e6010f64412f5, type: 3}
   - {fileID: 21300000, guid: 7bdb77e0fff984877bb70dab425b9a6e, type: 3}
-  - {fileID: 21300000, guid: f6820e512920d434ca395a508db1b39e, type: 3}
+  - {fileID: 21300000, guid: 252459a4774e248e392154930de98da9, type: 3}
   book: {fileID: 2976967979239375785}
   pageObject: {fileID: 7899351346077045760}
   instructionScreen: {fileID: 8533914851274002863}
@@ -2282,7 +2282,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1945155780895659225
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3925,7 +3925,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8567822208829063629, guid: 4493d94d8a2824f41a0b5917ed4a0b7e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 547
+      value: 537
       objectReference: {fileID: 0}
     - target: {fileID: 8567822208829063629, guid: 4493d94d8a2824f41a0b5917ed4a0b7e, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4038,12 +4038,16 @@ PrefabInstance:
       value: 0.9245283
       objectReference: {fileID: 0}
     - target: {fileID: 2157587045656806618, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157587045656806618, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7654088250288265923}
     - target: {fileID: 2157587045656806618, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenNotes
+      value: OpenPage
       objectReference: {fileID: 0}
     - target: {fileID: 2157587045656806618, guid: 5fbc8164c91b146368d5837d1fb716b1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

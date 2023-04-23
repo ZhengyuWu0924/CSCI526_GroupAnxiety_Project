@@ -1498,6 +1498,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelUI
       objectReference: {fileID: 0}
+    - target: {fileID: 6185038834281233337, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6185038834281233342, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1548,7 +1552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654088250288265923, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
       propertyPath: unlockedPages
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8533914851274002863, guid: 151ab6a03e11b47709a5c00fdb517401, type: 3}
       propertyPath: m_IsActive
