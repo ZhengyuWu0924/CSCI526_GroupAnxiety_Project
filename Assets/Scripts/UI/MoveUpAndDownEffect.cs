@@ -9,9 +9,10 @@ public class MoveUpAndDownEffect : MonoBehaviour
     [SerializeField] private float movingHeight = 0.6f;
     [SerializeField] private float movingTime = 0.8f;
     private float originalY;
-    
+
     // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
         originalY = transform.position.y;
         if (ifMoveOnAwake)
