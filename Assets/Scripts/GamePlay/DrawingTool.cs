@@ -357,6 +357,7 @@ public class DrawingTool : MonoBehaviour
         if (null == drawnObject) return;
         if (drawnObject.pointCount < 3)
         {
+            totalDrawDistance = 0;
             Destroy(drawnObject.gameObject);
         }else if (drawnObject.isStraight)
         {

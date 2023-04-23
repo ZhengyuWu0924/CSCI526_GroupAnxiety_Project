@@ -15,7 +15,7 @@ public class StarController : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             gameManager.updateCurrentLevelStars(GameManager.currentLevelStars + 1);
-            gameManager.updateInk(-10);
+            gameManager.updateInk(-8);
             Destroy(this.gameObject);
         }
     }

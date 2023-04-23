@@ -213,5 +213,5 @@ MonoBehaviour:
   massRatio: 0.5
   massRatioOffset: 1
   isStraight: 0
-  lineCostFactor: 1
+  lineCostFactor: 1.5
   cursor: {fileID: 2800000, guid: 4cdee75568d134fe188c750e34f5a3cb, type: 3}

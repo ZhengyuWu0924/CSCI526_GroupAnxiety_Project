@@ -256,6 +256,7 @@ public class PlayerController : MonoBehaviour
                 player.gravityScale = playerGravity;
                 jumpSpeed = 8f;
                 playerStatusController.ActivateStatus(positiveStatusImage);
+                gameManager.updateInk(2);
                 break;
             case BrushType.MAGNET_NEG:
                 playerPro = playerPro == PlayerProperty.NegativeMag ? PlayerProperty.NONE : PlayerProperty.NegativeMag;
@@ -265,6 +266,7 @@ public class PlayerController : MonoBehaviour
                 player.gravityScale = playerGravity;
                 jumpSpeed = 8f;
                 playerStatusController.ActivateStatus(negativeStatusImage);
+                gameManager.updateInk(2);
                 break;
             case BrushType.GRAVITY:
                 // check current activatived character property first
@@ -282,6 +284,7 @@ public class PlayerController : MonoBehaviour
                 // change the player's jump ability based on its current property state
                 jumpSpeed = playerPro == PlayerProperty.Antigravity ? 10f : 8f;
                 playerStatusController.ActivateStatus(gravityStatusImage);
+                gameManager.updateInk(4);
                 break;
             default:
                 break;
