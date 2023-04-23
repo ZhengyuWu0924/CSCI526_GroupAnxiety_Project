@@ -42,7 +42,7 @@ public class ElectronicTeleport : ElectronicDevice
             {
                 GameManager.Instance.player.transform.position = destination;
                 otherTeleport.connected = false;
-                yield return new WaitForSeconds(0.3f);
+                yield return new WaitForSeconds(0.5f);
                 otherTeleport.connected = true;
             }
         }

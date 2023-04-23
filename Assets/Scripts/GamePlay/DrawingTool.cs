@@ -307,10 +307,10 @@ public class DrawingTool : MonoBehaviour
             }
             EndDraw();
         }
-        //else if (hit.transform.name == "UIBlocker" && chosenPen.name == "ElectronicPen")
-        //{
-        //    EndDraw();
-        //}
+        else if (hit && hit.transform.name == "UIBlocker" && chosenPen.name == "ElectronicPen")
+        {
+            EndDraw();
+        }
         else
         {
             // add remain ink
