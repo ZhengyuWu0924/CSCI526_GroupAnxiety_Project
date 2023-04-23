@@ -123,7 +123,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1918575180068473116, guid: 70a6c9ec76b67044e98ba5d761a6c649, type: 3}
       propertyPath: m_Name
-      value: UIBlocker (1)
+      value: UIBlocker
       objectReference: {fileID: 0}
     - target: {fileID: 1918575180068473119, guid: 70a6c9ec76b67044e98ba5d761a6c649, type: 3}
       propertyPath: m_RootOrder
@@ -131,7 +131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1918575180068473119, guid: 70a6c9ec76b67044e98ba5d761a6c649, type: 3}
       propertyPath: m_LocalScale.x
-      value: 12.052871
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1918575180068473119, guid: 70a6c9ec76b67044e98ba5d761a6c649, type: 3}
       propertyPath: m_LocalScale.y
