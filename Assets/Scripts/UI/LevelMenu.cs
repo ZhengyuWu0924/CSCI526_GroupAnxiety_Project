@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelMenu : MonoBehaviour
 {
@@ -22,11 +23,16 @@ public class LevelMenu : MonoBehaviour
 
     public void Refresh()
     {
-        for (int i = 0; i < levelButtons.Length; i++)
+        for (int i = 0; i < levelButtons.Length - 1; i++)
         {
             int starAmount = playerPrefsManager.getStarsCollectedOnLevel(i + 1);
             levelButtons[i].SetUp(i + 1, Mathf.Min(starAmount, 3));
             // levelButtons[i].SetUp(i + 1, 0);
         }
+    }
+
+    public void LoadPlayground()
+    {
+        SceneManager.LoadScene("Playground");
     }
 }
